@@ -1,0 +1,68 @@
+class Cardmanagement{
+
+
+
+
+}
+
+
+
+class Menu{
+    -scanner Scanner(System.in)
+
+
+}
+
+
+
+
+class Shop{
+
+
+}
+
+
+
+
+class User{
+    -name : String
+    -password : String
+    -userID : String
+    -money : double
+
+
+    + User(pName String, pPassword String, pUserID int, pMoney int)
+    -setpassword(pPassword : String) : void
+    +changePassword(pPassword : String) : void
+    +setName(pName : String) : void 
+    +getName(pName : String)  
+    +setUserID(pUserID : int) : void
+    +getUserID(pUserID : int) 
+    +setMoney(pMoney : int) : void
+    +getMoney(pMoney : int) 
+
+}
+
+
+
+
+class Cards{
+    -rarity : String
+    -name : String
+    -cardID : int
+    -price: int
+
+    +sellcard()
+    +buycard()
+    +showname(pName : String)
+    +showrarity(pRarity : String)
+    +showprice(pPrice : int)
+    +showcardID(pCardID : int)
+
+}
+
+
+
+class Inventory{
+
+}⁸
