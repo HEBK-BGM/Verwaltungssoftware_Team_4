@@ -1,0 +1,15 @@
+Cards: bisasam {
+
+    name : Bisasam 
+    rarity: non rare
+    cardID : 001
+    price : 1,00
+
+
+    sellcard()
+    buycard()
+    showname()
+    showrarity()
+    showprice()
+    showcardID()
+}

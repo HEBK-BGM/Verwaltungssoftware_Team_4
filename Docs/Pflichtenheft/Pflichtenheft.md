@@ -22,3 +22,6 @@ Wir erstellen ein Programm, mit dem wir Pokémon Karten verwalten können. Man k
 
 
 
+## 3.2  Objektdiagramm 
+
+![Objekt-Diagramm-Bisasam](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/blob/main/Docs/Pflichtenheft/Diagramme/Object-Card.iuml)
