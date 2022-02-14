@@ -1,5 +1,5 @@
 class Cardmanagement{
-
+    +loggedIn: boolean
 
 
 
@@ -9,6 +9,14 @@ class Cardmanagement{
 
 class Menu{
     -scanner Scanner(System.in)
+    
+    +createUser() : User
+    +logIn()
+    +logOut()
+    +showInventory()
+    +showMoney()
+    +checkProfile()
+    +showMenu()
 
 
 }
@@ -17,7 +25,7 @@ class Menu{
 
 
 class Shop{
-
+    + card: Cards
 
 }
 
@@ -52,12 +60,12 @@ class Cards{
     -cardID : int
     -price: int
 
-    +sellcard()
-    +buycard()
-    +showname(pName : String)
-    +showrarity(pRarity : String)
-    +showprice(pPrice : int)
-    +showcardID(pCardID : int)
+    +sellCard()
+    +buyCard()
+    +showName(pName : String)
+    +showRarity(pRarity : String)
+    +showPrice(pPrice : int)
+    +showCardID(pCardID : int)
 
 }
 
@@ -65,4 +73,5 @@ class Cards{
 
 class Inventory{
 
-}⁸
++showCards()
+}
