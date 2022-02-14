@@ -1,3 +1,5 @@
+@startuml Klassendiagramm
+
 class Cardmanagement{
     +loggedIn: boolean
 
@@ -8,8 +10,7 @@ class Cardmanagement{
 
 
 class Menu{
-    -scanner Scanner(System.in)
-    
+    -sc Scanner(System.in)
     +createUser() : User
     +logIn()
     +logOut()
@@ -75,3 +76,4 @@ class Inventory{
 
 +showCards()
 }
+@enduml
