@@ -1,11 +1,12 @@
 @startuml
-Cards: bisasam {
+object cards {
 
-    name : Bisasam 
-    rarity: non rare
-    cardID : 001
-    price : 1,00
+    name = "Bisasam" 
+    rarity = "non rare"
+    cardID = 001
+    price = 1,00
 
+--- 
 
     sellcard()
     buycard()
@@ -14,7 +15,4 @@ Cards: bisasam {
     showprice()
     showcardID()
 }
-
-
-
 @enduml
