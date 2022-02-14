@@ -80,5 +80,4 @@ class Inventory{
 
 +showCards()
 }
-Cardmanagement *-- "1" Menu
 @enduml
