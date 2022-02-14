@@ -26,4 +26,4 @@ Wir erstellen ein Programm, mit dem wir Pokémon Karten verwalten können. Man k
 
 ![Objekt-Diagramm-Bisasam](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Object-Card.iuml)
 
-![your-UML-diagram-name](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/agileProjekt_2_Java/main/Docs/Pflichtenheft/Diagramme/AnwendungsFall_Fach_anlegen.iuml)
+
