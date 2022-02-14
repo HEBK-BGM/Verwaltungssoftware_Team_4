@@ -25,6 +25,8 @@ Die Menüfuhrung ist rein Textuell. Beim Start der Anwendung gibt es eine Passwo
 - Note für Fach anzeigen
 - abmelden
 
+
+
 ## 2. Beschreibung des Funktionsablaufes
 
 ### **Menü anzeigen**
