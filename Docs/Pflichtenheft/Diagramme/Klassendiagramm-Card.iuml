@@ -80,4 +80,8 @@ class Inventory{
 
 +showCards()
 }
+Cardmanagement *-- "1" Menu
+User *-- "1" Inventory
+User *-- "20" Cards
+Cards *-- "1" Shop
 @enduml

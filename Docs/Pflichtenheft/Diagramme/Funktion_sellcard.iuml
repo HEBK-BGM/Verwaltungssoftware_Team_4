@@ -1,0 +1,8 @@
+@startuml
+start
+:loggin;
+:Menu: showinventory;
+:Inventory: showcards;
+:Cards : sellcard;
+stop
+@enduml
