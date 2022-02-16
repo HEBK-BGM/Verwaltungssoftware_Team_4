@@ -2,7 +2,8 @@
 start
 :loggin;
 :Menu: showshop;
+:zeigt den Shop an;
 :Shop: showcards;
-:Shop: buycard;
+:Zeigt die Karten im Shop;
 stop
 @enduml
