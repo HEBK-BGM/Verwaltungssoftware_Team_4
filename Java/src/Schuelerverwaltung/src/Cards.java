@@ -5,13 +5,13 @@ public class Cards {
     String rarity = "non rare";
     double price;
     
-
+    //Keine Ahnung was falsch
     if(rarity.equals = "non rare"){
         price = 1.00;
     }
     else 
     if(rarity.equals = "rare"){
-    price = 5.00;        
+        price = 5.00;        
     }
     else
     if(rarity.equals = "super rare"){
