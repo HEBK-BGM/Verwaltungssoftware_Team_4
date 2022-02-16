@@ -16,7 +16,11 @@ class Cardmanagement{
 
 
 class Menu{
+
+    
+
     -sc Scanner(System.in)
+
     +createUser() : User
     +logIn() : String
     +logOut(pCardmanagement : Cardmanagement) : void
