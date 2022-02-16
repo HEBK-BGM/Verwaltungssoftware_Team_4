@@ -3,11 +3,11 @@
 1. Bescreibung der Anwendung
 2. Beschreibung der Funktionen 
    
-   2.1
+   2.1 Funktion: sellcard
 
-   2.2 
+   2.2 Funktion: buycard
 
-   2.3
+   2.3 Funktion: changepassword
 
    2.4 
 
@@ -22,6 +22,22 @@ Wir erstellen ein Programm, mit dem wir Pokémon Karten verwalten können. Man k
 
 ## 1.1 Beschreiung des Menüs
 Im Menü kann man mithilfe eines Scanners eingaben tätigen. Somit lässt sich dort auch ein User erstellen, außerdem kann man sich anmelden und abmelden. Im Menu kann man sich dazu auch noch sein Geld, sein Inventar, den Shop und auch sein Profil anzeigen lassen.
+
+
+## 2 Beschreibung der Funktionen
+
+## 2.1 Funktion: buycard
+![buycard](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Funktion_buycard.iuml)
+
+
+## 2.2 Funktion: sellcard
+![sellcard](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Funktion_sellcard.iuml)
+
+
+
+## 2.3 Funktion: changepassword
+![changepassword](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Funktion_changepassword.iuml)
+
 
 ## 3.2  Objektdiagramm 
 

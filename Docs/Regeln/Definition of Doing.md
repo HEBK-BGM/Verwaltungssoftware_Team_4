@@ -10,6 +10,7 @@
 3. HILFE wird bei uns groß geschrieben.
 
 
+
 4. Wenn man Pausen benötigt, dann soll man diese auch nehemen.
 
 
