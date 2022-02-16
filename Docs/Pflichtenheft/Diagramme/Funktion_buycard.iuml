@@ -4,5 +4,7 @@ start
 :Menu: showshop;
 :Shop: showcards;
 :Shop: buycard;
+:Bestätigung;
+:Karte gekauft;
 stop
 @enduml

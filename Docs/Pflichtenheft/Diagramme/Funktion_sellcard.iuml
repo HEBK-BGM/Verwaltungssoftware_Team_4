@@ -5,5 +5,7 @@ start
 :Menu: showinventory;
 :Inventory: showcards;
 :Cards : sellcard;
+:Bestätigung;
+:Karte verkauft;
 stop
 @enduml
