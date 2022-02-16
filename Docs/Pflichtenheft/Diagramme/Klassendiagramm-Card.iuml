@@ -33,7 +33,7 @@ class Shop{
 
 
 
-class User{
+class User{7
     -name : String
     -password : String
     -userID : String
