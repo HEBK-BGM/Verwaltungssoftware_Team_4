@@ -1,0 +1,8 @@
+@startuml
+start
+:loggin;
+:Menu: showshop;
+:Shop: showcards;
+:Shop: buycard;
+stop
+@enduml
