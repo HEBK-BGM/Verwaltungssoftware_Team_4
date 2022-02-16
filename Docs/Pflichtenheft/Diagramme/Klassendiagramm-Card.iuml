@@ -1,7 +1,13 @@
 @startuml Klassendiagramm
 
 class Cardmanagement{
-    +loggedIn: boolean
+    -user: User
+    -loggedIn: boolean
+    +logIn() : void
+    -logIn(pPassword: String) : void
+    +logOut() : void
+    +getLoggedIn() : boolean
+    +getUser() : User
 
 
 
@@ -16,8 +22,8 @@ class Menu{
     -sc Scanner(System.in)
 
     +createUser() : User
-    +logIn()
-    +logOut()
+    +logIn() : String
+    +logOut(pCardmanagement : Cardmanagement) : void
     +showInventory()
     +showMoney()
     +checkProfile()
@@ -30,14 +36,15 @@ class Menu{
 
 
 class Shop{
-    + card: Cards
+    +card: Cards
+    +showCards(pCards: Cards) : void
 
 }
 
 
 
 
-class User{7
+class User{
     -name : String
     -password : String
     -userID : String
@@ -45,7 +52,7 @@ class User{7
 
 
     + User(pName String, pPassword String, pUserID int, pMoney int)
-    -setpassword(pPassword : String) : void
+    +setpassword(pPassword : String) : void
     +changePassword(pPassword : String) : void
     +setName(pName : String) : void 
     +getName(pName : String)  
@@ -63,7 +70,7 @@ class Cards{
     -rarity : String
     -name : String
     -cardID : int
-    -price: int
+    -price: float
 
     +sellCard()
     +buyCard()
@@ -80,8 +87,11 @@ class Inventory{
 
 +showCards()
 }
-Cardmanagement *-- "1" Menu
-User *-- "1" Inventory
-User *-- "20" Cards
-Cards *-- "1" Shop
+Cardmanagement *-- "1" Menu : hat ein Menu
+User *-- "1" Inventory : hat ein Inventar
+User *-- "20" Cards : hat 20 Karten
+Cardmanagement *-- User : hat unbregenzte User
+User *-- "1" Shop : hat einen Shop
+Shop *-- Cards : hat unbegrenzte Karten
+Inventory *-- Cards : hat unbregrenzte Karten
 @enduml
