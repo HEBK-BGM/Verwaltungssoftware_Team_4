@@ -85,9 +85,8 @@ class Inventory{
 }
 Cardmanagement *-- "1" Menu : hat ein Menu
 User *-- "1" Inventory : hat ein Inventar
-User *-- "20" Inventory : hat 20 Karten
 Cardmanagement *-- User : hat unbregenzte User
 User *-- "1" Shop : hat einen Shop
-Shop *-- Cards 
-Inventory *-- "20" Cards
+Shop *-- "5" Cards : hat 5 Karten 
+Inventory *-- "20" Cards : hat 20 Karten
 @enduml
