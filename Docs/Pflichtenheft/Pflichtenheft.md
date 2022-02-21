@@ -39,8 +39,16 @@ Im Menü kann man mithilfe eines Scanners eingaben tätigen. Somit lässt sich d
 ![changepassword](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Funktion_changepassword.iuml)
 
 
+## 2.4 Funktion: shopshowcards
+
+![showcards](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Funktion_shopkartenanzeigen.iuml)
+
+
+
+## 3.1 Klassendiagramm 
+
+![Klassendiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Klassendiagramm-Card.iuml)
+
 ## 3.2  Objektdiagramm 
 
 ![Objekt-Diagramm-Bisasam](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Object-Card.iuml)
-
-
