@@ -1,6 +1,6 @@
 # Kapitelübersicht
 
-1. Bescreibung der Anwendung
+1. Beschreibung der Anwendung
 2. Beschreibung der Funktionen 
    
    2.1 Funktion: sellcard
@@ -18,14 +18,15 @@
 ## 1. Beschreibung der Anwendung
 
 Beschreibung des Programmes:
-Wir erstellen ein Programm, mit dem wir Pokémon Karten verwalten können. Man kann in der  Anwendung Karten(/Packs) kaufen bzw. verkaufen. Dabei haben verschiedene Karten unterschiedliche Seltenheitsstufen (und werden auch seltener bzw. öfter gezogen). Der Benutzer kann sich ein Konto erstellen, sich jederzeit ab und dann auch wieder anmelden, auch wenn das Programm zwischendurch geschlossen wurde ( -> Datenbank), dabei bleiben seine Inhalt## 1.1 Beschreibung des Menüs
+Wir erstellen ein Programm, mit dem wir Pokémon Karten verwalten können. Man kann in der  Anwendung Karten(/Packs) kaufen bzw. verkaufen. Dabei haben verschiedene Karten unterschiedliche Seltenheitsstufen (und werden auch seltener bzw. öfter gezogen). Der Benutzer kann sich ein Konto erstellen, sich jederzeit ab und dann auch wieder anmelden, auch wenn das Programm zwischendurch geschlossen wurde ( -> Datenbank), dabei bleiben seine Inhalt.
 
-## 1.1 Beschreiung des Menüs
+## 1.1 Beschreibung des Menüs
 Im Menü kann man mithilfe eines Scanners eingaben tätigen. Somit lässt sich dort auch ein User erstellen, außerdem kann man sich anmelden und abmelden. Im Menu kann man sich dazu auch noch sein Geld, sein Inventar, den Shop und auch sein Profil anzeigen lassen.
 
+TODO #20 ausführlicher und Beispiel des genauen Menüs also der genauen Ausgaben und Textführung
 
 ## 2 Beschreibung der Funktionen
-
+TODO #21 Textuelle Beschreibung der Methoen fehlt
 ## 2.1 Funktion: buycard
 ![buycard](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Funktion_buycard.iuml)
 
@@ -47,8 +48,12 @@ Im Menü kann man mithilfe eines Scanners eingaben tätigen. Somit lässt sich d
 
 ## 3.1 Klassendiagramm 
 
+TODO #22 Klsse Menu -> sc keine Methode, Rückgabewerte fehlen teilweise,; evtl. shop eher ans Menü statt User; Vererbung fehlt
+
 ![Klassendiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Klassendiagramm-Card.iuml)
 
 ## 3.2  Objektdiagramm 
+
+TODO #23 Nicht vollständig, das ist nur eine Objektkarte -> Objekte aller vorhandenen Klassen in Beziehung
 
 ![Objekt-Diagramm-Bisasam](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Object-Card.iuml)
