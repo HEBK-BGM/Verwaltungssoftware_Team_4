@@ -16,11 +16,7 @@ class Cardmanagement{
 
 
 class Menu{
-
-    
-
     -sc Scanner(System.in)
-
     +createUser() : User
     +logIn() : String
     +logOut(pCardmanagement : Cardmanagement) : void
@@ -89,9 +85,9 @@ class Inventory{
 }
 Cardmanagement *-- "1" Menu : hat ein Menu
 User *-- "1" Inventory : hat ein Inventar
-User *-- "20" Cards : hat 20 Karten
+User *-- "20" Inventory : hat 20 Karten
 Cardmanagement *-- User : hat unbregenzte User
 User *-- "1" Shop : hat einen Shop
-Shop *-- Cards : hat unbegrenzte Karten
-Inventory *-- Cards : hat unbregrenzte Karten
+Shop *-- Cards 
+Inventory *-- "20" Cards
 @enduml
