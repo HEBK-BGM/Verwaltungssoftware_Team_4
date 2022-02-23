@@ -21,10 +21,12 @@ class Menu{
     +createUser() : User
     +logIn() : String
     +logOut(pCardmanagement : Cardmanagement) : void
-    +showInventory()
-    +showMoney()
-    +checkProfile()
-    +showMenu()
+    +showInventory() : Inventory
+    +showMoney() : pMoney
+    +checkProfile() : void
+    +showMenu() : Menu
+    +showShop() : Shop
+    -breakLine() : void
 
 
 }
@@ -42,28 +44,34 @@ class Shop{
 
 
 class User{
-    -name : String
+    -username : String
     -password : String
     -userID : String
-    -money : double
 
 
-    +User(pName String, pPassword String, pUserID int, pMoney int)
-    +setpassword(pPassword : String) : void
+    +User(pName : String, pPassword : String, pUserID : int, pMoney : float)
+    +setPassword(pPassword : String) : void
     +changePassword(pPassword : String) : void
-    +setName(pName : String) : void 
-    +getName(pName : String)  
     +setUserID(pUserID : int) : void
-    +getUserID(pUserID : int) 
-    +setMoney(pMoney : int) : void
-    +getMoney(pMoney : int) 
+    +getUserID(): int
 
 }
 class User extends Person{
+  
+}
+class Person{
     -name: String
     -age: int
-}
+    -money: double
 
+    +User(pName : String, pAge : int)
+    +setName(pName : String) : void
+    +getName(): String
+    +setAge(pAge: int) : void
+    +getAge() : int
+    +setMoney(pMoney : int) : void
+    +getMoney() : int
+}
 
 
 class Cards{
@@ -72,8 +80,8 @@ class Cards{
     -cardID : int
     -price: float
 
-    +sellCard()
-    +buyCard()
+    +sellCard() : void
+    +buyCard() : void
     +showName(pName : String)
     +showRarity(pRarity : String)
     +showPrice(pPrice : int)
