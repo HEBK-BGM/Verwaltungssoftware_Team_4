@@ -16,7 +16,8 @@ class Cardmanagement{
 
 
 class Menu{
-    -sc Scanner(System.in)
+    -sc : Scanner(System.in)
+
     +createUser() : User
     +logIn() : String
     +logOut(pCardmanagement : Cardmanagement) : void
@@ -47,7 +48,7 @@ class User{
     -money : double
 
 
-    + User(pName String, pPassword String, pUserID int, pMoney int)
+    +User(pName String, pPassword String, pUserID int, pMoney int)
     +setpassword(pPassword : String) : void
     +changePassword(pPassword : String) : void
     +setName(pName : String) : void 
@@ -58,7 +59,10 @@ class User{
     +getMoney(pMoney : int) 
 
 }
-
+class User extends Person{
+    -name: String
+    -age: int
+}
 
 
 
@@ -86,7 +90,7 @@ class Inventory{
 Cardmanagement *-- "1" Menu : hat ein Menu
 User *-- "1" Inventory : hat ein Inventar
 Cardmanagement *-- User : hat unbregenzte User
-User *-- "1" Shop : hat einen Shop
+Menu *-- "1" Shop : hat einen Shop
 Shop *-- "5" Cards : hat 5 Karten 
 Inventory *-- "20" Cards : hat 20 Karten
 @enduml
