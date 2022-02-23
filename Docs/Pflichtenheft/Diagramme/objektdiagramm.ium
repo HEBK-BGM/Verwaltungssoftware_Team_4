@@ -1,0 +1,95 @@
+@startuml Klassendiagramm
+
+object cardmanagement{
+    -kevin = User
+    -aswin = User
+    -loggedIn= true
+
+
+
+
+}
+
+
+
+object menu{
+
+    -sc Scanner(System.in)
+
+}
+
+
+
+
+object shop{
+    +pikachu = Cards
+    
+
+}
+
+
+
+
+object kevin{
+    -name = "kevin"
+    -password = "12kds"
+    -userID = "001"
+    -money = 100.00
+    
+}
+
+object aswin{
+    -name = "aswin"
+    -password = "ldsdsaa"
+    -userID = "002"
+    -money = 1000000.00
+}
+
+
+
+
+object bisasam{
+    -rarity = "non rare"
+    -name = "bisasam"
+    -cardID = 001
+    -price = 1.00
+}
+
+
+object pikachu{
+    -rarity = "rare"
+    -name = "bisasam"
+    -cardID = 007
+    -price = 5.00
+}
+
+object glumanda{
+    -rarity = "rare"
+    -name = "bisasam"
+    -cardID = 010
+    -price = 10.00
+}
+
+
+
+object kevininventar{
+}
+
+object aswininventar{
+}
+
+
+cardmanagement *-- menu
+menu *-- shop
+cardmanagement *-- kevin
+cardmanagement *-- aswin
+
+kevin *-- kevininventar
+kevininventar *-- bisasam
+
+aswin *-- aswininventar
+aswininventar *-- glumanda
+
+shop *-- pikachu
+
+@enduml
