@@ -1,8 +1,7 @@
 @startuml Klassendiagramm
 
 object cardmanagement{
-    -kevin = User
-    -aswin = User
+    -user = [kevin,aswin]
     -loggedIn= true
 
 
@@ -14,7 +13,7 @@ object cardmanagement{
 
 object menu{
 
-    -sc Scanner(System.in)
+    -sc = sc : Scanner
 
 }
 
@@ -22,7 +21,7 @@ object menu{
 
 
 object shop{
-    +pikachu = Cards
+    + cards = [pikachu]
     
 
 }
@@ -58,7 +57,7 @@ object bisasam{
 
 object pikachu{
     -rarity = "rare"
-    -name = "bisasam"
+    -name = "pikachu"
     -cardID = 007
     -price = 5.00
 }
@@ -73,23 +72,24 @@ object glumanda{
 
 
 object kevininventar{
+    cards = [bisasam]
 }
 
 object aswininventar{
+    cards = [glumanda]
 }
 
 
 cardmanagement *-- menu
 menu *-- shop
-cardmanagement *-- kevin
-cardmanagement *-- aswin
+
 
 kevin *-- kevininventar
-kevininventar *-- bisasam
+
 
 aswin *-- aswininventar
-aswininventar *-- glumanda
 
-shop *-- pikachu
+
+
 
 @enduml
