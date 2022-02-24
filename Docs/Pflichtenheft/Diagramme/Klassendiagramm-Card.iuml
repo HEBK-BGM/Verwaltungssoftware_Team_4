@@ -56,9 +56,7 @@ class User{
     +getUserID(): int
 
 }
-class User extends Person{
-  
-}
+
 class Person{
     -name: String
     -age: int
@@ -101,4 +99,5 @@ Cardmanagement *-- "4" User : hat 4 User
 Menu *-- "1" Shop : hat einen Shop
 Shop *-- "5" Cards : hat 5 Karten 
 Inventory *-- "20" Cards : hat 20 Karten
+Person <|-- User : User erbt von Person
 @enduml
