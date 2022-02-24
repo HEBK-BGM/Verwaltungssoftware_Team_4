@@ -28,8 +28,7 @@ Wir erstellen ein Programm, mit dem wir Pokémon Karten verwalten können. Man k
 
 ## 1.1 Beschreibung des Menüs
 Im Menü kann man mithilfe eines Scanners eingaben tätigen. Somit lässt sich dort auch ein User erstellen, außerdem kann man sich anmelden und abmelden. Im Menu kann man sich dazu auch noch sein Geld, sein Inventar, den Shop und auch sein Profil anzeigen lassen.
-
-TODO #20 ausführlicher und Beispiel des genauen Menüs also der genauen Ausgaben und Textführung
+Zu Beginn gibt es die Möglichkeit ein Konto zu erstellen oder sich anzumelden. Im Anschluss, kann man sich s Inventar, sein Geld, den Shop und sein Profil ansehen. Im Inventar werden alle Karten aufgelistet, außerdem lassen sich dort auch die Stats anzeigen. Im Shop kann man sich immer eine von 5 Karten kaufen. Beim Profil lässt sich Name, ID, Alter und das Passwort des Users anzeigen, wobei sich das Passwort dort auch ändern lässt. Von den einzelnen Möglichkeiten kommt man immer wieder zurück ins Menü, von dort aus man sich abmelden kann.
 
 ---
 ## 2 Beschreibung der Funktionen
