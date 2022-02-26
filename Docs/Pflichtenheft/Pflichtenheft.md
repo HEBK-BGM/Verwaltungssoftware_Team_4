@@ -34,7 +34,7 @@ Zu Beginn gibt es die Möglichkeit ein Konto zu erstellen oder sich anzumelden. 
 ## 2 Beschreibung der Funktionen
 
 
-## 2.1 Funktion: **shopshowcards**
+## 2.1.1 Funktion: **shopshowcards**
 
 ![showcards](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Funktion_shopkartenanzeigen.iuml)
 
@@ -42,14 +42,14 @@ Bei dieser Funktion soll der User denn Shop mit den Karten sehen. Zu erst geht e
 
 ---
 
-## 2.2 Funktion: **buycard**
+## 2.1.2 Funktion: **buycard**
 
 ![buycard](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Funktion_buycard.iuml)
 
 Diese Methode soll erlauben Karten zu kaufen. Dafür muss der User angemeldet sein. Dann muss er über das Menü auf den Shop gehen. Als nächstes kann er sich von den 5 Karten eine aussuchen, welcher er haben möchte. Dann wird nach einer Bestätigung gefragt und die Karten erscheint im Inventar des Users und das Geld so viel wie die Karte kostet wird vom Guthaben abgezogen.
 
 ---
-## 2.3 Funktion: **sellcard**
+## 2.1.3 Funktion: **sellcard**
 ![sellcard](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Funktion_sellcard.iuml)
 
 Die Methode sellcard ist dafür gedacht Karten aus dem Inventar zu verkaufen. Der User muss angemeldet sein und als nächstes sich sein Inventar über das Menü anzeigen lassen. Dann wählt er die gewünsche Karte aus und verkauft sie. Zuerst wird nach einer Bestätigung gefragt ob er die Karte verkaufen will und dann wird die Karte aus dem Inventory gelöscht und er bekommt das Geld gutgeschrieben so viel wie die Karte kostet.
@@ -58,11 +58,17 @@ Die Methode sellcard ist dafür gedacht Karten aus dem Inventar zu verkaufen. De
 
 
 
-## 2.4 Funktion: **changepassword**
+## 2.1.4 Funktion: **changepassword**
 ![changepassword](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Funktion_changepassword.iuml)
 
 
 Der User kann auf den Menü auswählen sein Passwort zu ändern. Dann wird nach dem neuen Passort gefragt. Dieser soll der User dann eingeben und dann wird das Passwort erst überprüft und dann bestätigt. Dann hat der User ein neues Passwort für seinen account.
+
+
+
+## 2.2 Sequenzdiagramm 
+
+![Sequenzdiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Sequenzdiagramm.iuml)
 
 ---
 
