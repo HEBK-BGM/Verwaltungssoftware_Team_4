@@ -32,7 +32,6 @@ Zu Beginn gibt es die Möglichkeit ein Konto zu erstellen oder sich anzumelden. 
 
 ---
 ## 2 Beschreibung der Funktionen
-TODO #21 Textuelle Beschreibung der Methoen fehlt
 
 
 ## 2.1 Funktion: **shopshowcards**
@@ -70,12 +69,10 @@ Der User kann auf den Menü auswählen sein Passwort zu ändern. Dann wird nach 
 
 ## 3.1 Klassendiagramm 
 
-TODO #22 Klsse Menu -> sc keine Methode, Rückgabewerte fehlen teilweise,; evtl. shop eher ans Menü statt User; Vererbung fehlt
 
-![Klassendiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Klassendiagramm-Card.iuml)
+
+
 ## 3.2  Objektdiagramm 
-
-TODO #23 Nicht vollständig, das ist nur eine Objektkarte -> Objekte aller vorhandenen Klassen in Beziehung
 
 ![Objektdiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/objektdiagramm.iuml)
 
