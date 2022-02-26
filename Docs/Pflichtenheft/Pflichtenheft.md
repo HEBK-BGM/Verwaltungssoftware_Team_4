@@ -5,17 +5,21 @@
 
 2. Beschreibung der Funktionen 
    
-   2.1 Funktion: shopshowcards
+   2.1.1 Funktion: shopshowcards
 
-   2.2 Funktion: buycard
+   2.1.2 Funktion: buycard
 
-   2.3 Funktion: sellcard
+   2.1.3 Funktion: sellcard
 
-   2.4 Funktion: changepassword
+   2.1.4 Funktion: changepassword
+
+   2.2 Sequenzdiagramm
 
 3. Diagramme - Dokumentation
 
    3.1 Klassendiagramm
+
+   3.2 Objektdiagramm
 ---
 
 
