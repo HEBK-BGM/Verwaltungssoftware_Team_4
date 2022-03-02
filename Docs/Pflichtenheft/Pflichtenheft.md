@@ -77,7 +77,8 @@ Der User kann auf den Menü auswählen sein Passwort zu ändern. Dann wird nach 
 !(https://www.plantuml.com/plantuml/png/SoWkIImgAStDuGhEo2zGqBLJS4uiIYdEoImkKR1IACx8Bqy6yJKqkH3Yka1L8DL01KM9UIdvkM0b2XgQ2bnS3gbvAK3J0000)
 
 ---
-
+## 2.2.2 buyCards()
+!(https://www.plantuml.com/plantuml/png/SoWkIImgAStDuUBY2ix8Br3GjLFmp2jBpIl9BwfKi598AgrqJYnAqT24oWAb0rABYlFpW78bYTcfllbvgPL0MIukXzIy5A0v0000)
 
 ## 3.1 Klassendiagramm 
 
