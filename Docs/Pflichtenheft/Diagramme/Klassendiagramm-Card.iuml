@@ -43,7 +43,7 @@ class Shop{
 class User{
     -username : String
     -password : String
-    -userID : String
+    -userID : int
 
 
     +User(pName : String, pPassword : String, pUserID : int, pMoney : float)
@@ -85,12 +85,13 @@ class Cards{
 
 
 class Inventory{
-    +showCards()
+    +showCards(pCards: Cards) : void
     +sellCard() : void
 }
 
 
 class Cardslist{
+    +randomCard() : void
 }
 
 Cardmanagement *-- "1" Menu : hat ein Menu
