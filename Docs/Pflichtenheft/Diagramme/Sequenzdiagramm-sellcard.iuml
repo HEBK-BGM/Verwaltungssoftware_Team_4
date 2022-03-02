@@ -1,0 +1,9 @@
+@startuml
+
+Menu -> Inventory: showinventory()
+Inventory --> Menu: showcards()
+Inventory -> Inventory: sellcard()
+Inventory --> kevin: giveMoney()
+
+
+@enduml

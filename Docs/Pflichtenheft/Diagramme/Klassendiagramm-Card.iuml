@@ -87,6 +87,7 @@ class Inventory{
 +card : Cards[20]
 +showCards()
 +sellCard() : void
++giveMoney()
 }
 
 
