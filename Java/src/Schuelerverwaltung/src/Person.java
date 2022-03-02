@@ -3,13 +3,11 @@ public class Person {
     //Attribute
     private String name;
     private int age;
-    private double money;
 
-    //Konstruktor
-    public Person(String pName, int pAge, double pMoney){
+    //Person Konstruktor
+    public Person(String pName, int pAge){
         setName(pName);
         setAge(pAge);
-        setMoney(pMoney);
     }
 
 
@@ -22,10 +20,6 @@ public class Person {
         return age;
     }
 
-    public double getMoney(){
-        return money;
-    }
-
 
     //set Methoden
     public void setName(String pName){
@@ -36,7 +30,5 @@ public class Person {
         this.age = pAge;
     }
 
-    public void setMoney(double pMoney){
-        this.money = pMoney;
-    }
+
 }

@@ -7,6 +7,7 @@ class Cardmanagement{
     +logOut() : void
     +getLoggedIn() : boolean
     +getUser() : User
+    +checkpassword()
 
 
 
@@ -44,13 +45,19 @@ class User{
     -username : String
     -password : String
     -userID : int
+    -money : double
 
 
-    +User(pName : String, pPassword : String, pUserID : int, pMoney : float)
+    +User(pUsername : String, pPassword : String, pUserID : int, pMoney : double)
+    +setUsername(pUsername : String) : void
+    +getUsername() : String
     +setPassword(pPassword : String) : void
     +changePassword(pPassword : String) : void
     +setUserID(pUserID : int) : void
-    +getUserID(): int
+    +getUserID() : int
+    +setMoney(pMoney : double) : void
+    +getMoney() : double
+    
 
 }
 
@@ -58,15 +65,12 @@ class User{
 class Person{
     -name: String
     -age: int
-    -money: double
 
-    +User(pName : String, pAge : int)
+    +Person(pName : String, pAge : int)
     +setName(pName : String) : void
     +getName(): String
     +setAge(pAge: int) : void
     +getAge() : int
-    +setMoney(pMoney : int) : void
-    +getMoney() : int
 }
 
 
@@ -87,6 +91,7 @@ class Cards{
 class Inventory{
     +showCards(pCards: Cards) : void
     +sellCard() : void
+    +giveMoney()
 }
 
 
