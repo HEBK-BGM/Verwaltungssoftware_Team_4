@@ -1,3 +1,4 @@
+@startuml
 @startmindmap
 * Menü
 ** Shop
@@ -13,4 +14,6 @@
 *** Passwort ändern
 
 ** abmelden
+
 @endmindmap
+@enduml
