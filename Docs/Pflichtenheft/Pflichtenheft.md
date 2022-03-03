@@ -80,7 +80,7 @@ Der User kann auf den Menü auswählen sein Passwort zu ändern. Dann wird nach 
 
 ---
 ## 2.2.2 buyCards()
-![buycards](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Sequenzdiagramm-buyCard.iuml)
+![buycards](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Sequenzdiagram-buyCard.iuml)
 
 ---
 ## 2.2.3 sellcard()
