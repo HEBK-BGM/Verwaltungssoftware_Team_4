@@ -34,6 +34,7 @@ Wir erstellen ein Programm, mit dem wir Pokémon Karten verwalten können. Man k
 Im Menü kann man mithilfe eines Scanners eingaben tätigen. Somit lässt sich dort auch ein User erstellen, außerdem kann man sich anmelden und abmelden. Im Menu kann man sich dazu auch noch sein Geld, sein Inventar, den Shop und auch sein Profil anzeigen lassen.
 Zu Beginn gibt es die Möglichkeit ein Konto zu erstellen oder sich anzumelden. Im Anschluss, kann man sich s Inventar, sein Geld, den Shop und sein Profil ansehen. Im Inventar werden alle Karten aufgelistet, außerdem lassen sich dort auch die Stats anzeigen. Im Shop kann man sich immer eine von 5 Karten kaufen. Beim Profil lässt sich Name, ID, Alter und das Passwort des Users anzeigen, wobei sich das Passwort dort auch ändern lässt. Von den einzelnen Möglichkeiten kommt man immer wieder zurück ins Menü, von dort aus man sich abmelden kann.
 
+
 ![Menu](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Menu.iuml)
 
 ---
@@ -90,9 +91,14 @@ Der User kann auf den Menü auswählen sein Passwort zu ändern. Dann wird nach 
 
 ## 2.2.4 changepassword()
 ![changepassword](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Sequenzdiagramm-changepassword.iuml)
+
+---
 ## 3.1 Klassendiagramm 
 
 ![Klassendiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Klassendiagramm-Card.iuml)
+
+
+---
 
 
 
