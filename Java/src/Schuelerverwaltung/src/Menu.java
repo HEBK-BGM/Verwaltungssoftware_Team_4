@@ -73,7 +73,8 @@ public class Menu {
         //Hier einfügen: Wenn Erstellung erfogreich dann öffne Menue, wenn nicht wiederhole createUser()
 
 
-        User testUser = new User (pName,pAge,pUsername,pPassword,pMoney,pUserID);
+        User User = new User (pName,pAge,pUsername,pPassword,pUserID,pMoney);
+        return User;
     }
     
     //Hauptmenue des Programmes
