@@ -1,4 +1,0 @@
-@startuml
-Shop -> Inventory : buyCard()
-Shop --> person : takeMoney()
-@enduml

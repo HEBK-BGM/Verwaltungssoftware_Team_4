@@ -4,10 +4,14 @@ public class Person {
     private String name;
     private int age;
 
-    //Person Konstruktor
-    public Person(String pName, int pAge){
+    //Konstruktor
+    public Person(String pName, int pAge, double pMoney){
         setName(pName);
         setAge(pAge);
+    }
+
+
+    public Person(String pName, int pAge) {
     }
 
 
