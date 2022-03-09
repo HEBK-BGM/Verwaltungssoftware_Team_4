@@ -31,7 +31,7 @@ public class Menu {
             createUser();
     }
 
-
+    /*
     //Anmelden
     public void logIn(){
         breakLine();
@@ -41,10 +41,10 @@ public class Menu {
         //Hier Scanner einfügen der mit Datenbank überprüft
         breakLine();
 
-        //Hier einfügen: Wenn anmeldung erfolgreich dann öffne Menu
-        Menu();
+        //Hier einfügen: Wenn anmeldung erfolgreich dann öffne Menu, wenn nicht erfolgreich wiederhole logIn()
+        
     }
-
+    */
 
     //Erstellt einen neuen User
     public User createUser(){
@@ -70,7 +70,7 @@ public class Menu {
         System.out.println("Dein Geld beträgt:" + pMoney);
         breakLine();
 
-        Menu();
+        //Hier einfügen: Wenn Erstellung erfogreich dann öffne Menue, wenn nicht wiederhole createUser()
 
 
         User testUser = new User (pName,pAge,pUsername,pPassword,pMoney,pUserID);
