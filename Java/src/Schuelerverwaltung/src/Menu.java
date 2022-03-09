@@ -10,17 +10,41 @@ public class Menu {
     Random rand = new Random();
     int userIDrandom = 999;
 
-
+    //breakline
     public void breakLine(){
         System.out.println("------------------");
     }
 
-    //Methode für die Komplette Menüführung
+
+    //Methode für Menu start
     public void menustart(){
         breakLine();
-        System.out.println("");
+        System.out.println("(1) - Anmelden");
+        System.out.println("(2) - Konto erstellen");
         breakLine();
+
+        int ScannerMenu = sc.nextInt();
+        if(sc.equals("1")){
+           logIn();
+        }
+        else if(sc.equals("2")){
+            createUser();
     }
+
+
+    //Anmelden
+    public void logIn(){
+        breakLine();
+        System.out.println("Bitte geben Sie ihr Benutzernamen ein: ");
+        //Hier Scanner einfügen der mit Datenbank überprüft
+        System.out.println("Bitte geben Sie ihr Passwort ein: ");
+        //Hier Scanner einfügen der mit Datenbank überprüft
+        breakLine();
+
+        //Hier einfügen: Wenn anmeldung erfolgreich dann öffne Menu
+        Menu();
+    }
+
 
     //Erstellt einen neuen User
     public User createUser(){
@@ -37,29 +61,22 @@ public class Menu {
         System.out.println("Erstellen Sie ein Passwort");
         String pPassword = sc.nextLine();
 
-        //UserID wird random erstellt von 1000
+        //UserID wird random erstellt von 999
         int pUserID = rand.nextInt(userIDrandom);
         System.out.println("Dein UserID lautet:" + pUserID);
 
+        //User bekommt Startgeld
         double pMoney = 100.00;
         System.out.println("Dein Geld beträgt:" + pMoney);
         breakLine();
+
+        Menu();
 
 
         User testUser = new User (pName,pAge,pUsername,pPassword,pMoney,pUserID);
     }
     
-    
-    //Anmeldevorgang noch nicht ready
-    public String logIn(){
-        System.out.println("Gebe deinen Username ein:");
-        
-        String testUser = sc.next();
-
-        return testUser;  
-    }
-    
-    
+    //Hauptmenue des Programmes
     public Menu(){
         System.out.println("(1) - Inventar");
         System.out.println("(2) - Einkaufszentrum");
@@ -86,11 +103,46 @@ public class Menu {
 
         
     }
-    /*
+    
     public Inventory showInventory(){
+        System.out.println("(1) - " + pokemon1);
+        System.out.println("(2) - " + pokemon2);
+        System.out.println("(3) - " + pokemon3);
+        System.out.println("(4) - " + pokemon4);
+        System.out.println("(5) - " + pokemon5);
+        System.out.println("(6) - " + pokemon6);
+        System.out.println("(7) - " + pokemon7);
+        System.out.println("(8) - " + pokemon8);
+        System.out.println("(9) - " + pokemon9);
+        System.out.println("(10) - " + pokemon10);
+        System.out.println("(11) - " + pokemon11);
+        System.out.println("(12) - " + pokemon12);
+        System.out.println("(13) - " + pokemon13);
+        System.out.println("(14) - " + pokemon14);
+        System.out.println("(15) - " + pokemon15);
+        System.out.println("(16) - " + pokemon16);
+        System.out.println("(17) - " + pokemon17);
+        System.out.println("(18) - " + pokemon18);
+        System.out.println("(19) - " + pokemon19);
+        System.out.println("(20) - " + pokemon20);
 
+        if(sc.equals("1")){
+            
+        }
+        else if(sc.equals("2")){
+        
+        }
+        else if(sc.equals("3")){
+            
+        }
+        else if(sc.equals("4")){
+            
+        }
+        else if(sc.equals("5")){
+            
+        }
     }
-    */
+    
  
     public  String  checkProfile(){
         breakLine();
