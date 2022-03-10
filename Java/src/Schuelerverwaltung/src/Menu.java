@@ -218,6 +218,7 @@ public class Menu {
         else if(sc.equals("5")){
             
         }
+        
     }
     */
 
@@ -227,10 +228,9 @@ public class Menu {
         breakLine();
 
         System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
-        if(sc.equals("L")){
-            showMenu();
-        }
-        else if(sc.equals("l")){
+
+        String input = sc.nextLine();
+        if (input.toLowerCase().equals("l")) {
             showMenu();
         }
     }
@@ -245,10 +245,9 @@ public class Menu {
         breakLine();
 
         System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
-        if(sc.equals("L")){
-            showMenu();
-        }
-        else if(sc.equals("l")){
+
+        String input = sc.nextLine();
+        if (input.toLowerCase().equals("l")) {
             showMenu();
         }
 
