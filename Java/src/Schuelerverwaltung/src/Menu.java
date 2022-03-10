@@ -78,6 +78,7 @@ public class Menu {
         return testUser;
     }
     
+    
     //Hauptmenue des Programmes
     public Menu showMenu(){
         System.out.println("(1) - Inventar");
