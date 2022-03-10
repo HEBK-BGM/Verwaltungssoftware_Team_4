@@ -72,7 +72,24 @@ Der User kann auf den Menü auswählen sein Passwort zu ändern. Dann wird nach 
 
 ## 2.2 Sequenzdiagramm 
 
-![Sequenzdiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/Sequenzdiagramm.iuml)
+## 2.2.1
+![shopshowcards-Sequenzdiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/
+Sequenzdiagramm-shopshowcards.iuml)
+
+## 2.2.2
+![buycard-Sequenzdiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/
+Sequenzdiagramm-buycard.iuml)
+
+
+## 2.2.3
+![sellcard-Sequenzdiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/
+Sequenzdiagramm-sellcard.iuml)
+
+
+
+## 2.2.4 
+![changepassword](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HEBK-BGM/Verwaltungssoftware_Team_4/main/Docs/Pflichtenheft/Diagramme/
+Sequenzdiagramm-changepassword.iuml)
 
 ---
 

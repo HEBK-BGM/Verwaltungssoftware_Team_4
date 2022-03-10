@@ -1,0 +1,11 @@
+@startuml
+
+
+
+Shop-> Cardlist: showcards()
+
+Cardlist-->Shop: randomcards()
+
+
+
+@endum
