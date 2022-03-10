@@ -1,6 +1,6 @@
 public class Cards {
 
-    public static void main(String[] args) throws Exception {
+    /*public static void main(String[] args) throws Exception {
 
         // Infos for Pokémon cards
         int id = 001;
@@ -25,5 +25,5 @@ public class Cards {
 
         // System.out.println(pokemoninfo[3]);
 
-    }
+    }*/
 }
