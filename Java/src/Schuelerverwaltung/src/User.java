@@ -7,7 +7,7 @@ public class User extends Person {
     private double money;
 
     //User Konstruktor
-    public User(String pName, int pAge, String pUsername, String pPassword, int pUserID, double pMoney) {
+    public User(String pName, int pAge, String pUsername, String pPassword, double pMoney, int pUserID) {
         super(pName, pAge);
         setUsername(pUsername);
         setPassword(pPassword);
