@@ -2,23 +2,26 @@ public class Cardmanagement {
 
     //Attribute
     private User user;
-    private Menu menu;
-    private boolean loggedin;
+    private Menu menu1;
+
+    private boolean loggedin = false;
 
    //Konstruktor Cardmanagement
    public void Cardmanagement(){
     
-      Menu menu1 = new Menu();
+      menu1 = new Menu();
 
+      user = menu1.createUser();
       menu1.menustart();
-
    }
 
-   /*
+   
    //Methoden  
    public void logIn(){
+      String pPassword = menu1.logIn();
+      this.logIn(pPassword);
    }
-   */
+   
 
    //Log In Methode 
    public void logIn(String pPassword){
@@ -34,6 +37,7 @@ public class Cardmanagement {
    //LogOut Methode 
    public void logOut(){
       this.loggedin = false;
+      menu1.menustart();
    }
 
 

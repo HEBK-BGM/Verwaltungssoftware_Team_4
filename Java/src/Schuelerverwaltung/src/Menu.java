@@ -4,7 +4,7 @@ public class Menu {
 
     //Scanner für die Eingabe 
     Scanner sc = new Scanner(System.in);
-    String testUser = "test";
+    
 
     //Random für die UserID
     Random rand = new Random();
@@ -40,8 +40,7 @@ public class Menu {
         System.out.println("Dein Geld beträgt:" + pMoney);
         breakLine();
 
-        //Hier einfügen: Wenn Erstellung erfogreich dann öffne Menue, wenn nicht wiederhole createUser()
-
+        showMenu();
 
         User testUser = new User (pName,pAge,pUsername,pPassword,pUserID,pMoney);
         return testUser;
@@ -51,14 +50,14 @@ public class Menu {
     public void menustart(){
         breakLine();
         System.out.println("(1) - Anmelden");
-        System.out.println("(2) - Konto erstellen");
+        System.out.println("(2) - Programm schließen");
 
         sc.nextLine();
         if(sc.equals("1")){
             logIn();   
         }
         else if(sc.equals("2")){
-            createUser();
+            System.exit(0);
         }else{
             menustart();
         }
@@ -69,27 +68,24 @@ public class Menu {
     public String logIn(){
         breakLine();
         System.out.println("Bitte geben Sie ihr Passwort ein: ");
-
-        String testUser = sc.nextLine();
-
+        sc.nextLine();        
         breakLine();
 
-        return testUser;
+        return null; 
     }
 
     
-    public void logOut(){
+    public void logOut(Cardmanagement pCardmanagement){
         breakLine();
         System.out.println("Sie werden abgemeldet.......................");
+        pCardmanagement.logOut();
         breakLine();
-
-        menustart();
     }   
     
 
   
     
-    /*
+    
     //Hauptmenue des Programmes
     public Menu showMenu(){
     int ScannerMenu = sc.nextInt();
@@ -99,7 +95,7 @@ public class Menu {
         System.out.println("(4) - Benutzerprofil überprüfen/bearbeiten");
         System.out.println("(5) - Ausloggen/Abmelden");
 
-        int ScannerMenu = sc.nextInt();
+        /*
         if(sc.equals("1")){
             showInventory();
         }
@@ -118,8 +114,8 @@ public class Menu {
         else if(sc.equals("l")){
             logOut();
         }
-
-        
+        */
+        return null;
     }
 
     /*
