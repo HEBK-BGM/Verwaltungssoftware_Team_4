@@ -3,16 +3,15 @@ public class Cardmanagement {
     //Attribute
     private User user;
     private Menu menu1;
-
     private boolean loggedin = false;
 
    //Konstruktor Cardmanagement
-   public void Cardmanagement(){
-    
+   public Cardmanagement(){
       menu1 = new Menu();
 
       user = menu1.createUser();
-      menu1.menustart();
+
+      menu1.showMenu();
    }
 
    
@@ -37,7 +36,6 @@ public class Cardmanagement {
    //LogOut Methode 
    public void logOut(){
       this.loggedin = false;
-      menu1.menustart();
    }
 
 

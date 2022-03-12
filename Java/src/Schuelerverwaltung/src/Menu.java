@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 public class Menu {
-
+    
     //Scanner für die Eingabe 
     Scanner sc = new Scanner(System.in);
     
@@ -9,7 +9,6 @@ public class Menu {
     //Random für die UserID
     Random rand = new Random();
     int userIDrandom = 999;
-
 
     //breakline
     public void breakLine(){
@@ -42,8 +41,8 @@ public class Menu {
 
         showMenu();
 
-        User testUser = new User (pName,pAge,pUsername,pPassword,pUserID,pMoney);
-        return testUser;
+        User u = new User (pName,pAge,pUsername,pPassword,pUserID,pMoney);
+        return u;
     }    
 
     //Methode für Menu start
@@ -52,11 +51,11 @@ public class Menu {
         System.out.println("(1) - Anmelden");
         System.out.println("(2) - Programm schließen");
 
-        sc.nextLine();
-        if(sc.equals("1")){
-            logIn();   
+        sc.nextInt();
+        if(sc.equals(1)){
+            logIn(); 
         }
-        else if(sc.equals("2")){
+        else if(sc.equals(2)){
             System.exit(0);
         }else{
             menustart();
@@ -68,10 +67,11 @@ public class Menu {
     public String logIn(){
         breakLine();
         System.out.println("Bitte geben Sie ihr Passwort ein: ");
-        sc.nextLine();        
-        breakLine();
+        
+        String u = sc.nextLine();        
+        
+        return u;
 
-        return null; 
     }
 
     
