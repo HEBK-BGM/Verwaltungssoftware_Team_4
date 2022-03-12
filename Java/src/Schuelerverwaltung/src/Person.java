@@ -5,13 +5,9 @@ public class Person {
     private int age;
 
     //Konstruktor
-    public Person(String pName, int pAge, double pMoney){
+    public Person(String pName, int pAge) {
         setName(pName);
         setAge(pAge);
-    }
-
-
-    public Person(String pName, int pAge) {
     }
 
 

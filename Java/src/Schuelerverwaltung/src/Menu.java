@@ -10,42 +10,11 @@ public class Menu {
     Random rand = new Random();
     int userIDrandom = 999;
 
+
     //breakline
     public void breakLine(){
         System.out.println("------------------");
     }
-
-
-    //Methode für Menu start
-    public void menustart(){
-        breakLine();
-        System.out.println("(1) - Anmelden");
-        System.out.println("(2) - Konto erstellen");
-        breakLine();
-
-        int ScannerMenu = sc.nextInt();
-        if(sc.equals("1")){
-           logIn();
-        }
-        else if(sc.equals("2")){
-            createUser();
-        }
-    }
-
-    
-    //Anmelden
-    public String logIn(){
-        breakLine();
-        System.out.println("Bitte geben Sie ihr Benutzernamen ein: ");
-        //Hier Scanner einfügen der mit Datenbank überprüft
-        System.out.println("Bitte geben Sie ihr Passwort ein: ");
-        //Hier Scanner einfügen der mit Datenbank überprüft
-        breakLine();
-
-        //Hier einfügen: Wenn anmeldung erfolgreich dann öffne Menu, wenn nicht erfolgreich wiederhole logIn()
-        
-    }
-    
 
     //Erstellt einen neuen User
     public User createUser(){
@@ -76,11 +45,54 @@ public class Menu {
 
         User testUser = new User (pName,pAge,pUsername,pPassword,pUserID,pMoney);
         return testUser;
+    }    
+
+    //Methode für Menu start
+    public void menustart(){
+        breakLine();
+        System.out.println("(1) - Anmelden");
+        System.out.println("(2) - Konto erstellen");
+
+        sc.nextLine();
+        if(sc.equals("1")){
+            logIn();   
+        }
+        else if(sc.equals("2")){
+            createUser();
+        }else{
+            menustart();
+        }
     }
+
     
+    //Anmelden
+    public String logIn(){
+        breakLine();
+        System.out.println("Bitte geben Sie ihr Passwort ein: ");
+
+        String testUser = sc.nextLine();
+
+        breakLine();
+
+        return testUser;
+    }
+
     
+    public void logOut(){
+        breakLine();
+        System.out.println("Sie werden abgemeldet.......................");
+        breakLine();
+
+        menustart();
+    }   
+    
+
+  
+    
+    /*
     //Hauptmenue des Programmes
     public Menu showMenu(){
+    int ScannerMenu = sc.nextInt();
         System.out.println("(1) - Inventar");
         System.out.println("(2) - Einkaufszentrum");
         System.out.println("(3) - Liquide Mittel überprüfen");
@@ -221,7 +233,7 @@ public class Menu {
         }
         
     }
-    */
+    
 
     public showMoney(double pMoney){
         breakLine();
@@ -253,12 +265,5 @@ public class Menu {
         }
 
     }
-
-    public void logOut(){
-        breakLine();
-        System.out.println("Sie werden abgemeldet.......................");
-        breakLine();
-
-        menustart();
-    }   
+    */ 
 }

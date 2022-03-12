@@ -64,4 +64,8 @@ public class User extends Person {
             System.out.println("Neues Passwort: "+ pPassword);
         } 
     }
+
+    public boolean checkpassword(String pPassword){
+        return password == pPassword;
+    }   
 }
