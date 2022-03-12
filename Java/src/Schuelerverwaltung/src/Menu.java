@@ -29,11 +29,12 @@ public class Menu {
         }
         else if(sc.equals("2")){
             createUser();
+        }
     }
 
-    /*
+    
     //Anmelden
-    public void logIn(){
+    public String logIn(){
         breakLine();
         System.out.println("Bitte geben Sie ihr Benutzernamen ein: ");
         //Hier Scanner einfügen der mit Datenbank überprüft
@@ -44,7 +45,7 @@ public class Menu {
         //Hier einfügen: Wenn anmeldung erfolgreich dann öffne Menu, wenn nicht erfolgreich wiederhole logIn()
         
     }
-    */
+    
 
     //Erstellt einen neuen User
     public User createUser(){
@@ -73,12 +74,13 @@ public class Menu {
         //Hier einfügen: Wenn Erstellung erfogreich dann öffne Menue, wenn nicht wiederhole createUser()
 
 
-        User User = new User (pName,pAge,pUsername,pPassword,pUserID,pMoney);
-        return User;
+        User testUser = new User (pName,pAge,pUsername,pPassword,pUserID,pMoney);
+        return testUser;
     }
     
+    
     //Hauptmenue des Programmes
-    public Menu(){
+    public Menu showMenu(){
         System.out.println("(1) - Inventar");
         System.out.println("(2) - Einkaufszentrum");
         System.out.println("(3) - Liquide Mittel überprüfen");
@@ -98,13 +100,17 @@ public class Menu {
         else if(sc.equals("4")){
             CheckProfile();
         }
-        else if(sc.equals("1")){
+        else if(sc.equals("L")){
+            logOut();
+        }
+        else if(sc.equals("l")){
             logOut();
         }
 
         
     }
-    
+
+    /*
     public Inventory showInventory(){
         System.out.println("(1) - " + pokemon1);
         System.out.println("(2) - " + pokemon2);
@@ -142,14 +148,117 @@ public class Menu {
         else if(sc.equals("5")){
             
         }
+        else if(sc.equals("6")){
+        
+        }
+        else if(sc.equals("7")){
+            
+        }
+        else if(sc.equals("8")){
+            
+        }
+        else if(sc.equals("9")){
+            
+        }
+        else if(sc.equals("10")){
+        
+        }
+        else if(sc.equals("11")){
+            
+        }
+        else if(sc.equals("12")){
+            
+        }
+        else if(sc.equals("13")){
+            
+        }
+        else if(sc.equals("14")){
+            
+        }
+        else if(sc.equals("15")){
+            
+        }
+        else if(sc.equals("16")){
+        
+        }
+        else if(sc.equals("17")){
+            
+        }
+        else if(sc.equals("18")){
+            
+        }
+        else if(sc.equals("19")){
+            
+        }
+        else if(sc.equals("20")){
+            
+        }
+    }
+    */
+    
+    /*
+    public Shop showShop(){
+        System.out.println("(1) - " + pokemon1);
+        System.out.println("(2) - " + pokemon2);
+        System.out.println("(3) - " + pokemon3);
+        System.out.println("(4) - " + pokemon4);
+        System.out.println("(5) - " + pokemon5);
+
+        if(sc.equals("1")){
+            
+        }
+        else if(sc.equals("2")){
+        
+        }
+        else if(sc.equals("3")){
+            
+        }
+        else if(sc.equals("4")){
+            
+        }
+        else if(sc.equals("5")){
+            
+        }
+        
+    }
+    */
+
+    public showMoney(double pMoney){
+        breakLine();
+        //Hier Geld
+        breakLine();
+
+        System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
+
+        String input = sc.nextLine();
+        if (input.toLowerCase().equals("l")) {
+            showMenu();
+        }
     }
     
  
-    public  String  checkProfile(){
+    public void checkProfile(){
         breakLine();
-        System.out.println("Dein Account:");
-        return testUser;
+        System.out.println("Dein Username: " + User1);
+        System.out.println("Dein Passwort: " + UserPassword1);
+        System.out.println("Deine User ID " + UserId1);
+        System.out.println("Dein Alter " + UserAge1);
+        breakLine();
+
+        System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
+
+        String input = sc.nextLine();
+        if (input.toLowerCase().equals("l")) {
+            showMenu();
+        }
+
     }
-    
-    
+
+    public void logOut(){
+        breakLine();
+        System.out.println("Sie werden abgemeldet.......................");
+        breakLine();
+
+        menustart();
+    }   
 }
