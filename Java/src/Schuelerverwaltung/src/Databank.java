@@ -4,17 +4,18 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Databank {
-  public static void main(String[] args) {
+/*public class Databank {
+  
+  private User;
 
-    String[] User1 = {"name", "age", "ID", "Passwort", "Money"};
+    User[] user = {pName, pAge, pUsername, pPassword, pUserID, pMoney}
     try {
       BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
       writer.write("Writing to a file.");
       writer.write("\nHere is another line.");
       
-      for (String UserInfo : User1) {
-        writer.write("\n" + User1);
+      for (String UserInfo : user1) {
+        writer.write("\n" + user1);
       }
       writer.close();
     } catch (IOException e) {
@@ -33,3 +34,4 @@ public class Databank {
     }
   }
 }
+*/

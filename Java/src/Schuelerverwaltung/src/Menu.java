@@ -1,5 +1,11 @@
 import java.util.Scanner;
 import java.util.Random;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 public class Menu {
 
     //Scanner für die Eingabe 
@@ -22,8 +28,7 @@ public class Menu {
         System.out.println("(1) - Anmelden");
         System.out.println("(2) - Konto erstellen");
         breakLine();
-
-        int ScannerMenu = sc.nextInt();
+        
         if(sc.equals("1")){
            logIn();
         }
@@ -41,6 +46,7 @@ public class Menu {
         System.out.println("Bitte geben Sie ihr Passwort ein: ");
         //Hier Scanner einfügen der mit Datenbank überprüft
         breakLine();
+        return testUser;
 
         //Hier einfügen: Wenn anmeldung erfolgreich dann öffne Menu, wenn nicht erfolgreich wiederhole logIn()
         
@@ -49,36 +55,65 @@ public class Menu {
 
     //Erstellt einen neuen User
     public User createUser(){
-        breakLine();
-        System.out.println("Gebe deinen richtigen Namen ein:"); 
-        String pName = sc.nextLine();
-    
-        System.out.println("Gebe dein Alter ein:");
-        int pAge = sc.nextInt();
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("user.txt"))) {
+            breakLine();
+
+            System.out.println("Gebe deinen richtigen Namen ein:"); 
+            String pName = sc.next();
+   
+
+            System.out.println("Gebe dein Alter ein:");
+            int pAge = sc.nextInt();
         
-        System.out.println("Ertselle einen Username");
-        String pUsername = sc.nextLine();
 
-        System.out.println("Erstellen Sie ein Passwort");
-        String pPassword = sc.nextLine();
+            System.out.println("Ertselle einen Username");
+            String pUsername = sc.next();
 
-        //UserID wird random erstellt von 999
-        int pUserID = rand.nextInt(userIDrandom);
-        System.out.println("Dein UserID lautet:" + pUserID);
+            System.out.println("Erstellen Sie ein Passwort");
+            String pPassword = sc.next();
+            
 
-        //User bekommt Startgeld
-        double pMoney = 100.00;
-        System.out.println("Dein Geld beträgt:" + pMoney);
-        breakLine();
+            //UserID wird random erstellt von 999
+            int pUserID = rand.nextInt(userIDrandom);
+            System.out.println("Dein UserID lautet:" + pUserID);
+            
 
-        //Hier einfügen: Wenn Erstellung erfogreich dann öffne Menue, wenn nicht wiederhole createUser()
+            //User bekommt Startgeld
+            double pMoney = 100.00;
+            System.out.println("Dein Geld beträgt:" + pMoney);
 
+            breakLine();
+            
 
-        User testUser = new User (pName,pAge,pUsername,pPassword,pUserID,pMoney);
-        return testUser;
-    }
+            //Hier einfügen: Wenn Erstellung erfogreich dann öffne Menue, wenn nicht wiederhole createUser()
+            try { 
+                writer.write(pName);
+                writer.newLine();
+                writer.write(pAge);
+                writer.newLine();
+                writer.write(pUsername);
+                writer.newLine();
+                writer.write(pPassword);
+                writer.newLine();
+                writer.write(pUserID);
+                writer.newLine();
+                writer.write(String.valueOf(pMoney));
+                writer.newLine();
+                writer.close();
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+        
+    }  
     
     
+    /*
     //Hauptmenue des Programmes
     public Menu showMenu(){
         System.out.println("(1) - Inventar");
@@ -110,7 +145,7 @@ public class Menu {
         
     }
 
-    /*
+    
     public Inventory showInventory(){
         System.out.println("(1) - " + pokemon1);
         System.out.println("(2) - " + pokemon2);
@@ -221,7 +256,7 @@ public class Menu {
         }
         
     }
-    */
+    
 
     public showMoney(double pMoney){
         breakLine();
@@ -260,5 +295,14 @@ public class Menu {
         breakLine();
 
         menustart();
-    }   
-}
+    } 
+    
+
+
+
+    
+  
+    */
+   
+
+}  
