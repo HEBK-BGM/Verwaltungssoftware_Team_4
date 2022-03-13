@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 
+import java.io.File;  
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -41,62 +42,63 @@ public class Menu {
     //Anmelden
     public String logIn(){
         breakLine();
+
+        BufferedReader reader;
         System.out.println("Bitte geben Sie ihr Benutzernamen ein: ");
-        //Hier Scanner einfügen der mit Datenbank überprüft
+        
         System.out.println("Bitte geben Sie ihr Passwort ein: ");
-        //Hier Scanner einfügen der mit Datenbank überprüft
+
         breakLine();
         return testUser;
 
-        //Hier einfügen: Wenn anmeldung erfolgreich dann öffne Menu, wenn nicht erfolgreich wiederhole logIn()
         
     }
+    
     
 
     //Erstellt einen neuen User
     public User createUser(){
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("user.txt"))) {
             breakLine();
-
-            System.out.println("Gebe deinen richtigen Namen ein:"); 
-            String pName = sc.next();
-   
-
-            System.out.println("Gebe dein Alter ein:");
-            int pAge = sc.nextInt();
-        
-
             System.out.println("Ertselle einen Username");
             String pUsername = sc.next();
 
             System.out.println("Erstellen Sie ein Passwort");
             String pPassword = sc.next();
-            
 
+            System.out.println("Gebe deinen richtigen Namen ein:"); 
+            String pName = sc.next();
+   
+            System.out.println("Gebe dein Alter ein:");
+            int pAge = sc.nextInt();
+        
             //UserID wird random erstellt von 999
             int pUserID = rand.nextInt(userIDrandom);
             System.out.println("Dein UserID lautet:" + pUserID);
             
-
             //User bekommt Startgeld
             double pMoney = 100.00;
             System.out.println("Dein Geld beträgt:" + pMoney);
 
             breakLine();
             
-
-            //Hier einfügen: Wenn Erstellung erfogreich dann öffne Menue, wenn nicht wiederhole createUser()
+            
+            File folder = new File(".\\Users\\");
+            folder.mkdirs();
+            File userfile = new File(".\\Users\\" + pUsername + ".txt");
+            BufferedWriter writer;
             try { 
-                writer.write(pName);
-                writer.newLine();
-                writer.write(pAge);
-                writer.newLine();
+                userfile.createNewFile();
+                writer = new BufferedWriter(new FileWriter(userfile)); 
+                //In der Datei werden alle Werte untereinander geschrieben
                 writer.write(pUsername);
                 writer.newLine();
                 writer.write(pPassword);
                 writer.newLine();
-                writer.write(pUserID);
+                writer.write(pName);
+                writer.newLine();
+                writer.write(String.valueOf(pAge));
+                writer.newLine();
+                writer.write(String.valueOf(pUserID));
                 writer.newLine();
                 writer.write(String.valueOf(pMoney));
                 writer.newLine();
@@ -104,14 +106,9 @@ public class Menu {
             }catch (IOException e) {
                 e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;
-        
-    }  
     
+        return null;    
+    }  
     
     /*
     //Hauptmenue des Programmes
