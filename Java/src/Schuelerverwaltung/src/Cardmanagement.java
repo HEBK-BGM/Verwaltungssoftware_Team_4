@@ -50,5 +50,4 @@ public class Cardmanagement {
    public boolean getLoggedIN(){
       return this.loggedin;
    }
-
 }
