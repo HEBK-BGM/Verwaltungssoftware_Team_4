@@ -30,15 +30,17 @@ public class Menu {
         System.out.println("(2) - Konto erstellen");
         breakLine();
         
-        if(sc.equals("1")){
-           logIn();
-        }
-        else if(sc.equals("2")){
+        int input = sc.nextInt();
+        if (input == 1){
+            logIn();
+        }else if (input == 2){
             createUser();
         }
+
     }
 
-    
+
+
     //Anmelden
     public String logIn(){
         breakLine();
@@ -80,12 +82,18 @@ public class Menu {
             System.out.println("Dein Geld beträgt:" + pMoney);
 
             breakLine();
+<<<<<<< HEAD
             
             
             File folder = new File(".\\Users\\");
             folder.mkdirs();
             File userfile = new File(".\\Users\\" + pUsername + ".txt");
             BufferedWriter writer;
+=======
+            menustart();
+
+            //Hier einfügen: Wenn Erstellung erfogreich dann öffne Menue, wenn nicht wiederhole createUser()
+>>>>>>> 40378c7e4175e1df33fa38bb0f446433875178dd
             try { 
                 userfile.createNewFile();
                 writer = new BufferedWriter(new FileWriter(userfile)); 
@@ -106,43 +114,33 @@ public class Menu {
             }catch (IOException e) {
                 e.printStackTrace();
             }
+<<<<<<< HEAD
+=======
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;  
+    }  
+>>>>>>> 40378c7e4175e1df33fa38bb0f446433875178dd
     
         return null;    
     }  
     
-    /*
+    
     //Hauptmenue des Programmes
-    public Menu showMenu(){
+    public int showMenu(){
         System.out.println("(1) - Inventar");
         System.out.println("(2) - Einkaufszentrum");
         System.out.println("(3) - Liquide Mittel überprüfen");
         System.out.println("(4) - Benutzerprofil überprüfen/bearbeiten");
         System.out.println("(5) - Ausloggen/Abmelden");
-
-        int ScannerMenu = sc.nextInt();
-        if(sc.equals("1")){
-            showInventory();
-        }
-        else if(sc.equals("2")){
-            showShop();
-        }
-        else if(sc.equals("3")){
-            showMoney();
-        }
-        else if(sc.equals("4")){
-            CheckProfile();
-        }
-        else if(sc.equals("L")){
-            logOut();
-        }
-        else if(sc.equals("l")){
-            logOut();
-        }
-
         
+        return sc.nextInt();
+
     }
 
-    
+   /* 
     public Inventory showInventory(){
         System.out.println("(1) - " + pokemon1);
         System.out.println("(2) - " + pokemon2);
@@ -226,9 +224,9 @@ public class Menu {
             
         }
     }
-    */
     
-    /*
+    
+    
     public Shop showShop(){
         System.out.println("(1) - " + pokemon1);
         System.out.println("(2) - " + pokemon2);
@@ -253,11 +251,12 @@ public class Menu {
         }
         
     }
+    */
     
 
-    public showMoney(double pMoney){
+    public void showMoney(User pUser){
         breakLine();
-        //Hier Geld
+        System.out.println("Dein Geld beträgt: " + pUser.getMoney());
         breakLine();
 
         System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
@@ -269,12 +268,12 @@ public class Menu {
     }
     
  
-    public void checkProfile(){
+    public void showProfile(User pUser){
         breakLine();
-        System.out.println("Dein Username: " + User1);
-        System.out.println("Dein Passwort: " + UserPassword1);
-        System.out.println("Deine User ID " + UserId1);
-        System.out.println("Dein Alter " + UserAge1);
+        System.out.println("Dein Username: " + pUser.getUsername());
+        System.out.println("Dein Passwort: " + pUser.getPassword());
+        System.out.println("Deine User ID " + pUser.getUserID());
+        System.out.println("Dein Alter " + pUser.getAge() );
         breakLine();
 
         System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
@@ -283,23 +282,40 @@ public class Menu {
         if (input.toLowerCase().equals("l")) {
             showMenu();
         }
-
     }
 
-    public void logOut(){
+    public void logOut(Cardmanagement pCardmanagement){
         breakLine();
         System.out.println("Sie werden abgemeldet.......................");
+        pCardmanagement.logOut();
         breakLine();
 
         menustart();
     } 
     
 
+    public void menumain(Cardmanagement pCardmanagement, User pUser){
+        while(pCardmanagement.getLoggedIN()== true);
+        switch(showMenu()){
+            case 1: //pCardmanagement.getUser(). show inventory muss zum User
+                    break;
+            case 2: //showShop() Shop wird angezeigt
+                    break;
+            case 3: showMoney(pUser);
+                    break;
+            case 4: showProfile(pUser);
+                    break;
+            case 5: logOut(pCardmanagement);
+                    break;
+            default:
+        }
+    }
+
 
 
     
   
-    */
+    
    
 
 }  
