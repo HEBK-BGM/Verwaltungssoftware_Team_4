@@ -40,8 +40,9 @@ public class Menu {
     }
 
     //Log In
-    //check Username
     public String logIn(){
+
+        //check Username
         breakLine();
         System.out.println("Bitte geben Sie ihren Username ein: ");
         breakLine();
@@ -52,19 +53,21 @@ public class Menu {
         try { 
         BufferedReader reader1; //Neuer Reader
         reader1 = new BufferedReader(new FileReader("user.txt"));
+
         if((UsernameCheck == reader1.readLine(3)) != null) {
             System.out.println("Username eingabe erfolgreich.");
-        }
-        else if(UsernameCheck != reader1.readLine(3)) != null){
+
+        }else if(UsernameCheck != reader1.readLine(3)) != null){
             System.out.println("Username eingabe nicht erfolgreich, bitte versuche es erneut.");
             logIn();
         }
         reader1.close();
-        catch (IOException e) {
-        e.printStackTrace();
-        }
-        }
 
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        
+        
 
         //ckeck Password
         breakLine();
@@ -88,11 +91,12 @@ public class Menu {
         }catch (IOException f) {
             f.printStackTrace();
         }
+        
     }
     
 
 
-    /* Altes anmelden ohne reader
+    /*
     //Anmelden
     public String logIn(){
         breakLine();
@@ -103,10 +107,9 @@ public class Menu {
         System.out.println("Bitte geben Sie ihr Passwort ein: ");
 
         breakLine();
-        return testUser;
-        */
-        
+        return testUser;  
     }
+    */
     
     
 
