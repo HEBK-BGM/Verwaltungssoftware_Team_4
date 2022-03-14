@@ -39,8 +39,60 @@ public class Menu {
 
     }
 
+    //Log In
+    //check Username
+    public String logIn(){
+        breakLine();
+        System.out.println("Bitte geben Sie ihren Username ein: ");
+        breakLine();
+
+        //Scanner 
+        String UsernameCheck = sc.nextLine();
+
+        try { 
+        BufferedReader reader1; //Neuer Reader
+        reader1 = new BufferedReader(new FileReader("user.txt"));
+        if((UsernameCheck == reader1.readLine(3)) != null) {
+            System.out.println("Username eingabe erfolgreich.");
+        }
+        else if(UsernameCheck != reader1.readLine(3)) != null){
+            System.out.println("Username eingabe nicht erfolgreich, bitte versuche es erneut.");
+            logIn();
+        }
+        reader1.close();
+        catch (IOException e) {
+        e.printStackTrace();
+        }
+        }
 
 
+        //ckeck Password
+        breakLine();
+        System.out.println("Bitte geben Sie ihr Passwort ein: ");
+        breakLine();
+
+        //Scanner
+        String PasswordCheck = sc.nextLine();
+
+        try { 
+        BufferedReader reader2; //Reader 
+        reader2 = new BufferedReader(new FileReader("user.txt"));
+        if((PasswordCheck == reader2.readLine(3)) != null) {
+            System.out.println("Passwort eingabe erfolgreich.");
+        }
+        else if(PasswordCheck != reader2.readLine(4)) != null){
+            System.out.println("Passwort eingabe nicht erfolgreich, bitte versuche es erneut.");
+            logIn();
+        }
+        reader2.close();
+        }catch (IOException f) {
+            f.printStackTrace();
+        }
+    }
+    
+
+
+    /* Altes anmelden ohne reader
     //Anmelden
     public String logIn(){
         breakLine();
@@ -52,7 +104,7 @@ public class Menu {
 
         breakLine();
         return testUser;
-
+        */
         
     }
     
@@ -82,18 +134,12 @@ public class Menu {
             System.out.println("Dein Geld beträgt:" + pMoney);
 
             breakLine();
-<<<<<<< HEAD
             
             
             File folder = new File(".\\Users\\");
             folder.mkdirs();
             File userfile = new File(".\\Users\\" + pUsername + ".txt");
             BufferedWriter writer;
-=======
-            menustart();
-
-            //Hier einfügen: Wenn Erstellung erfogreich dann öffne Menue, wenn nicht wiederhole createUser()
->>>>>>> 40378c7e4175e1df33fa38bb0f446433875178dd
             try { 
                 userfile.createNewFile();
                 writer = new BufferedWriter(new FileWriter(userfile)); 
@@ -114,15 +160,6 @@ public class Menu {
             }catch (IOException e) {
                 e.printStackTrace();
             }
-<<<<<<< HEAD
-=======
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;  
-    }  
->>>>>>> 40378c7e4175e1df33fa38bb0f446433875178dd
     
         return null;    
     }  
@@ -318,4 +355,4 @@ public class Menu {
     
    
 
-}  
+} 
