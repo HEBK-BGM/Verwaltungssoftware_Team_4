@@ -47,7 +47,7 @@ public class ReadWrite{
     }
 
 
-    
+
     public void writeUserlist(User pUser){
         File userlist = new File(".\\Users\\userlist.txt");
         BufferedWriter writer;
