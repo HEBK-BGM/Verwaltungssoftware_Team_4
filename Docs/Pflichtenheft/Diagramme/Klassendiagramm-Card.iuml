@@ -78,12 +78,20 @@ class Cards{
     -rarity : String
     -name : String
     -cardID : int
-    -price: float
+    -price: double
 
-    +showName(pName : String)
-    +showRarity(pRarity : String)
-    +showPrice(pPrice : int)
-    +showCardID(pCardID : int)
+    +showName() : void
+    +showRarity() : void
+    +showPrice() : void
+    +showCardID(): void
+    +setName(pName : String) : void
+    +setRarity(pRarity : String) : void
+    +setPrice(pPrice : double) : void
+    +setCardID(pCardID : int) : void
+    +getName() : String
+    +getRarity() : String
+    +getPrice() : double
+    +getCardID() : int
 
 }
 
@@ -91,7 +99,7 @@ class Cards{
 class Inventory{
     +showCards(pCards: Cards) : void
     +sellCard() : void
-    +giveMoney()
+    +giveMoney() : void
 }
 
 

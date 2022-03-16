@@ -7,7 +7,7 @@ public class User extends Person {
     private double money;
 
     //User Konstruktor
-    public User(String pName, int pAge, String pUsername, String pPassword, int pUserID, double pMoney) {
+    public User(String pName, int pAge, String pUsername, String pPassword, double pMoney, int pUserID) {
         super(pName, pAge);
         setUsername(pUsername);
         setPassword(pPassword);
@@ -55,7 +55,17 @@ public class User extends Person {
 
 
     //changepassword 
-    public void changepassword(String pPassword){
-    
+    public void changepassword(String pPassword){   
+        if(pPassword.length() < 4){
+            System.out.println("Das Passwort konnte nicht geändert werden!");
+        }else{
+            System.out.println("Das Passwort wurde erfolgreich geändert.");
+            this.password = pPassword;
+            System.out.println("Neues Passwort: "+ pPassword);
+        } 
     }
+
+    public boolean checkpassword(String pPassword){
+        return password == pPassword;
+    }   
 }

@@ -5,7 +5,9 @@ public class App {
     
         Shop s1 = new Shop();
         s1.showShop();
+           
+        Menu menu = new Menu();
 
-            
+        menu.createUser();
     }
 }

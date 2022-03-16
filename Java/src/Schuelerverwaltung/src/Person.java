@@ -4,8 +4,8 @@ public class Person {
     private String name;
     private int age;
 
-    //Person Konstruktor
-    public Person(String pName, int pAge){
+    //Konstruktor
+    public Person(String pName, int pAge) {
         setName(pName);
         setAge(pAge);
     }
