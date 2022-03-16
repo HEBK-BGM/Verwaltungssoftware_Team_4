@@ -37,7 +37,7 @@ public class Menu {
         
         int input = sc.nextInt();
         if (input == 1){
-            logInUsername();
+            
         }else if (input == 2){
             createUser();
         }
@@ -46,53 +46,8 @@ public class Menu {
 
     //Log In
     public void logIn(){
-
-        //check Username
-        breakLine();
-        System.out.println("Bitte geben Sie ihren Username ein: ");
-        breakLine();
-
-        //Scanner 
-        String UsernameCheck = sc.nextLine();
-
-        try {
-            String reader1 = Files.readAllLines(Paths.get("user.txt")).get(3);
-
-            if (UsernameCheck == reader1) {
-                System.out.println("Username eingabe erfolgreich.");
-
-            }else if (UsernameCheck != reader1) {
-                System.out.println("Username eingabe nicht erfolgreich, bitte versuche es erneut.");
-                logIn();
-            }
-
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-
-        //ckeck Password
-        breakLine();
-        System.out.println("Bitte geben Sie ihr Passwort ein: ");
-        breakLine();
-
-        //Scanner
-        String PasswordCheck = sc.nextLine();
-
-        try {
-            String reader2 = Files.readAllLines(Paths.get("user.txt")).get(4);
-            if (PasswordCheck == reader2) {
-                System.out.println("Passwort eingabe erfolgreich.");
-            }
-            else if(PasswordCheck != reader2){
-                System.out.println("Passwort eingabe nicht erfolgreich, bitte versuche es erneut.");
-                logIn();
-            }
-        
-        }catch (IOException f) {
-            f.printStackTrace();
-        }
-        
     }
+
 
     //Erstellt einen neuen User
     public User createUser(){
@@ -110,48 +65,17 @@ public class Menu {
    
             System.out.println("Gebe dein Alter ein:");
             int pAge = sc.nextInt(); 
+        
 
             //UserID wird random erstellt von 999
             int pUserID = rand.nextInt(userIDrandom);
             
             //User bekommt Startgeld
+            double pMoney = 100.0;
+
+            
             User user = new User(pName, pAge, pUsername, pPassword, pMoney, pUserID);
             
-            /*
-
-            breakLine();
-            
-            
-            File folder = new File(".\\Users\\");
-            folder.mkdirs();
-            File userfile = new File(".\\Users\\" + pUsername + ".txt");
-            BufferedWriter writer;
-            try { 
-                userfile.createNewFile();
-                writer = new BufferedWriter(new FileWriter(userfile)); 
-                //In der Datei werden alle Werte untereinander geschrieben
-                writer.write(pUsername);
-                writer.newLine();
-                writer.write(pPassword);
-                writer.newLine();
-                writer.write(pName);
-                writer.newLine();
-                writer.write(String.valueOf(pAge));
-                writer.newLine();
-                writer.write(String.valueOf(pUserID));
-                writer.newLine();
-                writer.write(String.valueOf(pMoney));
-                writer.newLine();
-                writer.close();
-            }catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            
-        }
-        */
         return user;        
     }  
 
@@ -163,6 +87,8 @@ public class Menu {
         System.out.println("(3) - Liquide Mittel überprüfen");
         System.out.println("(4) - Benutzerprofil überprüfen/bearbeiten");
         System.out.println("(5) - Ausloggen/Abmelden");
+
+        return sc.nextInt();
 
     }
 
@@ -309,7 +235,7 @@ public class Menu {
             showMenu();
         }
     }
-
+/*
     public void logOut(Cardmanagement pCardmanagement){
         breakLine();
         System.out.println("Sie werden abgemeldet.......................");
@@ -318,7 +244,7 @@ public class Menu {
 
         menustart();
     } 
-    
+
 
     public void menumain(Cardmanagement pCardmanagement, User pUser){
         while(pCardmanagement.getLoggedIN() == true);
@@ -336,6 +262,7 @@ public class Menu {
             default:
         }
     }
+*/
 
 
 
