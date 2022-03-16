@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 public class ReadWrite{
 
     //Log In
-    public void WriteLogin(User pUser){
+    public void writeLogin(User pUser){
 
         File folder = new File(".\\Users\\");
             folder.mkdirs();
@@ -25,7 +25,7 @@ public class ReadWrite{
             try { 
                 userfile.createNewFile();
                 writer = new BufferedWriter(new FileWriter(userfile)); 
-                //In der Datei werden alle Werte untereinander geschrieben
+                //In der User-Datei werden alle Werte untereinander geschrieben
                 writer.write(pUser.getUsername());
                 writer.newLine();
                 writer.write(pUser.getPassword());
@@ -42,42 +42,44 @@ public class ReadWrite{
             }catch (IOException e) {
                 e.printStackTrace();
             }
+
+            
     }
 
 
-        public void ReadLogin(){
-
+    
+    public void writeUserlist(User pUser){
+        File userlist = new File(".\\Users\\userlist.txt");
+        BufferedWriter writer;
         try {
-            String reader1 = Files.readAllLines(Paths.get("user.txt")).get(3);
+            userlist.createNewFile();
+            writer = new BufferedWriter(new FileWriter(userlist));
+            writer.append(pUser.getUsername());
+            writer.newLine();
+            writer.close();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-            if (UsernameCheck == reader1) {
-                System.out.println("Username eingabe erfolgreich.");
-
-            }else if (UsernameCheck != reader1) {
-                System.out.println("Username eingabe nicht erfolgreich, bitte versuche es erneut.");
-                logIn();
-            }
+    //TODO readUsername fertigstellen
+    public void readUsername(){
+        try {
+            String reader1 = Files.readAllLines(Paths.get(".\\Users\\")).get(1);
 
         } catch (IOException e){
             e.printStackTrace();
-        
-        
-
+        }
+    }
+    //TODO readPassword fertigstellen
+    public void readPassword(){
         try {
-            String reader2 = Files.readAllLines(Paths.get("user.txt")).get(4);
-            if (PasswordCheck == reader2) {
-                System.out.println("Passwort eingabe erfolgreich.");
-            }
-            else if(PasswordCheck != reader2){
-                System.out.println("Passwort eingabe nicht erfolgreich, bitte versuche es erneut.");
-                logIn();
-            }
-        
-        }catch (IOException f) {
-            f.printStackTrace();
+            String reader2 = Files.readAllLines(Paths.get("user.txt")).get(2);
+         
+        } catch (IOException e){
+            e.printStackTrace();
         }
         
     }
-
   
 }

@@ -12,7 +12,8 @@ public class Cardmanagement {
       readwrite = new ReadWrite();
 
       user = menu1.createUser();
-      readwrite.WriteLogin(user);
+      readwrite.writeLogin(user);
+      readwrite.writeUserlist(user);
       
 
 

@@ -45,8 +45,19 @@ public class Menu {
     }
 
     //Log In
-    public void logIn(){
+    public String logInUsername(){
+        breakLine();
+        System.out.println("Bitte geben Sie ihren Usernamen ein:");
+        breakLine();
+        return sc.next();
     }
+
+    public String logInPassword(){
+        System.out.println("Bitte geben Sie ihr Passwort rein:");
+        breakLine();
+        return sc.next();
+    }
+
 
 
     //Erstellt einen neuen User
