@@ -1,4 +1,7 @@
 import java.util.Scanner;
+
+import javax.print.attribute.standard.RequestingUserName;
+
 import java.util.Random;
 
 import java.io.BufferedReader;
@@ -31,7 +34,7 @@ public class Menu {
         
         int input = sc.nextInt();
         if (input == 1){
-            logIn();
+            logInUsername();
         }else if (input == 2){
             createUser();
         }
@@ -41,40 +44,43 @@ public class Menu {
 
 
     //Anmelden
-    public String logIn(){
+    public String logInUsername(){
         breakLine();
         System.out.println("Bitte geben Sie ihr Benutzernamen ein: ");
-        //Hier Scanner einfügen der mit Datenbank überprüft
-        System.out.println("Bitte geben Sie ihr Passwort ein: ");
-        //Hier Scanner einfügen der mit Datenbank überprüft
+        String check = sc.next();
         breakLine();
-        return testUser;
+        logInPassword();
+    
+        return check;
+    }
 
-        //Hier einfügen: Wenn anmeldung erfolgreich dann öffne Menu, wenn nicht erfolgreich wiederhole logIn()
-        
+    public String logInPassword(){
+        breakLine();
+        System.out.println("Bitte geben Sie ihr Passwort ein: ");
+        String check = sc.next();
+        breakLine();
+
+        return check;
     }
     
 
     //Erstellt einen neuen User
     public User createUser(){
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("user.txt"))) {
+        //try (BufferedWriter writer = new BufferedWriter(new FileWriter("user.txt"))) {
             breakLine();
-
-            System.out.println("Gebe deinen richtigen Namen ein:"); 
-            String pName = sc.next();
-   
-
-            System.out.println("Gebe dein Alter ein:");
-            int pAge = sc.nextInt();
-        
 
             System.out.println("Ertselle einen Username");
             String pUsername = sc.next();
 
             System.out.println("Erstellen Sie ein Passwort");
             String pPassword = sc.next();
-            
+
+            System.out.println("Gebe deinen richtigen Namen ein:"); 
+            String pName = sc.next();
+   
+            System.out.println("Gebe dein Alter ein:");
+            int pAge = sc.nextInt(); 
 
             //UserID wird random erstellt von 999
             int pUserID = rand.nextInt(userIDrandom);
@@ -85,10 +91,9 @@ public class Menu {
             double pMoney = 100.00;
             System.out.println("Dein Geld beträgt:" + pMoney);
 
-            breakLine();
-            menustart();
-
-            //Hier einfügen: Wenn Erstellung erfogreich dann öffne Menue, wenn nicht wiederhole createUser()
+            User user = new User(pName, pAge, pUsername, pPassword, pMoney, pUserID);
+            
+            /*
             try { 
                 writer.write(pName);
                 writer.newLine();
@@ -108,9 +113,10 @@ public class Menu {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            
         }
-
-        return null;  
+        */
+        return user;        
     }  
     
     
@@ -282,7 +288,7 @@ public class Menu {
     
 
     public void menumain(Cardmanagement pCardmanagement, User pUser){
-        while(pCardmanagement.getLoggedIN()== true);
+        while(pCardmanagement.getLoggedIN() == true);
         switch(showMenu()){
             case 1: //pCardmanagement.getUser(). show inventory muss zum User
                     break;

@@ -10,24 +10,32 @@ public class Cardmanagement {
       menu1 = new Menu();
 
       user = menu1.createUser();
-
-      menu1.showMenu();
+      menu1.menustart();
    }
 
    
    //Methoden  
    public void logIn(){
-      String pPassword = menu1.logIn();
-      this.logIn(pPassword);
+      String pUsername = menu1.logInUsername();
+      String pPassword = menu1.logInPassword();
+      this.logIn(pUsername,pPassword);
+
    }
    
 
    //Log In Methode 
-   public void logIn(String pPassword){
-      if(user.checkpassword(pPassword)){
-         System.out.println("Sie wurden angemeldet");
-         loggedin = true;
-      }else {
+   public void logIn(String pUsername,String pPassword){
+
+      if(user.checkusername(pUsername) == true){
+         //Wenn true dann überprüfe password
+         if(user.checkpassword(pPassword) == true){
+            System.out.println("Sie wurden angemeldet");
+            loggedin = true;
+         }else {
+            System.out.println("Anmeldung fehlgeschlagen");
+            loggedin = false;
+         }
+      }else{
          System.out.println("Anmeldung fehlgeschlagen");
          loggedin = false;
       }
