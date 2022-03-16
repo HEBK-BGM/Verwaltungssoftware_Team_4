@@ -53,13 +53,17 @@ public class Menu {
         breakLine();
         System.out.println("Bitte geben Sie ihren Usernamen ein:");
         breakLine();
+        sc.nextLine();
+        
         return sc.nextLine();
     }
 
     public String logInPassword(){
         System.out.println("Bitte geben Sie ihr Passwort rein:");
         breakLine();
-        return sc.next();
+        sc.nextLine();
+
+        return sc.nextLine();
     }
 
 

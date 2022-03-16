@@ -3,7 +3,8 @@ import java.util.Scanner;
 import java.util.Random;
 
 //Import für Reader/Writer
-import java.io.File;  
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -13,9 +14,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class ReadWrite{
-
-    private String line;
-
 
     //Log In
     public void writeLogin(User pUser){
@@ -66,32 +64,42 @@ public class ReadWrite{
         }
     }
 
-    /*   //TODO readUsername fertigstellen
-    public String readUsername(Menu pMenu, String uInput){
+    //TODO readUsername fertigstellen
+    public void readUsername(Menu pMenu,User pUser){
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(".\\User\\userlist.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("Userlist.txt"));
+            String line;
+            try {
+                while((line = br.readLine()) != null){
 
-            while((line = reader.readLine()) != null) {
-                
+                    if(line.equals(pMenu.logInUsername())){
+                        pUser.setPassword(line);
+                        System.out.println("JAAAAA");
+                        break;
+                    }
+                }
+                br.close();      
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            reader.close();
-        } catch (IOException e){
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return line;
     }
 
     
+
     //TODO readPassword fertigstellen
-    public void readPassword(){
+    public String readPassword(User pUser){
         try {
-            String reader = 
-         
-        } catch (IOException e){
+            BufferedReader reader = new BufferedReader(new FileReader(".\\Users\\" + pUser.getUsername() + ".txt"));
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        return null;
         
+
     }
-    */
-  
+
+
 }

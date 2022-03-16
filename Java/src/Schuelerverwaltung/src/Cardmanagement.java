@@ -16,18 +16,11 @@ public class Cardmanagement {
    }
 
    
-   //Methoden  
-   public void logIn(){
-   }
-   
-
    //LogOut Methode 
    public void logOut(){
       this.loggedin = false;
    }
    
-
-
 
    //get User
    public User getUser(){
