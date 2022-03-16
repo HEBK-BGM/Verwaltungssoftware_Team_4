@@ -42,7 +42,7 @@ public class Menu {
     }
 
     //Log In
-    public String logIn(){
+    public void logIn(){
 
         //check Username
         breakLine();
@@ -53,12 +53,12 @@ public class Menu {
         String UsernameCheck = sc.nextLine();
 
         try {
-            String line = Files.readAllLines(Paths.get("user.txt")).get(3);
+            String reader1 = Files.readAllLines(Paths.get("user.txt")).get(3);
 
-            if (UsernameCheck == line) {
+            if (UsernameCheck == reader1) {
                 System.out.println("Username eingabe erfolgreich.");
 
-            }else if (UsernameCheck != line) {
+            }else if (UsernameCheck != reader1) {
                 System.out.println("Username eingabe nicht erfolgreich, bitte versuche es erneut.");
                 logIn();
             }
@@ -66,8 +66,6 @@ public class Menu {
         } catch (IOException e){
             e.printStackTrace();
         }
-        
-        
 
         //ckeck Password
         breakLine();
@@ -77,17 +75,16 @@ public class Menu {
         //Scanner
         String PasswordCheck = sc.nextLine();
 
-        try { 
-        BufferedReader reader2; //Reader 
-        reader2 = new BufferedReader(new FileReader("user.txt"));
-        if((PasswordCheck == reader2.readLine(3)) != null) {
-            System.out.println("Passwort eingabe erfolgreich.");
-        }
-        else if(PasswordCheck != reader2.readLine(4)) != null){
-            System.out.println("Passwort eingabe nicht erfolgreich, bitte versuche es erneut.");
-            logIn();
-        }
-        reader2.close();
+        try {
+            String reader2 = Files.readAllLines(Paths.get("user.txt")).get(4);
+            if (PasswordCheck == reader2) {
+                System.out.println("Passwort eingabe erfolgreich.");
+            }
+            else if(PasswordCheck != reader2){
+                System.out.println("Passwort eingabe nicht erfolgreich, bitte versuche es erneut.");
+                logIn();
+            }
+        
         }catch (IOException f) {
             f.printStackTrace();
         }
