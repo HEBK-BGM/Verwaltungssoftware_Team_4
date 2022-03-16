@@ -34,13 +34,13 @@ public class Shop {
 
 
     public  void showCards() {
-        
-
+        Cardslist s4 = new Cardslist();
+        s4.randomCard();
     }
     public void buyCard(Cardslist pCardList) {
         
-        Cardslist s4 = new Cardslist();
-        s4.randomCard();
+        
+        
 
 
     }
