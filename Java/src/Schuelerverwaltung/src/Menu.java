@@ -7,6 +7,8 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 public class Menu {
 
     //Scanner für die Eingabe 
@@ -50,20 +52,18 @@ public class Menu {
         //Scanner 
         String UsernameCheck = sc.nextLine();
 
-        try { 
-        BufferedReader reader1; //Neuer Reader
-        reader1 = new BufferedReader(new FileReader("user.txt"));
+        try {
+            String line = Files.readAllLines(Paths.get("user.txt")).get(3);
 
-        if((UsernameCheck == reader1.readLine(3)) != null) {
-            System.out.println("Username eingabe erfolgreich.");
+            if (UsernameCheck == line) {
+                System.out.println("Username eingabe erfolgreich.");
 
-        }else if(UsernameCheck != reader1.readLine(3)) != null){
-            System.out.println("Username eingabe nicht erfolgreich, bitte versuche es erneut.");
-            logIn();
-        }
-        reader1.close();
+            }else if (UsernameCheck != line) {
+                System.out.println("Username eingabe nicht erfolgreich, bitte versuche es erneut.");
+                logIn();
+            }
 
-        }catch (IOException e){
+        } catch (IOException e){
             e.printStackTrace();
         }
         
