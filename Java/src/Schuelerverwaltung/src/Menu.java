@@ -14,9 +14,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 public class Menu {
 
+    private ReadWrite write;
+
     //Scanner für die Eingabe 
     Scanner sc = new Scanner(System.in);
-    String testUser = "test";
 
     //Random für die UserID
     Random rand = new Random();
@@ -32,16 +33,19 @@ public class Menu {
     public void menustart(){
         breakLine();
         System.out.println("(1) - Anmelden");
-        System.out.println("(2) - Konto erstellen");
+        System.out.println("(2) - Account erstellen");
         breakLine();
         
-        int input = sc.nextInt();
-        if (input == 1){
-            
-        }else if (input == 2){
+        String input = sc.next();
+        if (input.equals("1")){
+            logInUsername();
+        }else if(input.equals("2")){
             createUser();
+        }else{
+            System.out.println("Falsche eingabe");
+            breakLine();
+            menustart();
         }
-
     }
 
     //Log In
@@ -49,7 +53,7 @@ public class Menu {
         breakLine();
         System.out.println("Bitte geben Sie ihren Usernamen ein:");
         breakLine();
-        return sc.next();
+        return sc.nextLine();
     }
 
     public String logInPassword(){
@@ -63,30 +67,32 @@ public class Menu {
     //Erstellt einen neuen User
     public User createUser(){
 
-        //try (BufferedWriter writer = new BufferedWriter(new FileWriter("user.txt"))) {
-            breakLine();
-            System.out.println("Ertselle einen Username");
-            String pUsername = sc.next();
+        write = new ReadWrite();
+        breakLine();
+        System.out.println("Ertselle einen Username");
+        String pUsername = sc.next();
 
-            System.out.println("Erstellen Sie ein Passwort");
-            String pPassword = sc.next();
+        System.out.println("Erstellen Sie ein Passwort");
+        String pPassword = sc.next();
 
-            System.out.println("Gebe deinen richtigen Namen ein:"); 
-            String pName = sc.next();
+        System.out.println("Gebe deinen richtigen Namen ein:"); 
+        String pName = sc.next();
    
-            System.out.println("Gebe dein Alter ein:");
-            int pAge = sc.nextInt(); 
+        System.out.println("Gebe dein Alter ein:");
+        int pAge = sc.nextInt(); 
         
+        //UserID wird random erstellt von 999
+        int pUserID = rand.nextInt(userIDrandom);
+            
+        //User bekommt Startgeld
+        double pMoney = 100.0;
+            
+        User user = new User(pName, pAge, pUsername, pPassword, pMoney, pUserID);
 
-            //UserID wird random erstellt von 999
-            int pUserID = rand.nextInt(userIDrandom);
-            
-            //User bekommt Startgeld
-            double pMoney = 100.0;
+        write.writeLogin(user);
+        write.writeUserlist(user);
 
-            
-            User user = new User(pName, pAge, pUsername, pPassword, pMoney, pUserID);
-            
+        menustart();
         return user;        
     }  
 

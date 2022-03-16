@@ -1,9 +1,8 @@
 import java.util.Scanner;
 
-import javax.print.attribute.standard.RequestingUserName;
-
 import java.util.Random;
 
+//Import für Reader/Writer
 import java.io.File;  
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -15,6 +14,9 @@ import java.nio.file.Paths;
 
 public class ReadWrite{
 
+    private String line;
+
+
     //Log In
     public void writeLogin(User pUser){
 
@@ -23,7 +25,9 @@ public class ReadWrite{
             File userfile = new File(".\\Users\\" + pUser.getUsername() + ".txt");
             BufferedWriter writer;
             try { 
-                userfile.createNewFile();
+                if(userfile.exists()){
+                    System.out.println("Den Usernamen gibt es bereits!");
+                }else {
                 writer = new BufferedWriter(new FileWriter(userfile)); 
                 //In der User-Datei werden alle Werte untereinander geschrieben
                 writer.write(pUser.getUsername());
@@ -39,47 +43,55 @@ public class ReadWrite{
                 writer.write(String.valueOf(pUser.getMoney()));
                 writer.newLine();
                 writer.close();
+                }
             }catch (IOException e) {
                 e.printStackTrace();
-            }
-
-            
+            } 
     }
 
-
-
+    
     public void writeUserlist(User pUser){
-        File userlist = new File(".\\Users\\userlist.txt");
-        BufferedWriter writer;
-        try {
-            userlist.createNewFile();
-            writer = new BufferedWriter(new FileWriter(userlist));
-            writer.append(pUser.getUsername());
-            writer.newLine();
-            writer.close();
+        try{
+            File userlist = new File("Userlist.txt");
+            if(!userlist.exists()){
+                userlist.createNewFile();
+            }
+            FileWriter fw = new FileWriter("Userlist.txt",true);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            bw.append((pUser.getUsername() + "\n"));
+            bw.close();
         }catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    //TODO readUsername fertigstellen
-    public void readUsername(){
+    /*   //TODO readUsername fertigstellen
+    public String readUsername(Menu pMenu, String uInput){
         try {
-            String reader1 = Files.readAllLines(Paths.get(".\\Users\\")).get(1);
+            BufferedReader reader = new BufferedReader(new FileReader(".\\User\\userlist.txt"));
 
+            while((line = reader.readLine()) != null) {
+                
+            }
+            reader.close();
         } catch (IOException e){
             e.printStackTrace();
         }
+        return line;
     }
+
+    
     //TODO readPassword fertigstellen
     public void readPassword(){
         try {
-            String reader2 = Files.readAllLines(Paths.get("user.txt")).get(2);
+            String reader = 
          
         } catch (IOException e){
             e.printStackTrace();
         }
         
     }
+    */
   
 }
