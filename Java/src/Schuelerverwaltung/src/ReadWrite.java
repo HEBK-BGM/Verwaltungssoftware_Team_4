@@ -15,6 +15,7 @@ import java.nio.file.Paths;
 
 public class ReadWrite{
 
+
     //Log In
     public void writeLogin(User pUser){
 
@@ -25,6 +26,7 @@ public class ReadWrite{
             try { 
                 if(userfile.exists()){
                     System.out.println("Den Usernamen gibt es bereits!");
+                    System.exit(0);
                 }else {
                 writer = new BufferedWriter(new FileWriter(userfile)); 
                 //In der User-Datei werden alle Werte untereinander geschrieben
@@ -64,41 +66,37 @@ public class ReadWrite{
         }
     }
 
+    
     //TODO readUsername fertigstellen
-    public void readUsername(Menu pMenu,User pUser){
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("Userlist.txt"));
-            String line;
-            try {
-                while((line = br.readLine()) != null){
+    public void readUsername(Menu pMenu, User pUser) throws IOException{
 
-                    if(line.equals(pMenu.logInUsername())){
-                        pUser.setPassword(line);
-                        System.out.println("JAAAAA");
-                        break;
-                    }
-                }
-                br.close();      
-            } catch (IOException e) {
-                e.printStackTrace();
+        BufferedReader br = new BufferedReader(new FileReader("Userlist.txt"));
+        String line = br.readLine();
+            while(line != null) {
+
+                br.readLine();
+
+                if(line == pMenu.getInputUs());
+                    System.out.println("Erfolgreich Username eingegeben!");
+                    pUser.setPassword(line);
+                    break;
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        br.close();
     }
 
-    
-
     //TODO readPassword fertigstellen
-    public String readPassword(User pUser){
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(".\\Users\\" + pUser.getUsername() + ".txt"));
-        } catch (FileNotFoundException e) {
+    public void readPassword(User pUser) throws IOException{
+        int n = 2;
+        String line;
+        try (BufferedReader reader = new BufferedReader(new FileReader(".\\Users\\" + pUser.getUsername() + ".txt"))){ 
+            for(int i = 0; i < n; i++)
+                reader.readLine();
+                line = reader.readLine();
+                pUser.setPassword(line);
+                System.out.println("Anmeldung Erfolgreich!");
+        }catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return null;
-        
-
     }
 
 

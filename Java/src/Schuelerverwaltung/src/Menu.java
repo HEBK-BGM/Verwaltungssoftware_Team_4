@@ -15,6 +15,8 @@ import java.nio.file.Paths;
 public class Menu {
 
     private ReadWrite write;
+    private ReadWrite read;
+
 
     //Scanner für die Eingabe 
     Scanner sc = new Scanner(System.in);
@@ -38,7 +40,8 @@ public class Menu {
         
         String input = sc.next();
         if (input.equals("1")){
-            logInUsername();
+            getInputUs();
+            getClass();
         }else if(input.equals("2")){
             createUser();
         }else{
@@ -48,22 +51,25 @@ public class Menu {
         }
     }
 
-    //Log In
-    public String logInUsername(){
+    
+  
+
+
+
+    public String getInputUs(){
         breakLine();
-        System.out.println("Bitte geben Sie ihren Usernamen ein:");
+        System.out.println("Gebe deinen Usernamen ein:");   
         breakLine();
-        sc.nextLine();
-        
-        return sc.nextLine();
+
+        return sc.next();
     }
 
-    public String logInPassword(){
-        System.out.println("Bitte geben Sie ihr Passwort rein:");
+    public String getInputPw(){
         breakLine();
-        sc.nextLine();
+        System.out.println("Gebe deinen Password ein:");   
+        breakLine();
 
-        return sc.nextLine();
+        return sc.next();
     }
 
 
