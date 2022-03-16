@@ -1,5 +1,14 @@
 import java.util.Scanner;
 import java.util.Random;
+
+import java.io.File;  
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 public class Menu {
 
     //Scanner für die Eingabe 
@@ -22,95 +31,153 @@ public class Menu {
         System.out.println("(1) - Anmelden");
         System.out.println("(2) - Konto erstellen");
         breakLine();
-
-        int ScannerMenu = sc.nextInt();
-        if(sc.equals("1")){
-           logIn();
-        }
-        else if(sc.equals("2")){
+        
+        int input = sc.nextInt();
+        if (input == 1){
+            logIn();
+        }else if (input == 2){
             createUser();
         }
+
     }
 
+    //Log In
+    public void logIn(){
+
+        //check Username
+        breakLine();
+        System.out.println("Bitte geben Sie ihren Username ein: ");
+        breakLine();
+
+        //Scanner 
+        String UsernameCheck = sc.nextLine();
+
+        try {
+            String reader1 = Files.readAllLines(Paths.get("user.txt")).get(3);
+
+            if (UsernameCheck == reader1) {
+                System.out.println("Username eingabe erfolgreich.");
+
+            }else if (UsernameCheck != reader1) {
+                System.out.println("Username eingabe nicht erfolgreich, bitte versuche es erneut.");
+                logIn();
+            }
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+        //ckeck Password
+        breakLine();
+        System.out.println("Bitte geben Sie ihr Passwort ein: ");
+        breakLine();
+
+        //Scanner
+        String PasswordCheck = sc.nextLine();
+
+        try {
+            String reader2 = Files.readAllLines(Paths.get("user.txt")).get(4);
+            if (PasswordCheck == reader2) {
+                System.out.println("Passwort eingabe erfolgreich.");
+            }
+            else if(PasswordCheck != reader2){
+                System.out.println("Passwort eingabe nicht erfolgreich, bitte versuche es erneut.");
+                logIn();
+            }
+        
+        }catch (IOException f) {
+            f.printStackTrace();
+        }
+        
+    }
     
+
+
+    /*
     //Anmelden
     public String logIn(){
         breakLine();
-        System.out.println("Bitte geben Sie ihr Benutzernamen ein: ");
-        //Hier Scanner einfügen der mit Datenbank überprüft
-        System.out.println("Bitte geben Sie ihr Passwort ein: ");
-        //Hier Scanner einfügen der mit Datenbank überprüft
-        breakLine();
 
-        //Hier einfügen: Wenn anmeldung erfolgreich dann öffne Menu, wenn nicht erfolgreich wiederhole logIn()
+        BufferedReader reader;
+        System.out.println("Bitte geben Sie ihr Benutzernamen ein: ");
         
+        System.out.println("Bitte geben Sie ihr Passwort ein: ");
+
+        breakLine();
+        return testUser;  
     }
+    */
+    
     
 
     //Erstellt einen neuen User
     public User createUser(){
-        breakLine();
-        System.out.println("Gebe deinen richtigen Namen ein:"); 
-        String pName = sc.nextLine();
-    
-        System.out.println("Gebe dein Alter ein:");
-        int pAge = sc.nextInt();
+            breakLine();
+            System.out.println("Ertselle einen Username");
+            String pUsername = sc.next();
+
+            System.out.println("Erstellen Sie ein Passwort");
+            String pPassword = sc.next();
+
+            System.out.println("Gebe deinen richtigen Namen ein:"); 
+            String pName = sc.next();
+   
+            System.out.println("Gebe dein Alter ein:");
+            int pAge = sc.nextInt();
         
-        System.out.println("Ertselle einen Username");
-        String pUsername = sc.nextLine();
+            //UserID wird random erstellt von 999
+            int pUserID = rand.nextInt(userIDrandom);
+            System.out.println("Dein UserID lautet:" + pUserID);
+            
+            //User bekommt Startgeld
+            double pMoney = 100.00;
+            System.out.println("Dein Geld beträgt:" + pMoney);
 
-        System.out.println("Erstellen Sie ein Passwort");
-        String pPassword = sc.nextLine();
-
-        //UserID wird random erstellt von 999
-        int pUserID = rand.nextInt(userIDrandom);
-        System.out.println("Dein UserID lautet:" + pUserID);
-
-        //User bekommt Startgeld
-        double pMoney = 100.00;
-        System.out.println("Dein Geld beträgt:" + pMoney);
-        breakLine();
-
-        //Hier einfügen: Wenn Erstellung erfogreich dann öffne Menue, wenn nicht wiederhole createUser()
-
-
-        User testUser = new User (pName,pAge,pUsername,pPassword,pUserID,pMoney);
-        return testUser;
-    }
+            breakLine();
+            
+            
+            File folder = new File(".\\Users\\");
+            folder.mkdirs();
+            File userfile = new File(".\\Users\\" + pUsername + ".txt");
+            BufferedWriter writer;
+            try { 
+                userfile.createNewFile();
+                writer = new BufferedWriter(new FileWriter(userfile)); 
+                //In der Datei werden alle Werte untereinander geschrieben
+                writer.write(pUsername);
+                writer.newLine();
+                writer.write(pPassword);
+                writer.newLine();
+                writer.write(pName);
+                writer.newLine();
+                writer.write(String.valueOf(pAge));
+                writer.newLine();
+                writer.write(String.valueOf(pUserID));
+                writer.newLine();
+                writer.write(String.valueOf(pMoney));
+                writer.newLine();
+                writer.close();
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
+    
+        return null;    
+    }  
     
     
     //Hauptmenue des Programmes
-    public Menu showMenu(){
+    public int showMenu(){
         System.out.println("(1) - Inventar");
         System.out.println("(2) - Einkaufszentrum");
         System.out.println("(3) - Liquide Mittel überprüfen");
         System.out.println("(4) - Benutzerprofil überprüfen/bearbeiten");
         System.out.println("(5) - Ausloggen/Abmelden");
-
-        int ScannerMenu = sc.nextInt();
-        if(sc.equals("1")){
-            showInventory();
-        }
-        else if(sc.equals("2")){
-            showShop();
-        }
-        else if(sc.equals("3")){
-            showMoney();
-        }
-        else if(sc.equals("4")){
-            CheckProfile();
-        }
-        else if(sc.equals("L")){
-            logOut();
-        }
-        else if(sc.equals("l")){
-            logOut();
-        }
-
         
+        return sc.nextInt();
+
     }
 
-    /*
+   /* 
     public Inventory showInventory(){
         System.out.println("(1) - " + pokemon1);
         System.out.println("(2) - " + pokemon2);
@@ -194,9 +261,9 @@ public class Menu {
             
         }
     }
-    */
     
-    /*
+    
+    
     public Shop showShop(){
         System.out.println("(1) - " + pokemon1);
         System.out.println("(2) - " + pokemon2);
@@ -222,10 +289,11 @@ public class Menu {
         
     }
     */
+    
 
-    public showMoney(double pMoney){
+    public void showMoney(User pUser){
         breakLine();
-        //Hier Geld
+        System.out.println("Dein Geld beträgt: " + pUser.getMoney());
         breakLine();
 
         System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
@@ -237,12 +305,12 @@ public class Menu {
     }
     
  
-    public void checkProfile(){
+    public void showProfile(User pUser){
         breakLine();
-        System.out.println("Dein Username: " + User1);
-        System.out.println("Dein Passwort: " + UserPassword1);
-        System.out.println("Deine User ID " + UserId1);
-        System.out.println("Dein Alter " + UserAge1);
+        System.out.println("Dein Username: " + pUser.getUsername());
+        System.out.println("Dein Passwort: " + pUser.getPassword());
+        System.out.println("Deine User ID " + pUser.getUserID());
+        System.out.println("Dein Alter " + pUser.getAge() );
         breakLine();
 
         System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
@@ -251,14 +319,40 @@ public class Menu {
         if (input.toLowerCase().equals("l")) {
             showMenu();
         }
-
     }
 
-    public void logOut(){
+    public void logOut(Cardmanagement pCardmanagement){
         breakLine();
         System.out.println("Sie werden abgemeldet.......................");
+        pCardmanagement.logOut();
         breakLine();
 
         menustart();
-    }   
-}
+    } 
+    
+
+    public void menumain(Cardmanagement pCardmanagement, User pUser){
+        while(pCardmanagement.getLoggedIN()== true);
+        switch(showMenu()){
+            case 1: //pCardmanagement.getUser(). show inventory muss zum User
+                    break;
+            case 2: //showShop() Shop wird angezeigt
+                    break;
+            case 3: showMoney(pUser);
+                    break;
+            case 4: showProfile(pUser);
+                    break;
+            case 5: logOut(pCardmanagement);
+                    break;
+            default:
+        }
+    }
+
+
+
+    
+  
+    
+   
+
+} 
