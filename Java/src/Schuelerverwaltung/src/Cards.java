@@ -5,6 +5,7 @@ public class Cards {
     private int cardID;
     private double price;
 
+
     //get-Methoden
     public String getName() {
         return name; 
@@ -60,6 +61,4 @@ public class Cards {
             price = price + 25.00;
         } else if (rarity.equals("pogO")) {
             price = price + 420.69;
-        } 
-    } */
-}
+        }
