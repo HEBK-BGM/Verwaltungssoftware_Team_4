@@ -4,11 +4,14 @@ import javax.print.attribute.standard.RequestingUserName;
 
 import java.util.Random;
 
+import java.io.File;  
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 public class Menu {
 
     //Scanner für die Eingabe 
@@ -41,35 +44,61 @@ public class Menu {
 
     }
 
+    //Log In
+    public void logIn(){
 
-
-    //Anmelden
-    public String logInUsername(){
+        //check Username
         breakLine();
-        System.out.println("Bitte geben Sie ihr Benutzernamen ein: ");
-        String check = sc.next();
+        System.out.println("Bitte geben Sie ihren Username ein: ");
         breakLine();
-        logInPassword();
-    
-        return check;
-    }
 
-    public String logInPassword(){
+        //Scanner 
+        String UsernameCheck = sc.nextLine();
+
+        try {
+            String reader1 = Files.readAllLines(Paths.get("user.txt")).get(3);
+
+            if (UsernameCheck == reader1) {
+                System.out.println("Username eingabe erfolgreich.");
+
+            }else if (UsernameCheck != reader1) {
+                System.out.println("Username eingabe nicht erfolgreich, bitte versuche es erneut.");
+                logIn();
+            }
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+        //ckeck Password
         breakLine();
         System.out.println("Bitte geben Sie ihr Passwort ein: ");
-        String check = sc.next();
         breakLine();
 
-        return check;
+        //Scanner
+        String PasswordCheck = sc.nextLine();
+
+        try {
+            String reader2 = Files.readAllLines(Paths.get("user.txt")).get(4);
+            if (PasswordCheck == reader2) {
+                System.out.println("Passwort eingabe erfolgreich.");
+            }
+            else if(PasswordCheck != reader2){
+                System.out.println("Passwort eingabe nicht erfolgreich, bitte versuche es erneut.");
+                logIn();
+            }
+        
+        }catch (IOException f) {
+            f.printStackTrace();
+        }
+        
     }
-    
 
     //Erstellt einen neuen User
     public User createUser(){
 
         //try (BufferedWriter writer = new BufferedWriter(new FileWriter("user.txt"))) {
             breakLine();
-
             System.out.println("Ertselle einen Username");
             String pUsername = sc.next();
 
@@ -84,26 +113,32 @@ public class Menu {
 
             //UserID wird random erstellt von 999
             int pUserID = rand.nextInt(userIDrandom);
-            System.out.println("Dein UserID lautet:" + pUserID);
             
-
             //User bekommt Startgeld
-            double pMoney = 100.00;
-            System.out.println("Dein Geld beträgt:" + pMoney);
-
             User user = new User(pName, pAge, pUsername, pPassword, pMoney, pUserID);
             
             /*
+
+            breakLine();
+            
+            
+            File folder = new File(".\\Users\\");
+            folder.mkdirs();
+            File userfile = new File(".\\Users\\" + pUsername + ".txt");
+            BufferedWriter writer;
             try { 
-                writer.write(pName);
-                writer.newLine();
-                writer.write(pAge);
-                writer.newLine();
+                userfile.createNewFile();
+                writer = new BufferedWriter(new FileWriter(userfile)); 
+                //In der Datei werden alle Werte untereinander geschrieben
                 writer.write(pUsername);
                 writer.newLine();
                 writer.write(pPassword);
                 writer.newLine();
-                writer.write(pUserID);
+                writer.write(pName);
+                writer.newLine();
+                writer.write(String.valueOf(pAge));
+                writer.newLine();
+                writer.write(String.valueOf(pUserID));
                 writer.newLine();
                 writer.write(String.valueOf(pMoney));
                 writer.newLine();
@@ -111,6 +146,7 @@ public class Menu {
             }catch (IOException e) {
                 e.printStackTrace();
             }
+
         } catch (IOException e) {
             e.printStackTrace();
             
@@ -118,8 +154,7 @@ public class Menu {
         */
         return user;        
     }  
-    
-    
+
     
     //Hauptmenue des Programmes
     public int showMenu(){
@@ -128,8 +163,6 @@ public class Menu {
         System.out.println("(3) - Liquide Mittel überprüfen");
         System.out.println("(4) - Benutzerprofil überprüfen/bearbeiten");
         System.out.println("(5) - Ausloggen/Abmelden");
-        
-        return sc.nextInt();
 
     }
 
@@ -311,4 +344,4 @@ public class Menu {
     
    
 
-}  
+} 
