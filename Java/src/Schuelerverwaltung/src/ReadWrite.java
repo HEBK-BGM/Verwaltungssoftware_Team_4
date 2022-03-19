@@ -18,19 +18,18 @@ public class ReadWrite{
 
     Scanner sc = new Scanner(System.in);
 
+    private String line;
 
-    //Input Abfragen für Reader
-    public String getInputUs(){
-        System.out.println("Gebe deinen Usernamen ein:");   
-        return sc.next();
+    public void setLine(String pLine){
+        this.line = pLine;
     }
 
-    public String getInputPw(){
-        System.out.println("Gebe deinen Password ein:");   
-        return sc.next();
+    public String getLine(){
+        return line;
     }
+    
 
-    //Log In
+    //Writer
     public void writeLogin(User pUser){
 
         File folder = new File(".\\Users\\");
@@ -80,39 +79,67 @@ public class ReadWrite{
         }
     }
 
-    
-    //TODO readUsername fertigstellen
-    public String readUsername() throws IOException{
 
-        BufferedReader br = new BufferedReader(new FileReader("Userlist.txt"));
-        String line;
-            while( (line = br.readLine() ) !=null){
-                if(getInputUs().equals(line)){
-                    System.out.println("Dein Username " + line);
-                    break;
+    //Reader
+    public void readLogIn() {
+        try{
+            System.out.println("Gebe deinen Usernamen ein: ");
+            String inputUS = sc.next();
+            String pLine;
+            BufferedReader br = new BufferedReader(new FileReader("Userlist.txt"));
+                while((pLine = br.readLine() ) !=null){
+                    if(inputUS.equals(pLine)){
+                        System.out.println("Dein Username: " + pLine);
+                        setLine(pLine);
+                        break;
+                    }else{
+                        continue; 
+                    }
+                }
+                br.close(); 
+                String pUsername = line; 
+                System.out.println(pUsername);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        try{
+            System.out.println("Gebe dein Password ein: ");
+            String inputPW = sc.next();
+            String pLine;
+            BufferedReader br = new BufferedReader(new FileReader((".\\Users\\" + getLine() + ".txt")));
+            for(int x = 1; x < 2; x++){
+                br.readLine();
+
+                if(br.readLine().equals(inputPW)){
+                    String pPassword = br.readLine();
+                    System.out.println("Dein Password: " + pPassword);
                 }else{
-                    continue; 
+                    System.out.println("Falsches Passwort!");
+                    System.exit(0);
                 }
             }
-            
             br.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        } 
 
-        return line;
+
     }
+    
+    
+    
+   
+   
+    
+    
 
-    /*
-    //TODO readPassword fertigstellen
-    public void readPassword(User pUser, Menu pMenu){
-
-        BufferedReader br = new BufferedReader(new FileReader(".\\Users\\" + pUser.getUsername() + ".txt"));
-
-        String ln =
         
-        while( (ln = br.readLine()) != null) {
-            
-        }
-    }
-    */
+    
+    
+    
+    
 
 
 }
