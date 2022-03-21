@@ -14,9 +14,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 public class Menu {
 
+    //Write für create User
     private ReadWrite write;
-    private ReadWrite read;
-
 
     //Scanner für die Eingabe 
     Scanner sc = new Scanner(System.in);
@@ -32,46 +31,15 @@ public class Menu {
 
 
     //Methode für Menu start
-    public void menustart(){
+    public String menustart(){
         breakLine();
         System.out.println("(1) - Anmelden");
         System.out.println("(2) - Account erstellen");
         breakLine();
         
-        String input = sc.next();
-        if (input.equals("1")){
-            getInputUs();
-            getClass();
-        }else if(input.equals("2")){
-            createUser();
-        }else{
-            System.out.println("Falsche eingabe");
-            breakLine();
-            menustart();
-        }
+        
+        return sc.nextLine();
     }
-
-    
-  
-
-
-
-    public String getInputUs(){
-        breakLine();
-        System.out.println("Gebe deinen Usernamen ein:");   
-        breakLine();
-
-        return sc.next();
-    }
-
-    public String getInputPw(){
-        breakLine();
-        System.out.println("Gebe deinen Password ein:");   
-        breakLine();
-
-        return sc.next();
-    }
-
 
 
     //Erstellt einen neuen User
@@ -99,10 +67,22 @@ public class Menu {
             
         User user = new User(pName, pAge, pUsername, pPassword, pMoney, pUserID);
 
+        System.out.println("Dein Username: " + user.getUsername());
+        breakLine();
+        System.out.println("Dein Password: " + user.getPassword() );
+        breakLine();
+        System.out.println("Dein Name: " + user.getName() );
+        breakLine();
+        System.out.println("Dein Alter: " + user.getAge());
+        breakLine();
+        System.out.println("Dein Guthaben: " + user.getMoney() );
+        breakLine();
+        System.out.println("Deine ID: " + user.getUserID() );
+
         write.writeLogin(user);
         write.writeUserlist(user);
 
-        menustart();
+        System.out.println("User erstellt! Starte das Programm neu!");
         return user;        
     }  
 
