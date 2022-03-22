@@ -1,44 +1,42 @@
+import java.io.IOException;
+
 public class Cardmanagement {
 
     //Attribute
     private User user;
-    private Menu menu1;
+    private Menu menu;
+    private ReadWrite r;
     private boolean loggedin = false;
 
    //Konstruktor Cardmanagement
    public Cardmanagement(){
-      menu1 = new Menu();
+      menu = new Menu();
+      user = new User(" ", 0 , " ", " ", 0.0 , 0);
+      r = new ReadWrite();
 
-      user = menu1.createUser();
-
-      menu1.showMenu();
+      logIN();
    }
 
-   
-   //Methoden  
-   public void logIn(){
-      String pPassword = menu1.logIn();
-      this.logIn(pPassword);
-   }
-   
-
-   //Log In Methode 
-   public void logIn(String pPassword){
-      if(user.checkpassword(pPassword)){
-         System.out.println("Sie wurden angemeldet");
-         loggedin = true;
-      }else {
-         System.out.println("Anmeldung fehlgeschlagen");
-         loggedin = false;
+   public void logIN(){
+      if(menu.menustart().equals("1")){
+         r.readLogIn(user);
+         this.loggedin = true;
+      }else if(menu.menustart().equals("2")){
+         menu.createUser();   
+      }else{
+         System.out.println("Falsche eingabe!");
+         System.exit(0);
       }
+   
    }
-
+  
+   
+   
    //LogOut Methode 
    public void logOut(){
       this.loggedin = false;
    }
-
-
+   
 
    //get User
    public User getUser(){

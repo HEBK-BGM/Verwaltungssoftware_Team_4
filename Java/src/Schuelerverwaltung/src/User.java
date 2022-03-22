@@ -68,4 +68,8 @@ public class User extends Person {
     public boolean checkpassword(String pPassword){
         return password == pPassword;
     }   
+
+    public boolean checkusername(String pUsername){
+        return username == pUsername;
+    }
 }
