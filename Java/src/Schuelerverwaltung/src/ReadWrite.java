@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.LineNumberReader;
+import java.net.http.HttpResponse.PushPromiseHandler;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -73,6 +74,7 @@ public class ReadWrite{
     public void readLogIn(User pUser) {
         try{
             //Frage nach dem Usernamen
+            System.out.println("------------------");
             System.out.println("Gebe deinen Usernamen ein: ");
             String inputUS = sc.next();
             String line;
@@ -88,25 +90,35 @@ public class ReadWrite{
                 }
                 br.close(); 
             //Frage nach dem Passwort
+            System.out.println("------------------");
             System.out.println("Gebe dein Password ein: ");
+            System.out.println("------------------");
             String inputPW = sc.next();
             BufferedReader br2 = new BufferedReader(new FileReader((".\\Users\\" + pUser.getUsername() + ".txt")));
-            String line2 = br2.readLine();
-
-                for(int x = 0; x < 2; x++){
+                for(int x = 0; x < 1; x++){
                     br2.readLine();
-                    System.out.println("lese " + line2);
                 }
-
+                String line2 = br2.readLine();;
                 if(inputPW.equals(line2)){
+                    pUser.setPassword(line2);
+                    pUser.setName(br2.readLine());
+                    pUser.setAge(Integer.parseInt(br2.readLine()));
+                    pUser.setUserID(Integer.parseInt(br2.readLine()));
+                    pUser.setMoney(Double.parseDouble(br2.readLine()));
+                    System.out.println("Erfolgreich Angemeldet!");
                 }else{
-                    System.out.println("Falsches Passwort!");
+                    System.out.println("Falsches Password!");
                     System.exit(0);
                 }
-                
             br2.close();
+            System.out.println("------------------");
             System.out.println("Dein Username: " + pUser.getUsername());
             System.out.println("Dein Password: " + pUser.getPassword());
+            System.out.println("Dein Name: " + pUser.getName());
+            System.out.println("Dein Alter: " + pUser.getAge());
+            System.out.println("Deine UserID: " + pUser.getUserID());
+            System.out.println("Dein Guthaben: " + pUser.getMoney());
+            System.out.println("------------------");
             
         }catch (IOException e){
             e.printStackTrace();
