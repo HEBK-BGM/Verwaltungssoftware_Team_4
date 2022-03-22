@@ -93,20 +93,16 @@ public class ReadWrite{
             BufferedReader br2 = new BufferedReader(new FileReader((".\\Users\\" + pUser.getUsername() + ".txt")));
             String line2 = br2.readLine();
 
-                for(int x = 0; x < 10; x++){
-                    if(x == 2){
-                        System.out.println("lese " + line2);
-                        if(inputPW.equals(line2)){
-                            pUser.setPassword(line2);
-                        }else{
-                            System.out.println("Falsches Passwort!");
-                            System.exit(0);
-                        }
-                    }else{
-                        x++;
-                    }
+                for(int x = 0; x < 2; x++){
+                    br2.readLine();
+                    System.out.println("lese " + line2);
                 }
 
+                if(inputPW.equals(line2)){
+                }else{
+                    System.out.println("Falsches Passwort!");
+                    System.exit(0);
+                }
                 
             br2.close();
             System.out.println("Dein Username: " + pUser.getUsername());
