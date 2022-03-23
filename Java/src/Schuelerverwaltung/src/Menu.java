@@ -38,7 +38,7 @@ public class Menu {
         breakLine();
         
         
-        return sc.nextLine();
+        return sc.next();
     }
 
 
@@ -82,18 +82,20 @@ public class Menu {
         write.writeLogin(user);
         write.writeUserlist(user);
 
-        System.out.println("User erstellt! Starte das Programm neu!");
+        System.out.println("User erstellt!");
         return user;        
     }  
 
     
     //Hauptmenue des Programmes
     public int showMenu(){
+        breakLine();
         System.out.println("(1) - Inventar");
         System.out.println("(2) - Einkaufszentrum");
         System.out.println("(3) - Liquide Mittel überprüfen");
         System.out.println("(4) - Benutzerprofil überprüfen/bearbeiten");
         System.out.println("(5) - Ausloggen/Abmelden");
+        breakLine();
 
         return sc.nextInt();
 
@@ -242,7 +244,7 @@ public class Menu {
             showMenu();
         }
     }
-/*
+
     public void logOut(Cardmanagement pCardmanagement){
         breakLine();
         System.out.println("Sie werden abgemeldet.......................");
@@ -254,22 +256,23 @@ public class Menu {
 
 
     public void menumain(Cardmanagement pCardmanagement, User pUser){
-        while(pCardmanagement.getLoggedIN() == true);
-        switch(showMenu()){
-            case 1: //pCardmanagement.getUser(). show inventory muss zum User
-                    break;
-            case 2: //showShop() Shop wird angezeigt
-                    break;
-            case 3: showMoney(pUser);
-                    break;
-            case 4: showProfile(pUser);
-                    break;
-            case 5: logOut(pCardmanagement);
-                    break;
-            default:
+        while(pCardmanagement.getLoggedIN() == true){
+            switch(showMenu()){
+                case 1: //pCardmanagement.getUser(). show inventory muss zum User
+                        break;
+                case 2: //showShop() Shop wird angezeigt
+                        break;
+                case 3: showMoney(pUser);
+
+                case 4: showProfile(pUser);
+                        
+                case 5: logOut(pCardmanagement);
+                        break;
+                default:
+            }
         }
     }
-*/
+
 
 
 

@@ -110,7 +110,9 @@ public class ReadWrite{
                     System.out.println("Falsches Password!");
                     System.exit(0);
                 }
+
             br2.close();
+            
             System.out.println("------------------");
             System.out.println("Dein Username: " + pUser.getUsername());
             System.out.println("Dein Password: " + pUser.getPassword());
