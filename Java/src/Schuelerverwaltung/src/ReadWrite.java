@@ -17,7 +17,7 @@ import java.nio.file.Paths;
 
 public class ReadWrite{
 
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
     //Writer
     public void writeLogin(User pUser){

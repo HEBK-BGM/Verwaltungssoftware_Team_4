@@ -16,16 +16,19 @@ class Cardmanagement{
 
 class Menu{
     -sc : Scanner(System.in)
+    -write : ReadWrite
+    -rand : Random
 
+    +menustart() : String
     +createUser() : User
-    +logIn() : String
     +logOut(pCardmanagement : Cardmanagement) : void
     +showInventory() : Inventory
     +showMoney() : pMoney
-    +checkProfile() : void
-    +showMenu() : Menu
+    +showProfile(pUser : User) : void
+    +showMenu() : int
     +showShop() : Shop
-    -breakLine() : void
+    +breakLine() : void
+    +menumanin(pCardmanagement : Cardmanagement, pUser : User) : void
 
 
 }
@@ -107,10 +110,20 @@ class Cardslist{
     +randomCard() : void
 }
 
+class ReadWrite{
+    - sc : Scanner(System.in)
+
+    + writeLogin(pUser : User) : void
+    + writeUserlist(pUser : User) : void
+    + readLogIn(pUser : User) : void
+}
+
 Cardmanagement *-- "1" Menu : hat ein Menu
+Cardmanagement *-- "1" ReadWrite : hat einen Reader/Writer 
 User *-- "1" Inventory : hat ein Inventar
-Cardmanagement *-- "4" User : hat 4 User
+Cardmanagement *-- "1" User : hat 1 User
 Menu *-- "1" Shop : hat einen Shop
+Menu *-- "1" ReadWrite : hat einen writer
 Shop *-- "5" Cardslist : hat 5 Karten 
 Inventory *-- "20" Cardslist : hat 20 Karten
 Cardslist *-- "151" Cards : hat 151 Karten
