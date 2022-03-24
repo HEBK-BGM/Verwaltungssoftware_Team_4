@@ -17,6 +17,8 @@ public class Menu {
     //Write für create User
     private ReadWrite write;
 
+    private Shop s1;
+
     //Scanner für die Eingabe 
     Scanner sc = new Scanner(System.in);
 
@@ -36,7 +38,7 @@ public class Menu {
         System.out.println("(1) - Anmelden");
         System.out.println("(2) - Account erstellen");
         breakLine();
-        
+
         return sc.next();
     }
 
@@ -100,119 +102,6 @@ public class Menu {
 
     }
 
-   /* 
-    public Inventory showInventory(){
-        System.out.println("(1) - " + pokemon1);
-        System.out.println("(2) - " + pokemon2);
-        System.out.println("(3) - " + pokemon3);
-        System.out.println("(4) - " + pokemon4);
-        System.out.println("(5) - " + pokemon5);
-        System.out.println("(6) - " + pokemon6);
-        System.out.println("(7) - " + pokemon7);
-        System.out.println("(8) - " + pokemon8);
-        System.out.println("(9) - " + pokemon9);
-        System.out.println("(10) - " + pokemon10);
-        System.out.println("(11) - " + pokemon11);
-        System.out.println("(12) - " + pokemon12);
-        System.out.println("(13) - " + pokemon13);
-        System.out.println("(14) - " + pokemon14);
-        System.out.println("(15) - " + pokemon15);
-        System.out.println("(16) - " + pokemon16);
-        System.out.println("(17) - " + pokemon17);
-        System.out.println("(18) - " + pokemon18);
-        System.out.println("(19) - " + pokemon19);
-        System.out.println("(20) - " + pokemon20);
-
-        if(sc.equals("1")){
-            
-        }
-        else if(sc.equals("2")){
-        
-        }
-        else if(sc.equals("3")){
-            
-        }
-        else if(sc.equals("4")){
-            
-        }
-        else if(sc.equals("5")){
-            
-        }
-        else if(sc.equals("6")){
-        
-        }
-        else if(sc.equals("7")){
-            
-        }
-        else if(sc.equals("8")){
-            
-        }
-        else if(sc.equals("9")){
-            
-        }
-        else if(sc.equals("10")){
-        
-        }
-        else if(sc.equals("11")){
-            
-        }
-        else if(sc.equals("12")){
-            
-        }
-        else if(sc.equals("13")){
-            
-        }
-        else if(sc.equals("14")){
-            
-        }
-        else if(sc.equals("15")){
-            
-        }
-        else if(sc.equals("16")){
-        
-        }
-        else if(sc.equals("17")){
-            
-        }
-        else if(sc.equals("18")){
-            
-        }
-        else if(sc.equals("19")){
-            
-        }
-        else if(sc.equals("20")){
-            
-        }
-    }
-    
-    
-    
-    public Shop showShop(){
-        System.out.println("(1) - " + pokemon1);
-        System.out.println("(2) - " + pokemon2);
-        System.out.println("(3) - " + pokemon3);
-        System.out.println("(4) - " + pokemon4);
-        System.out.println("(5) - " + pokemon5);
-
-        if(sc.equals("1")){
-            
-        }
-        else if(sc.equals("2")){
-        
-        }
-        else if(sc.equals("3")){
-            
-        }
-        else if(sc.equals("4")){
-            
-        }
-        else if(sc.equals("5")){
-            
-        }
-        
-    }
-    */
-    
 
     public void showMoney(User pUser){
         breakLine();
@@ -255,11 +144,12 @@ public class Menu {
 
 
     public void menumain(Cardmanagement pCardmanagement, User pUser){
+        s1 = new Shop();
         while(pCardmanagement.getLoggedIN() == true){
             switch(showMenu()){
-                case 1: //pCardmanagement.getUser(). show inventory muss zum User
+                case 1: System.out.println("Jajajaj");
                         break;
-                case 2: //showShop() Shop wird angezeigt
+                case 2: s1.showShop();
                         break;
                 case 3: showMoney(pUser);
 

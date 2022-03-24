@@ -7,30 +7,25 @@ public class Shop {
     
     Scanner scanner = new Scanner(System.in);
 
- public  String antwort2;
+    public  String antwort2;
 
- public  void showShop() {
-        
+    public void showShop() {
+            
         System.out.println("Hallo");
         System.out.println("");
         System.out.println("Wilkommen in unserem Shop!...");
         scanner.nextLine();
         System.out.println("Möchtest du dir das Angebot an Karten ansehen?");
         String antwort1 = scanner.nextLine();
-        if (antwort1.equals("Ja") || antwort1.equals("ja") || antwort1.equals("JA")) {
-            buyCard();
-        
-        
-
-
-        }
-        else {
-            return;
-        }
-        
-        if (antwort2.equals("Ja") || antwort2.equals("ja") || antwort2.equals("JA")) {
-           
-        }
+            if (antwort1.equals("Ja") || antwort1.equals("ja") || antwort1.equals("JA")) {
+                buyCard();
+            }
+            else {
+                return;
+            }
+            if (antwort2.equals("Ja") || antwort2.equals("ja") || antwort2.equals("JA")) {
+                
+            }
     }
 
     public  void showCards() {
