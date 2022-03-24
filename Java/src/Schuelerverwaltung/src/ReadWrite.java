@@ -85,10 +85,12 @@ public class ReadWrite{
                         pUser.setUsername(line);
                         break;
                     }else{   //sonst wiederholt sich die while schleif
-                        continue;  
+                        br.readLine();
+                        continue;
                     }
                 }
                 br.close(); 
+
             //Frage nach dem Passwort
             System.out.println("------------------");
             System.out.println("Gebe dein Password ein: ");
@@ -124,21 +126,7 @@ public class ReadWrite{
             
         }catch (IOException e){
             e.printStackTrace();
+            System.exit(0);
         }
     }
-    
-    
-    
-   
-   
-    
-    
-
-        
-    
-    
-    
-    
-
-
 }

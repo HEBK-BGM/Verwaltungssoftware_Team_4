@@ -15,16 +15,17 @@ public class Cardmanagement {
       r = new ReadWrite();
 
       logIN();
-      menu.menumain(this, user);
    }
 
    public void logIN(){
       if(menu.menustart().equals("1")){
          r.readLogIn(user);
          loggedin = true;
+         menu.menumain(this, user);
       }else if(menu.menustart().equals("2")){
          menu.createUser(); 
-         loggedin = true;  
+         loggedin = true; 
+         menu.menumain(this, user); 
       }else{
          System.out.println("Falsche eingabe!");
          loggedin = false;

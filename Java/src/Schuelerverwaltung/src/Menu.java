@@ -37,7 +37,6 @@ public class Menu {
         System.out.println("(2) - Account erstellen");
         breakLine();
         
-        
         return sc.next();
     }
 
@@ -272,13 +271,4 @@ public class Menu {
             }
         }
     }
-
-
-
-
-    
-  
-    
-   
-
 } 
