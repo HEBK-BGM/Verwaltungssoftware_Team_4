@@ -144,8 +144,8 @@ public class Menu {
 
 
     public void menumain(Cardmanagement pCardmanagement, User pUser){
-        s1 = new Shop();
         while(pCardmanagement.getLoggedIN() == true){
+            s1 = new Shop();
             switch(showMenu()){
                 case 1: System.out.println("Jajajaj");
                         break;
