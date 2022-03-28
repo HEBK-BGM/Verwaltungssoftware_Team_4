@@ -97,16 +97,19 @@ public class ReadWrite{
             System.out.println("------------------");
             String inputPW = sc.next();
             BufferedReader br2 = new BufferedReader(new FileReader((".\\Users\\" + pUser.getUsername() + ".txt")));
+                //For schleife, damit der Reader in Zeile 2 gelangt
                 for(int x = 0; x < 1; x++){
                     br2.readLine();
                 }
+                //Überprüfung nach dem Passwort mit der Eingabe
                 String line2 = br2.readLine();;
                 if(inputPW.equals(line2)){
+                    //wenn true, dann werden alle Werte dem User gegeben
                     pUser.setPassword(line2);
                     pUser.setName(br2.readLine());
-                    pUser.setAge(Integer.parseInt(br2.readLine()));
+                    pUser.setAge(Integer.parseInt(br2.readLine())); // Umwandlung vom String in int
                     pUser.setUserID(Integer.parseInt(br2.readLine()));
-                    pUser.setMoney(Double.parseDouble(br2.readLine()));
+                    pUser.setMoney(Double.parseDouble(br2.readLine())); //Umwandlung von String ind double
                     System.out.println("Erfolgreich Angemeldet!");
                 }else{
                     System.out.println("Falsches Password!");
