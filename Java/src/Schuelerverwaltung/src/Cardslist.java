@@ -4,10 +4,15 @@ import java.util.Random;
 
 public class Cardslist {
     Random random = new Random();
+    Random random1 = new Random();
+    Random random2 = new Random();
+    Random random3 = new Random();
+
     String name;
     String rare;
     int id;
     double price;
+    
 
     
     public Cardslist(String name, int id, String rare, double price) { // constructer
@@ -41,26 +46,27 @@ public class Cardslist {
         pokeObjects[16] = new Cardslist("Mewto",16," - extreme rare ",25.00);
         pokeObjects[17] = new Cardslist("Mew",17," - extreme rare ",25.00);
         pokeObjects[18] = new Cardslist("Manuel",18," - pogO ",420.69);
+
+
+
         
 
-        
-
-
-
-
-
-
-
-        for (int i = 0;i<5;i++) {
 
         
             int randomNumber=random.nextInt(pokeObjects.length);
-      	    System.out.println(pokeObjects[randomNumber].name+pokeObjects[randomNumber].rare+pokeObjects[randomNumber].price);
-            }
+            
+            int randomNumber1=random1.nextInt(pokeObjects.length);
+        
+            int randomNumber2=random2.nextInt(pokeObjects.length);
+    
+            int randomNumber3=random3.nextInt(pokeObjects.length);
 
+           System.out.println(pokeObjects[randomNumber].name+pokeObjects[randomNumber].rare+pokeObjects[randomNumber].price); 
+           System.out.println(pokeObjects[randomNumber1].name+pokeObjects[randomNumber1].rare+pokeObjects[randomNumber1].price);
+           System.out.println(pokeObjects[randomNumber2].name+pokeObjects[randomNumber2].rare+pokeObjects[randomNumber2].price);
+           System.out.println(pokeObjects[randomNumber3].name+pokeObjects[randomNumber3].rare+pokeObjects[randomNumber3].price);
 
-
-    } 
+        } 
    
     }
 
