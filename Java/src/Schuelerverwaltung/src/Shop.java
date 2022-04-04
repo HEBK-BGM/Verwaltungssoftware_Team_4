@@ -41,7 +41,7 @@ public class Shop {
         
         showCards();
         Shop[] ladeTheke = new Shop[4]; 
-        
+       
         System.out.println("Möchtest du eine Karten kaufen?");
         antwort2 = scanner.nextLine();
 
