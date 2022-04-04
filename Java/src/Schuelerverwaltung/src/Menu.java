@@ -1,17 +1,6 @@
 import java.util.Scanner;
-
-import javax.print.attribute.standard.RequestingUserName;
-
 import java.util.Random;
 
-import java.io.File;  
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 public class Menu {
 
     //Write für create User
@@ -52,9 +41,7 @@ public class Menu {
         String pUsername = sc.next();
 
         System.out.println("Erstellen Sie ein Passwort");
-        String pPassword;
-         System.out.println("Passwort zu kurz!");
-        pPassword = sc.next();
+        String pPassword = sc.next();
         
 
         System.out.println("Gebe deinen richtigen Namen ein:"); 
@@ -67,22 +54,23 @@ public class Menu {
         int pUserID = rand.nextInt(userIDrandom);
             
         //User bekommt Startgeld
-        double pMoney = 100.0;
+        double pMoney = 1000.0;
             
         User user = new User(pName, pAge, pUsername, pPassword, pMoney, pUserID);
 
         System.out.println("Dein Username: " + user.getUsername());
         breakLine();
-        System.out.println("Dein Password: " + user.getPassword() );
+        System.out.println("Dein Password: " + user.getPassword());
         breakLine();
-        System.out.println("Dein Name: " + user.getName() );
+        System.out.println("Dein Name: " + user.getName());
         breakLine();
         System.out.println("Dein Alter: " + user.getAge());
         breakLine();
-        System.out.println("Dein Guthaben: " + user.getMoney() );
+        System.out.println("Dein Guthaben: " + user.getMoney());
         breakLine();
-        System.out.println("Deine ID: " + user.getUserID() );
-
+        System.out.println("Deine ID: " + user.getUserID());
+        write.writeLogin(user);
+        write.writeUserlist(user);
 
         System.out.println("User erstellt!");
         return user;        
@@ -100,7 +88,6 @@ public class Menu {
         breakLine();
 
         return sc.nextInt();
-
     }
 
 
@@ -143,27 +130,31 @@ public class Menu {
         System.out.println("Sie werden abgemeldet.......................");
         pCardmanagement.logOut();
         breakLine();
-
-        menustart();
+        System.exit(0);
     } 
 
 
-    public void menumain(Cardmanagement pCardmanagement, User pUser){
+    public void menumain(Cardmanagement pCardmanagement){
         while(pCardmanagement.getLoggedIN() == true){
            // s1 = new Shop();
             switch(showMenu()){
                 case 1: System.out.println("Jajajaj");
                         break;
+
                 case 2: /*s1.showShop(); */System.out.println("Shop");
                         break;
-                case 3: showMoney(pUser);
+
+                case 3: showMoney(pCardmanagement.getUser());
                         break;
-                case 4: showProfile(pUser);
+
+                case 4: showProfile(pCardmanagement.getUser());
                         break;
+
                 case 5: logOut(pCardmanagement);
                         break;
-                default:System.out.println("Falsche Eingbe!");
-                        break;
+
+                default: System.out.println("Falsche Eingbe!");
+                        
             }
         }
     }

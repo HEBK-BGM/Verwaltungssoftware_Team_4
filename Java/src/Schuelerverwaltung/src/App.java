@@ -5,11 +5,5 @@ public class App {
     
 
        Cardmanagement app = new Cardmanagement();
-
-        /*Shop s1 = new Shop();
-        s1.showShop();
-           
-        Menu menu = new Menu();
-        */
     }
 }
