@@ -111,9 +111,11 @@ public class Menu {
 
         System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
 
-        String input = sc.nextLine();
+        String input = sc.next();
         if (input.toLowerCase().equals("l")) {
             showMenu();
+        }else{
+            System.out.println("Falsche Eingabe!");
         }
     }
     
@@ -128,9 +130,11 @@ public class Menu {
 
         System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
 
-        String input = sc.nextLine();
+        String input = sc.next();
         if (input.toLowerCase().equals("l")) {
             showMenu();
+        }else{
+            System.out.println("Falsche Eingabe!");
         }
     }
 
@@ -150,7 +154,7 @@ public class Menu {
             switch(showMenu()){
                 case 1: System.out.println("Jajajaj");
                         break;
-                case 2: /*s1.showShop(); */System.out.println("jajaj");
+                case 2: /*s1.showShop(); */System.out.println("Shop");
                         break;
                 case 3: showMoney(pUser);
                         break;
@@ -158,7 +162,8 @@ public class Menu {
                         break;
                 case 5: logOut(pCardmanagement);
                         break;
-                default:
+                default:System.out.println("Falsche Eingbe!");
+                        break;
             }
         }
     }
