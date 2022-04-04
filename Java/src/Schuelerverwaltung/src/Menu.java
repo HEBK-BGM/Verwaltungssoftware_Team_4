@@ -48,12 +48,12 @@ public class Menu {
 
         write = new ReadWrite();
         breakLine();
-        System.out.println("Ertselle einen Username");
+        System.out.println("Erstelle einen Username");
         String pUsername = sc.next();
 
         System.out.println("Erstellen Sie ein Passwort");
         String pPassword;
-         System.out.println("Passwort zu kurz!");
+        System.out.println("Passwort zu kurz!");
         pPassword = sc.next();
         
 
@@ -148,7 +148,8 @@ public class Menu {
         while(pCardmanagement.getLoggedIN() == true){
            // s1 = new Shop();
             switch(showMenu()){
-                case 1: System.out.println("Jajajaj");
+                case 1: Inventory inv = new Inventory();
+                        inv.showInventory();
                         break;
                 case 2: /*s1.showShop(); */System.out.println("jajaj");
                         break;
