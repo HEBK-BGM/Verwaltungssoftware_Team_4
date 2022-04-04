@@ -17,7 +17,7 @@ public class Menu {
     //Write für create User
     private ReadWrite write;
 
-    private Shop s1;
+    //private Shop s1;
 
     //Scanner für die Eingabe 
     Scanner sc = new Scanner(System.in);
@@ -52,7 +52,10 @@ public class Menu {
         String pUsername = sc.next();
 
         System.out.println("Erstellen Sie ein Passwort");
-        String pPassword = sc.next();
+        String pPassword;
+         System.out.println("Passwort zu kurz!");
+        pPassword = sc.next();
+        
 
         System.out.println("Gebe deinen richtigen Namen ein:"); 
         String pName = sc.next();
@@ -80,8 +83,6 @@ public class Menu {
         breakLine();
         System.out.println("Deine ID: " + user.getUserID() );
 
-        write.writeLogin(user);
-        write.writeUserlist(user);
 
         System.out.println("User erstellt!");
         return user;        
@@ -145,16 +146,16 @@ public class Menu {
 
     public void menumain(Cardmanagement pCardmanagement, User pUser){
         while(pCardmanagement.getLoggedIN() == true){
-            s1 = new Shop();
+           // s1 = new Shop();
             switch(showMenu()){
                 case 1: System.out.println("Jajajaj");
                         break;
-                case 2: s1.showShop();
+                case 2: /*s1.showShop(); */System.out.println("jajaj");
                         break;
                 case 3: showMoney(pUser);
-
+                        break;
                 case 4: showProfile(pUser);
-                        
+                        break;
                 case 5: logOut(pCardmanagement);
                         break;
                 default:
