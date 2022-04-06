@@ -80,6 +80,8 @@ public class User extends Person {
     public void addMoney(double pMoney){
         if(pMoney > 1000.0){
             System.out.println("Du kannst nicht mehr als 1000 hinzufügen!");
+        }else if(pMoney < 0 ){
+            System.out.println("Du kannst nur Geld hinzufügen!");
         }else{
             this.money = pMoney + money;
         }
