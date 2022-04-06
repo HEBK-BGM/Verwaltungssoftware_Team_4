@@ -145,7 +145,7 @@ public class Menu {
             String pUsername = sc.next();
             breakLine();
             pUser.changeUsername(pUsername);
-=
+
         }else{
             System.out.println("Falsche Eingabe!");
             showProfile(pUser, pCardmanagement);
@@ -172,10 +172,10 @@ public class Menu {
                 case 2: /*s1.showShop(); */System.out.println("Shop");
                         break;
 
-                case 3: showMoney(pCardmanagement.getUser());
+                case 3: showMoney(pCardmanagement.getUser(), pCardmanagement);
                         break;
 
-                case 4: showProfile(pCardmanagement.getUser());
+                case 4: showProfile(pCardmanagement.getUser(), pCardmanagement);
 
                         break;
 
