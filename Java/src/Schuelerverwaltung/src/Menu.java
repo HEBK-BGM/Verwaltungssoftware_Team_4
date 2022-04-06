@@ -48,12 +48,11 @@ public class Menu {
 
         write = new ReadWrite();
         breakLine();
-        System.out.println("Erstelle einen Username");
+        System.out.println("Ertselle einen Username");
         String pUsername = sc.next();
 
         System.out.println("Erstellen Sie ein Passwort");
         String pPassword;
-        System.out.println("Passwort zu kurz!");
         pPassword = sc.next();
         
 
@@ -83,7 +82,8 @@ public class Menu {
         breakLine();
         System.out.println("Deine ID: " + user.getUserID() );
 
-
+        write.writeLogin(user);
+        write.writeUserlist(user);
         System.out.println("User erstellt!");
         return user;        
     }  
@@ -99,12 +99,12 @@ public class Menu {
         System.out.println("(5) - Ausloggen/Abmelden");
         breakLine();
 
-        return sc.nextInt();
-
+        int input = sc.nextInt();
+        return input;
     }
 
 
-    public void showMoney(User pUser){
+    public void showMoney(User pUser, Cardmanagement pCardmanagement){
         breakLine();
         System.out.println("Dein Geld beträgt: " + pUser.getMoney());
         breakLine();
@@ -116,11 +116,12 @@ public class Menu {
             showMenu();
         }else{
             System.out.println("Falsche Eingabe!");
+            showMoney(pUser, pCardmanagement);
         }
     }
     
  
-    public void showProfile(User pUser){
+    public void showProfile(User pUser,Cardmanagement pCardmanagement){
         breakLine();
         System.out.println("Dein Username: " + pUser.getUsername());
         System.out.println("Dein Passwort: " + pUser.getPassword());
@@ -132,9 +133,10 @@ public class Menu {
 
         String input = sc.next();
         if (input.toLowerCase().equals("l")) {
-            showMenu();
+            menumain(pCardmanagement);
         }else{
             System.out.println("Falsche Eingabe!");
+            showProfile(pUser, pCardmanagement);
         }
     }
 
@@ -144,27 +146,27 @@ public class Menu {
         pCardmanagement.logOut();
         breakLine();
 
-        menustart();
+        System.exit(0);
     } 
 
-
-    public void menumain(Cardmanagement pCardmanagement, User pUser){
+    //hier wird das MEn
+    public void menumain(Cardmanagement pCardmanagement){
         while(pCardmanagement.getLoggedIN() == true){
            // s1 = new Shop();
             switch(showMenu()){
-                case 1: Inventory inv = new Inventory();
-                        inv.showInventory();
+                case 1: System.out.println("Jajajaj");
                         break;
                 case 2: /*s1.showShop(); */System.out.println("Shop");
                         break;
-                case 3: showMoney(pUser);
+                case 3: showMoney(pCardmanagement.getUser(), pCardmanagement);
                         break;
-                case 4: showProfile(pUser);
+                case 4: showProfile(pCardmanagement.getUser(), pCardmanagement);
                         break;
                 case 5: logOut(pCardmanagement);
                         break;
                 default:System.out.println("Falsche Eingbe!");
-                        break;
+                        continue;
+                        
             }
         }
     }

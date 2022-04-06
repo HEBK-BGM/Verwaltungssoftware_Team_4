@@ -14,16 +14,19 @@ public class Cardmanagement {
 
       logIN();
    }
-
+   //Log in Methode 
    public void logIN(){
+      //bei "1" anmelden
       if(menu.menustart().equals("1")){
          r.readLogIn(user);
          loggedin = true;
-         menu.menumain(this, user);
+         menu.menumain(this);
+      //bei "2" createuser
       }else if(menu.menustart().equals("2")){
          menu.createUser(); 
          loggedin = true; 
-         menu.menumain(this, user); 
+         menu.menumain(this); 
+      //sonst Falsche Eingabe
       }else{
          System.out.println("Falsche eingabe!");
          loggedin = false;
