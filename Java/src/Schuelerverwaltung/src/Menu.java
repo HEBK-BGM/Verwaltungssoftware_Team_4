@@ -46,6 +46,7 @@ public class Menu {
         }else{
             pUsername = input;
         }
+        System.out.println(pUsername);
 
 
         System.out.println("Erstellen Sie ein Passwort");
@@ -65,6 +66,7 @@ public class Menu {
             
         User user = new User(pName, pAge, pUsername, pPassword, pMoney, pUserID);
 
+        breakLine();
         System.out.println("Dein Username: " + user.getUsername());
         breakLine();
         System.out.println("Dein Password: " + user.getPassword());
@@ -94,11 +96,11 @@ public class Menu {
         breakLine();
 
         return sc.nextInt();
-
     }
 
 
     public void showMoney(User pUser, Cardmanagement pCardmanagement){
+        
         breakLine();
         System.out.println("Dein Geld beträgt: " + pUser.getMoney());
         breakLine();

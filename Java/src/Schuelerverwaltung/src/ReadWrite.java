@@ -21,7 +21,6 @@ public class ReadWrite{
 
     //Writer
     public void writeLogin(User pUser){
-
         File folder = new File(".\\Users\\");
             folder.mkdirs();
             File userfile = new File(".\\Users\\" + pUser.getUsername() + ".txt");
@@ -41,8 +40,7 @@ public class ReadWrite{
                 writer.newLine();
                 writer.write(String.valueOf(pUser.getMoney()));
                 writer.newLine();
-                writer.close();
-                
+                writer.close(); 
             }catch (IOException e) {
                 e.printStackTrace();
             } 
@@ -131,8 +129,6 @@ public class ReadWrite{
 
     public boolean checkUsernamefolder(String checkUsername){
         boolean check = false;
-        File folder = new File(".\\Users\\");
-        folder.mkdirs();
         File userfile = new File(".\\Users\\" + checkUsername + ".txt");    
             if(userfile.exists()){
                 System.out.println("Den Usernamen gibt es bereits!");
