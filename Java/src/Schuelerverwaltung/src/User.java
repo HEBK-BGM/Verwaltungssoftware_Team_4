@@ -55,14 +55,25 @@ public class User extends Person {
 
 
     //changepassword 
-    public void changepassword(String pPassword){   
+    public void changePassword(String pPassword){   
         if(pPassword.length() < 4){
             System.out.println("Das Passwort konnte nicht geändert werden!");
         }else{
             System.out.println("Das Passwort wurde erfolgreich geändert.");
             this.password = pPassword;
-            System.out.println("Neues Passwort: "+ pPassword);
+            System.out.println("Neues Passwort: "+ this.password);
         } 
+    }
+
+    public void changeUsername(String pUsername){   
+        if(pUsername.equals(null) || pUsername.equals("")){
+            System.out.println("Benutzername konnte nicht geändert werden!");
+        }else{
+            System.out.println("Benutzername wurde erfolgreich geändert!");
+            this.username = pUsername;
+            System.out.println("Neuer Benutzername: " + this.username);
+        }
+        
     }
 
     public boolean checkpassword(String pPassword){

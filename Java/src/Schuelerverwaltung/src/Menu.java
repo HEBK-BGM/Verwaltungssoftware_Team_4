@@ -69,8 +69,6 @@ public class Menu {
         System.out.println("Dein Guthaben: " + user.getMoney());
         breakLine();
         System.out.println("Deine ID: " + user.getUserID());
-        write.writeLogin(user);
-        write.writeUserlist(user);
 
         System.out.println("User erstellt!");
         return user;        
@@ -115,11 +113,21 @@ public class Menu {
         System.out.println("Dein Alter " + pUser.getAge() );
         breakLine();
 
+        System.out.println("Drücke -B- um deinen Benutzernamen zu ändern");
+        System.out.println("Drücke -P- um dein Passwort zu ändern");
         System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
 
         String input = sc.next();
         if (input.toLowerCase().equals("l")) {
             showMenu();
+        }else if(input.toLowerCase().equals("p")){
+            System.out.println("Gebe dein neues Passwort ein: ");
+            String pPassword = sc.next();
+            pUser.changePassword(pPassword);
+        }else if(input.toLowerCase().equals("b")){
+            System.out.println("Gebe dein neuen Benutzernamen ein: ");
+            String pUsername = sc.next();
+            pUser.changeUsername(pUsername);
         }else{
             System.out.println("Falsche Eingabe!");
         }
