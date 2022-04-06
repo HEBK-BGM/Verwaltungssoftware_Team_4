@@ -39,9 +39,12 @@ public class Inventory {
     }
     private void showCards() {
         //showCards() braucht vermutlich ein Return-Wert aus Shop (von der buyCard())
+        Inventory[] cards = new Inventory[20];
+        for (int i=0; i<=20; i++) {
+            System.out.println(cards[i]);
+        }
         breakLine();
         System.out.println("Hier werden bald deine Karten angezeigt");
-
     }
     private void breakLine() {
         System.out.println("--------------");

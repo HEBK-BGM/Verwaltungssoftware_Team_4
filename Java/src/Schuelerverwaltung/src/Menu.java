@@ -166,7 +166,8 @@ public class Menu {
         while(pCardmanagement.getLoggedIN() == true){
            // s1 = new Shop();
             switch(showMenu()){
-                case 1: System.out.println("Jajajaj");
+                case 1: Inventory inv = new Inventory();
+                        inv.showInventory();
                         break;
 
                 case 2: /*s1.showShop(); */System.out.println("Shop");
