@@ -21,7 +21,7 @@ public class Cardmanagement {
 
       //bei "1" anmelden
       if(menu.menustart().equals("1")){
-         r.readLogIn(user);
+         r.readLogIn(getUser());
          loggedin = true;
          menu.menumain(this);
         

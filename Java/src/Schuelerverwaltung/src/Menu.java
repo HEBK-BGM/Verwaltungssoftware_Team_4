@@ -81,6 +81,7 @@ public class Menu {
 
 
         System.out.println("User erstellt!");
+        
         return user;        
     }  
 
@@ -176,23 +177,15 @@ public class Menu {
             switch(showMenu()){
                 case 1: System.out.println("Jajajaj");
                         break;
-
                 case 2: /*s1.showShop(); */System.out.println("Shop");
                         break;
-
                 case 3: showMoney(pCardmanagement.getUser(), pCardmanagement);
                         break;
-
                 case 4: showProfile(pCardmanagement.getUser(), pCardmanagement);
-
                         break;
-
                 case 5: logOut(pCardmanagement);
                         break;
-
-                default: System.out.println("Falsche Eingbe!");
-
-                        
+                default: System.out.println("Falsche Eingbe!");         
             }
         }
     }
