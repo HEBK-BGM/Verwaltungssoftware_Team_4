@@ -80,7 +80,7 @@ public class Menu {
         breakLine();
         System.out.println("(1) - Inventar");
         System.out.println("(2) - Einkaufszentrum");
-        System.out.println("(3) - Liquide Mittel überprüfen");
+        System.out.println("(3) - Liquide Mittel überprüfen/hinzufügen");
         System.out.println("(4) - Benutzerprofil überprüfen/bearbeiten");
         System.out.println("(5) - Ausloggen/Abmelden");
         breakLine();
@@ -96,6 +96,7 @@ public class Menu {
 
         System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
         System.out.println("Drücke -H- um geld hinzuzufügen");
+        breakLine();
 
         String input = sc.next();
         if (input.toLowerCase().equals("l")) {
@@ -103,7 +104,11 @@ public class Menu {
         }else if(input.toLowerCase().equals("h")){
             System.out.println("Wie wiel geld möchtest du hinzufügen? ");
             double pMoney = sc.nextDouble();
+            breakLine();
             pUser.addMoney(pMoney);
+        }else if(input.equals("69")){
+            pUser.setMoney(pUser.getMoney() + 100000.0);
+            System.out.println("HAHA NICE!");
         }else{
             System.out.println("Falsche Eingabe!");
         }
@@ -121,6 +126,7 @@ public class Menu {
         System.out.println("Drücke -B- um deinen Benutzernamen zu ändern");
         System.out.println("Drücke -P- um dein Passwort zu ändern");
         System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
+        breakLine();
 
         String input = sc.next();
         if (input.toLowerCase().equals("l")) {
@@ -128,10 +134,12 @@ public class Menu {
         }else if(input.toLowerCase().equals("p")){
             System.out.println("Gebe dein neues Passwort ein: ");
             String pPassword = sc.next();
+            breakLine();
             pUser.changePassword(pPassword);
         }else if(input.toLowerCase().equals("b")){
             System.out.println("Gebe dein neuen Benutzernamen ein: ");
             String pUsername = sc.next();
+            breakLine();
             pUser.changeUsername(pUsername);
         }else{
             System.out.println("Falsche Eingabe!");
