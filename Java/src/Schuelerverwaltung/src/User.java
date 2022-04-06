@@ -54,7 +54,7 @@ public class User extends Person {
 
 
 
-    //changepassword 
+    //Passwort ändern 
     public void changePassword(String pPassword){   
         if(pPassword.length() < 4){
             System.out.println("Das Passwort konnte nicht geändert werden!");
@@ -65,6 +65,7 @@ public class User extends Person {
         } 
     }
 
+    //Username ändern
     public void changeUsername(String pUsername){   
         if(pUsername.equals(null) || pUsername.equals("")){
             System.out.println("Benutzername konnte nicht geändert werden!");
@@ -75,10 +76,10 @@ public class User extends Person {
         }
         
     }
-
+    //Methode um geld hinzuzufügen 
     public void addMoney(double pMoney){
         if(pMoney > 1000.0){
-            System.out.println("Du kannst nicht mehr als 1000 € hinzufügen!");
+            System.out.println("Du kannst nicht mehr als 1000 hinzufügen!");
         }else{
             this.money = pMoney + money;
         }
@@ -88,7 +89,9 @@ public class User extends Person {
         return password == pPassword;
     }   
 
-    public boolean checkusername(String pUsername){
-        return username == pUsername;
+    public void checkusername(String pUsername){
+        if(pUsername.equals(null) || pUsername.equals(" ")){
+            System.out.println("Falsche Benutzername!");
+        }
     }
 }
