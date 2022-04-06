@@ -95,10 +95,15 @@ public class Menu {
         breakLine();
 
         System.out.println("Drücke -L- um zurück ins Menu zu gelangen");
+        System.out.println("Drücke -H- um geld hinzuzufügen");
 
         String input = sc.next();
         if (input.toLowerCase().equals("l")) {
             showMenu();
+        }else if(input.toLowerCase().equals("h")){
+            System.out.println("Wie wiel geld möchtest du hinzufügen? ");
+            double pMoney = sc.nextDouble();
+            pUser.addMoney(pMoney);
         }else{
             System.out.println("Falsche Eingabe!");
         }

@@ -76,6 +76,14 @@ public class User extends Person {
         
     }
 
+    public void addMoney(double pMoney){
+        if(pMoney > 1000.0){
+            System.out.println("Du kannst nicht mehr als 100€ hinzufügen!");
+        }else{
+            this.money = pMoney + money;
+        }
+    }
+
     public boolean checkpassword(String pPassword){
         return password == pPassword;
     }   
