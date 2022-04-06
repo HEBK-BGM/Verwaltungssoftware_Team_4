@@ -42,6 +42,7 @@ public class Menu {
 
         System.out.println("Erstellen Sie ein Passwort");
         String pPassword = sc.next();
+
         
 
         System.out.println("Gebe deinen richtigen Namen ein:"); 
@@ -70,6 +71,7 @@ public class Menu {
         breakLine();
         System.out.println("Deine ID: " + user.getUserID());
 
+
         System.out.println("User erstellt!");
         return user;        
     }  
@@ -86,10 +88,11 @@ public class Menu {
         breakLine();
 
         return sc.nextInt();
+
     }
 
 
-    public void showMoney(User pUser){
+    public void showMoney(User pUser, Cardmanagement pCardmanagement){
         breakLine();
         System.out.println("Dein Geld beträgt: " + pUser.getMoney());
         breakLine();
@@ -111,11 +114,12 @@ public class Menu {
             System.out.println("HAHA NICE!");
         }else{
             System.out.println("Falsche Eingabe!");
+            showMoney(pUser, pCardmanagement);
         }
     }
     
  
-    public void showProfile(User pUser){
+    public void showProfile(User pUser,Cardmanagement pCardmanagement){
         breakLine();
         System.out.println("Dein Username: " + pUser.getUsername());
         System.out.println("Dein Passwort: " + pUser.getPassword());
@@ -141,8 +145,10 @@ public class Menu {
             String pUsername = sc.next();
             breakLine();
             pUser.changeUsername(pUsername);
+=
         }else{
             System.out.println("Falsche Eingabe!");
+            showProfile(pUser, pCardmanagement);
         }
     }
 
@@ -151,6 +157,7 @@ public class Menu {
         System.out.println("Sie werden abgemeldet.......................");
         pCardmanagement.logOut();
         breakLine();
+
         System.exit(0);
     } 
 
@@ -169,12 +176,14 @@ public class Menu {
                         break;
 
                 case 4: showProfile(pCardmanagement.getUser());
+
                         break;
 
                 case 5: logOut(pCardmanagement);
                         break;
 
                 default: System.out.println("Falsche Eingbe!");
+
                         
             }
         }
