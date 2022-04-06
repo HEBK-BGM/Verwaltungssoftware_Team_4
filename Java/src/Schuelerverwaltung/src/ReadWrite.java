@@ -27,26 +27,22 @@ public class ReadWrite{
             File userfile = new File(".\\Users\\" + pUser.getUsername() + ".txt");
             BufferedWriter writer;
             try { 
-                if(userfile.exists()){
-                    System.out.println("Den Usernamen gibt es bereits!");
-                    System.exit(0);
-                }else {
-                    writer = new BufferedWriter(new FileWriter(userfile)); 
-                    //In der User-Datei werden alle Werte untereinander geschrieben
-                    writer.write(pUser.getUsername());
-                    writer.newLine();
-                    writer.write(pUser.getPassword());
-                    writer.newLine();
-                    writer.write(pUser.getName());
-                    writer.newLine();
-                    writer.write(String.valueOf(pUser.getAge()));
-                    writer.newLine();
-                    writer.write(String.valueOf(pUser.getUserID()));
-                    writer.newLine();
-                    writer.write(String.valueOf(pUser.getMoney()));
-                    writer.newLine();
-                    writer.close();
-                }
+                writer = new BufferedWriter(new FileWriter(userfile)); 
+                //In der User-Datei werden alle Werte untereinander geschrieben
+                writer.write(pUser.getUsername());
+                writer.newLine();
+                writer.write(pUser.getPassword());
+                writer.newLine();
+                writer.write(pUser.getName());
+                writer.newLine();
+                writer.write(String.valueOf(pUser.getAge()));
+                writer.newLine();
+                writer.write(String.valueOf(pUser.getUserID()));
+                writer.newLine();
+                writer.write(String.valueOf(pUser.getMoney()));
+                writer.newLine();
+                writer.close();
+                
             }catch (IOException e) {
                 e.printStackTrace();
             } 
@@ -132,4 +128,18 @@ public class ReadWrite{
             System.exit(0);
         }
     }
+
+    public boolean checkUsernamefolder(String checkUsername){
+        boolean check = false;
+        File folder = new File(".\\Users\\");
+        folder.mkdirs();
+        File userfile = new File(".\\Users\\" + checkUsername + ".txt");    
+            if(userfile.exists()){
+                System.out.println("Den Usernamen gibt es bereits!");
+                System.exit(0);
+            }else{
+                check = true;
+            }
+        return check;
+    } 
 }

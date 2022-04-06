@@ -38,12 +38,18 @@ public class Menu {
         write = new ReadWrite();
         breakLine();
         System.out.println("Ertselle einen Username");
-        String pUsername = sc.next();
+        String pUsername = "121";
+        String input = sc.next();
+
+        if(write.checkUsernamefolder(input) != true){
+            System.exit(0);
+        }else{
+            pUsername = input;
+        }
+
 
         System.out.println("Erstellen Sie ein Passwort");
         String pPassword = sc.next();
-
-        
 
         System.out.println("Gebe deinen richtigen Namen ein:"); 
         String pName = sc.next();
