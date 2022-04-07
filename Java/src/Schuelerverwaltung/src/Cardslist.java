@@ -37,7 +37,7 @@ public class Cardslist {
 
     public void randomCard(Shop pShop) {
 
-      
+        pokeObjects2[0] = new Cardslist("Ratfratz",0, " - non rare ", 1.00);
         pokeObjects2[1] = new Cardslist("Taubsi", 1, " - non rare ", 1.00);
         pokeObjects2[2] = new Cardslist("Glumanda",2, "  - non rare ",1.00);
         pokeObjects2[3] = new Cardslist("Schiggy",3, " - non rare ",1.00);
@@ -56,7 +56,7 @@ public class Cardslist {
         pokeObjects2[16] = new Cardslist("Mewto",16," - extreme rare ",25.00);
         pokeObjects2[17] = new Cardslist("Mew",17," - extreme rare ",25.00);
         pokeObjects2[18] = new Cardslist("Manuel",18," - pogO ",420.69);
-        pokeObjects2[19] = new Cardslist("Glurak X ",18," - pogO ",420.69);
+        pokeObjects2[19] = new Cardslist("Glurak X ",19," - pogO ",420.69);
         
 
 
