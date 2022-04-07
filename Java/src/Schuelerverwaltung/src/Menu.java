@@ -37,7 +37,7 @@ public class Menu {
 
         write = new ReadWrite();
         breakLine();
-        System.out.println("Ertselle einen Username");
+        System.out.println("Erstelle einen Username");
         String pUsername = sc.next();
 
         System.out.println("Erstellen Sie ein Passwort");
@@ -45,10 +45,10 @@ public class Menu {
 
         
 
-        System.out.println("Gebe deinen richtigen Namen ein:"); 
+        System.out.println("Gebe deinen richtigen Namen ein"); 
         String pName = sc.next();
    
-        System.out.println("Gebe dein Alter ein:");
+        System.out.println("Gebe dein Alter ein");
         int pAge = sc.nextInt(); 
         
         //UserID wird random erstellt von 999

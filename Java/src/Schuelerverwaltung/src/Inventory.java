@@ -2,13 +2,13 @@
 import java.util.Scanner;
 
 public class Inventory {
+    Inventory[] cards = new Inventory[20];
     // Methoden
     public int textInventory() {
-        //textInventory() wird vom Menu ausgeführt
         Scanner sc = new Scanner(System.in);
         breakLine();
         System.out.println("(1) - Eigene Karten anzeigen");
-        System.out.println("(2) - Karte verkaufen");
+        System.out.println("(2) - Karte verkaufen");          
         breakLine();
         return sc.nextInt();
     }
@@ -24,9 +24,7 @@ public class Inventory {
     public void showInventory() {
         breakLine();
         System.out.println("Willkommen in deinem Inventar");
-        breakLine();
         System.out.println("Hier kannst du bis zu 20 Karten speichern und diese auch verkaufen");
-        breakLine();
         System.out.println("Was willst du tun?");
         mainInventory();
 
@@ -36,20 +34,31 @@ public class Inventory {
     }
     public void sellCard() {
         //sellCard() braucht showCards()
+        Scanner sc = new Scanner(System.in);
         breakLine();
-        System.out.println("Hier kannst du bald deine Karten verkaufen");
+        for (int u=0; u<=19; u++) {
+            if (cards[u] == null) {
+                System.out.println("Du hast keine Karten, die du verkaufen kannst.");
+                break;
+            }
+            else {
+                System.out.println("Wähle die Karte, die du verkaufen willst.");
+                showCards();
+                u = sc.nextInt();
+            }  
+        }
     }
     private void showCards() {
         //showCards() braucht vermutlich ein Return-Wert aus Shop (von der buyCard())
-        Inventory[] cards = new Inventory[20];
-        for (int i=0; i<=19; i++) {
-            if (cards[i] == null) {
-                breakLine();
-                System.out.println("Die Karte an Stelle " + i + " existiert noch nicht");
+        // Inventory[] cards = new Inventory[20];
+        breakLine();
+        for (int i=0, j=1; i<=19; i++, j++) {
+             if (cards[i] == null) {
+                System.out.println("Die Karte an Stelle " + j + " existiert noch nicht");
             }
-            else {
+             else {
                 breakLine();
-                System.out.println("Karte an Stelle " + i + " = " + cards[i]);
+                System.out.println("Karte an Stelle " + j + " = " + cards[i]);
             }
         }
     }
