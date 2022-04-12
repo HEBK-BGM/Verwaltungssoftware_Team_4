@@ -9,7 +9,7 @@ public class Shop {
 
     public  String antwort2;
     int antwort3;
-
+   
     public void showShop(Cardslist pCardslist) {
             
         System.out.println("Hallo");
@@ -47,12 +47,11 @@ public class Shop {
         ladeTheke[2] = pCardslist.pokeObjects[pCardslist.randomNumber2];
         ladeTheke[3] = pCardslist.pokeObjects[pCardslist.randomNumber3];
         System.out.println("Möchtest du eine Karten kaufen?");
-     /*   if (inventory = voll) ||  {
-        System.out.println("dein Inventar ist voll, du wirst zum Menü zurückgeschickt");    
-        return;
-        }
-     */
         antwort2 = scanner.nextLine();
+     /*  for (int x=0; x < cards.length; x++)
+           if (x == candy.length - 1)
+     */
+        
         if (antwort2.equals("Ja")||(antwort2.equals("ja"))) {
             System.out.println("Welche Karte möchtest du kaufen? (1) (2) (3) (4)");
             antwort3 = scanner.nextInt();

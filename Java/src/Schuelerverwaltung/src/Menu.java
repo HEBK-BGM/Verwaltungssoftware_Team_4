@@ -170,7 +170,9 @@ public class Menu {
                         inv.showInventory();
                         break;
 
-                case 2: /*s1.showShop(); */System.out.println("Shop");
+                case 2: Cardslist c = new Cardslist();
+                        Shop s1 = new Shop();
+                        s1.showShop(c); 
                         break;
 
                 case 3: showMoney(pCardmanagement.getUser(), pCardmanagement);
