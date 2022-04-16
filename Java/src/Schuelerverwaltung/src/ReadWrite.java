@@ -132,4 +132,30 @@ public class ReadWrite{
             System.exit(0);
         }
     }
+
+
+    public boolean checkUsername(String pUsername){
+        boolean check = true;
+
+        try{
+            BufferedReader br = new BufferedReader(new FileReader("Userlist.txt"));
+            String line;
+                while((line = br.readLine() ) !=null){
+                    if(pUsername != line){
+                        continue;
+                    }else if(pUsername == line){
+                        check = false;
+                        break;
+                    }else{
+                        continue;
+                    }
+                }
+            br.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        
+        return check;
+    }
+    
 }
