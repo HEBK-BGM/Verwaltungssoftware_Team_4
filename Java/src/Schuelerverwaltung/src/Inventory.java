@@ -4,6 +4,28 @@ import java.util.Scanner;
 public class Inventory {
     Inventory[] cards = new Inventory[20];
     // Methoden
+    public void createCards() {
+        cards[0] = new Inventory();
+        cards[1] = new Inventory();
+        cards[2] = new Inventory();
+        cards[3] = new Inventory();
+        cards[4] = new Inventory();
+        cards[5] = new Inventory();
+        cards[6] = new Inventory();
+        cards[7] = new Inventory();
+        cards[8] = new Inventory();
+        cards[9] = new Inventory();
+        cards[10] = new Inventory();
+        cards[11] = new Inventory();
+        cards[12] = new Inventory();
+        cards[13] = new Inventory();
+        cards[14] = new Inventory();
+        cards[15] = new Inventory();
+        cards[16] = new Inventory();
+        cards[17] = new Inventory();
+        cards[18] = new Inventory();
+        cards[19] = new Inventory();
+    }
     public int textInventory() {
         Scanner sc = new Scanner(System.in);
         breakLine();
