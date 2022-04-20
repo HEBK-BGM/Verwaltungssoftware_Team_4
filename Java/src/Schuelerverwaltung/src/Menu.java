@@ -171,8 +171,9 @@ public class Menu {
                         break;
 
                 case 2: Cardslist c = new Cardslist();
+                        Inventory d = new Inventory();
                         Shop s1 = new Shop();
-                        s1.showShop(c); 
+                        s1.showShop(c,d); 
                         break;
 
                 case 3: showMoney(pCardmanagement.getUser(), pCardmanagement);
