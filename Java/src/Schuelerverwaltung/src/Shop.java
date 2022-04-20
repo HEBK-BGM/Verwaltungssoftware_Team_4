@@ -42,6 +42,7 @@ public class Shop {
         ladeTheke[1] = new Shop();
         ladeTheke[2] = new Shop();
         ladeTheke[3] = new Shop();
+        //ladeTheke[0].copy(pCardslist.pokeObjects);
         ladeTheke[0] = pCardslist.pokeObjects[pCardslist.randomNumber];
         ladeTheke[1] = pCardslist.pokeObjects[pCardslist.randomNumber1];
         ladeTheke[2] = pCardslist.pokeObjects[pCardslist.randomNumber2];
@@ -70,7 +71,7 @@ public class Shop {
     } 
         public void buyCard1(Inventory pInventory) {
             
-            //ladeTheke[0] = cards[];
+           // ladeTheke[0] = pInventory.cards[1];
         }
      
 }
