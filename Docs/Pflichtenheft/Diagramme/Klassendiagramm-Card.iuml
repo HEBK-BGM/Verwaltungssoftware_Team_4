@@ -1,13 +1,16 @@
 @startuml Klassendiagramm
 
 class Cardmanagement{
+    - User : user
+    - Menu : menu
+    - r : ReadWrite
     -loggedIn: boolean
+
     +logIn() : void
-    -logIn(pPassword: String) : void
     +logOut() : void
     +getLoggedIn() : boolean
     +getUser() : User
-    +checkpassword()
+    
 
 
 
@@ -18,17 +21,18 @@ class Menu{
     -sc : Scanner(System.in)
     -write : ReadWrite
     -rand : Random
+    - s1 : Shop
 
     +menustart() : String
     +createUser() : User
     +logOut(pCardmanagement : Cardmanagement) : void
     +showInventory() : Inventory
-    +showMoney() : pMoney
-    +showProfile(pUser : User) : void
+    +showMoney(pUser : User, pCardmanagement : Cardmanagement) : void
+    +showProfile(pUser : User, pCardmanagement : Cardmanagement) : void
     +showMenu() : int
     +showShop() : Shop
     +breakLine() : void
-    +menumanin(pCardmanagement : Cardmanagement, pUser : User) : void
+    +menumanin(pCardmanagement : Cardmanagement) : void
 
 
 }
@@ -60,7 +64,9 @@ class User{
     +getUserID() : int
     +setMoney(pMoney : double) : void
     +getMoney() : double
-    
+    +addmoney(pMoney : String) : void
+    +checkpassword(pPassword : String) :void
+    +checkusername(pUsername : String) :void
 
 }
 
@@ -116,6 +122,7 @@ class ReadWrite{
     + writeLogin(pUser : User) : void
     + writeUserlist(pUser : User) : void
     + readLogIn(pUser : User) : void
+    + checkUsername(pUsername : String) : boolean
 }
 
 Cardmanagement *-- "1" Menu : hat ein Menu
