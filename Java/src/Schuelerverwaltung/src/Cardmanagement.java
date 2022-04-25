@@ -21,7 +21,6 @@ public class Cardmanagement {
       myCardslist = new Cardslist();
       myShop = new Shop(myCardslist, user);
 
-      menu = new Menu(this);
       logIN();
    }
   

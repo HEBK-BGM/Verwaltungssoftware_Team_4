@@ -4,12 +4,15 @@ class Cardmanagement{
     - User : user
     - Menu : menu
     - r : ReadWrite
-    -loggedIn: boolean
+    - loggedIn: boolean
+    - myShop : Shop
+    - myCardslist : Cardslist
 
     +logIn() : void
     +logOut() : void
     +getLoggedIn() : boolean
     +getUser() : User
+    +getshop() : Shop
     
 
 
@@ -21,7 +24,7 @@ class Menu{
     -sc : Scanner(System.in)
     -write : ReadWrite
     -rand : Random
-    - s1 : Shop
+    myCardmanagement : Cardmanagement
 
     +menustart() : String
     +createUser() : User
@@ -39,10 +42,15 @@ class Menu{
 
 
 class Shop{
-    -changeMoney: double
-
+    -ladeTheke[] : Cards
+    -myCardslist : Cardslist
+    -presentUser : User 
+    +antwort2 : String
+    antwort3 : int
+    scanner : Scanner(System.in)
     
     +showCards(pCards: Cards) : void
+    +showShop() : void
     +buyCard() : void
 
 }
@@ -101,14 +109,20 @@ class Cards{
     +getRarity() : String
     +getPrice() : double
     +getCardID() : int
-
+    +toString() : String
 }
 
 
 class Inventory{
-    +showCards(pCards: Cards) : void
+    cards[] : Cards
+
+    +textInventory() : int 
+    +mainInventory() : void
+    -showCards() : void
     +sellCard() : void
     +giveMoney() : void
+    -breakLine() : void
+    +addCard(pCard : Cards) : void
 }
 
 

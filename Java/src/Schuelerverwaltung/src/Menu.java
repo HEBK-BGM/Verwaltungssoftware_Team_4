@@ -8,7 +8,7 @@ public class Menu {
     //Write für create User
     private ReadWrite write;
 
-    //private Shop s1;
+ 
 
     //Scanner für die Eingabe 
     Scanner sc = new Scanner(System.in);
