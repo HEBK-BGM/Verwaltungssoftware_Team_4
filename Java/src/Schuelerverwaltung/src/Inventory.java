@@ -2,11 +2,16 @@
 import java.util.Scanner;
 
 public class Inventory {
+    private User presentUser;
     Cards[] cards = new Cards[20];
+    Scanner sc = new Scanner(System.in);
+    int cardchoice;
     // Methoden
- 
+   /* public Inventory(User pUser) {
+        this.presentUser = pUser;
+    } */
+
     public int textInventory() {
-        Scanner sc = new Scanner(System.in);
         breakLine();
         System.out.println("(1) - Eigene Karten anzeigen");
         System.out.println("(2) - Karte verkaufen");          
@@ -17,7 +22,7 @@ public class Inventory {
         switch(textInventory()) {
             case 1: showCards();
                     break;
-            case 2: sellCard();
+            case 2: sellCardAufruf();
                     break;
             default:
         }
@@ -33,11 +38,16 @@ public class Inventory {
     public void giveMoney() {
         //giveMoney() braucht sellCard()
     }
-    public void sellCard() {
+    public Cards getCard(Cards pCard) {
+        return pCard;
+    }
+    public void sellCardAufruf() {
+        sellCard(cards[cardchoice]);
+    }
+    public void sellCard(Cards pCard) {
         //sellCard() braucht showCards()
-        Scanner sc = new Scanner(System.in);
         breakLine();
-        for (int u=0; u<=19; u++) {
+        for (int u=0; u<cards.length; u++) {
             if (cards[u] == null) {
                 System.out.println("Du hast keine Karten, die du verkaufen kannst.");
                 break;
@@ -45,28 +55,35 @@ public class Inventory {
             else {
                 System.out.println("Wähle die Karte, die du verkaufen willst.");
                 showCards();
-                int z = sc.nextInt();
-                if (z <= 20) {
-                    cards[z] = null;
-                    System.out.println("Karte an Stelle" + z + "verkauft"); 
+                cardchoice = sc.nextInt();
+                if (cardchoice <= 20) {
+                    cards[cardchoice] = null;
+                    double currentmoney = presentUser.getMoney();
+                    double changemoney = pCard.getPrice();
+                    currentmoney = currentmoney + changemoney;
+                    System.out.println("Karte an Stelle" + cardchoice + "verkauft"); 
+                    System.out.println("Dein neues Guthaben beträgt:" + currentmoney);
                 }
                 else {
                     System.out.println("Die angegebene Stelle existiert nicht");
                 }  
             }
-        sc.close();
         }
     }
     private void showCards() {
         //showCards() braucht vermutlich ein Return-Wert aus Shop (von der buyCard())
         breakLine();
-        for (int i=0, j=1; i<=19; i++, j++) {
-             if (cards[i] == null) {
+        for (int i=0, j=1; i<cards.length; i++, j++) {
+             if (cards[0] == null) {
                 System.out.println("Die Karte an Stelle " + j + " existiert noch nicht");
             }
              else {
                 breakLine();
-                System.out.println("Karte an Stelle " + j + " = " + cards[i]);
+                System.out.println(cards[0]);
+               /* System.out.println("Karte an Stelle " + j + " = " + cards[i].getName());
+                System.out.println("Seltenheit:" + cards[i].getRarity());
+                System.out.println("Preis:" + cards[i].getPrice());
+                System.out.println("CardID:" + cards[i].getCardID()); */
             }
         }
     }
@@ -75,14 +92,14 @@ public class Inventory {
     }
 
     public void addCard(Cards pCard){
-        for (int i = 0; i< cards.length ; i++){
+        for (int i = 0; i < cards.length; i++) {
             if (cards[i] == null){
                 cards[i] = pCard;
-                System.out.println("Karte wurde im Inventar auf Platz: " + i + " gelegt.");
+                System.out.println("Karte wurde im Inventar auf Platz " + i + " gelegt.");
                 return;
             }
         }
-        System.out.println("Karte konnte nicht hinzugefügt werden. Das Inventar ist voll");
+        System.out.println("Karte konnte nicht hinzugefügt werden. Das Inventar ist voll.");
     }
 }
 

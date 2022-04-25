@@ -19,7 +19,7 @@ public class Shop {
 
         System.out.println("Hallo");
         System.out.println("");
-        System.out.println("Wilkommen in unserem Shop!...");
+        System.out.println("Willkommen in unserem Shop!...");
         scanner.nextLine();
         System.out.println("Möchtest du dir das Angebot an Karten ansehen?");
         String antwort1 = scanner.nextLine();
@@ -48,7 +48,7 @@ public class Shop {
         ladeTheke[2] = myCardslist.randomCard();
         ladeTheke[3] = myCardslist.randomCard();
         showCards();
-        System.out.println("Möchtest du eine Karten kaufen?");
+        System.out.println("Möchtest du eine Karte kaufen?");
         antwort2 = scanner.nextLine();
         /*
          * for (int x=0; x < cards.length; x++)
@@ -63,7 +63,7 @@ public class Shop {
         } else {
             return;
         }
-            presentUser.getInventory().addCard(ladeTheke[antwort3-1]);;
+         presentUser.getInventory().addCard(ladeTheke[antwort3-1]);
         
 
     }
