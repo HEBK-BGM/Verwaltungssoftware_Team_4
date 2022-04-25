@@ -1,4 +1,6 @@
 import java.util.Scanner;
+
+
 import java.util.Random;
 
 public class Menu {
@@ -14,6 +16,12 @@ public class Menu {
     //Random für die UserID
     Random rand = new Random();
     int userIDrandom = 999;
+
+    Cardmanagement myCardmanagement;
+
+    public Menu (Cardmanagement pCardmanagement){
+        this.myCardmanagement = pCardmanagement;
+    }
 
     //breakline
     public void breakLine(){
@@ -179,14 +187,10 @@ public class Menu {
         while(pCardmanagement.getLoggedIN() == true){
            // s1 = new Shop();
             switch(showMenu()){
-                case 1: Inventory inv = new Inventory();
-                        inv.showInventory();
+                case 1: pCardmanagement.getUser().getInventory().showInventory();
                         break;
 
-                case 2: Cardslist c = new Cardslist();
-                        Inventory d = new Inventory();
-                        Shop s1 = new Shop();
-                        s1.showShop(c,d); 
+                case 2: this.myCardmanagement.getShop().showShop();
                         break;
 
                 case 3: showMoney(pCardmanagement.getUser(), pCardmanagement);

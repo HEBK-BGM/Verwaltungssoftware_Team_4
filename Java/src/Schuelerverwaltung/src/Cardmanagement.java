@@ -4,13 +4,24 @@ public class Cardmanagement {
     private User user;
     private Menu menu;
     private ReadWrite r;
+    private Cardslist myCardslist;
+    private Shop myShop;
     private boolean loggedin = false;
 
    //Konstruktor Cardmanagement
    public Cardmanagement(){
+
+     
+      user = new User(" ", 0 , " ", " ", 0.0 , 0);
       menu = new Menu();
+
       r = new ReadWrite();
 
+      
+      myCardslist = new Cardslist();
+      myShop = new Shop(myCardslist, user);
+
+      menu = new Menu(this);
       logIN();
    }
   
@@ -55,5 +66,9 @@ public class Cardmanagement {
    //getLoggedIN
    public boolean getLoggedIN(){
       return this.loggedin;
+   }
+
+   public Shop getShop(){
+      return this.myShop;
    }
 }

@@ -6,6 +6,16 @@ public class Cards {
     private double price;
 
 
+   
+    public Cards(String pName, int pCardID, String pRarity, double pPrice){
+
+        this.setName(pName);
+        this.setCardID(pCardID);
+        this.setRarity(pRarity);
+        this.setPrice(pPrice);
+    }
+
+
     //get-Methoden
     public String getName() {
         return name; 
@@ -62,4 +72,8 @@ public class Cards {
         } else if (rarity.equals("pogO")) {
             price = price + 420.69;
         } */
+
+    public String toString(){
+        return "Name: "  + name + " CardID: " + cardID + " Rarität: " + rarity+ " Price: " + price;
+    }
 }
