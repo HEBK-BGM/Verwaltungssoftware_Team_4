@@ -13,7 +13,7 @@ public class Cardmanagement {
 
      
       user = new User(" ", 0 , " ", " ", 0.0 , 0);
-      menu = new Menu();
+      menu = new Menu(this);
 
       r = new ReadWrite();
 
@@ -31,7 +31,6 @@ public class Cardmanagement {
 
       //bei "1" anmelden
       if(menu.menustart().equals("1")){
-         user = new User(" ", 0 , " ", " ", 0.0 , 0);
          r.readLogIn(user);
          loggedin = true;
          menu.menumain(this);
