@@ -18,6 +18,7 @@ import java.nio.file.Paths;
 public class ReadWrite{
 
     private Scanner sc = new Scanner(System.in);
+    
 
     //Writer
     public void writeLogin(User pUser){
@@ -27,10 +28,6 @@ public class ReadWrite{
             File userfile = new File(".\\Users\\" + pUser.getUsername() + ".txt");
             BufferedWriter writer;
             try { 
-                if(userfile.exists()){
-                    System.out.println("Den Usernamen gibt es bereits!");
-                    System.exit(0);
-                }else {
                     writer = new BufferedWriter(new FileWriter(userfile)); 
                     //In der User-Datei werden alle Werte untereinander geschrieben
                     writer.write(pUser.getUsername());
@@ -46,7 +43,7 @@ public class ReadWrite{
                     writer.write(String.valueOf(pUser.getMoney()));
                     writer.newLine();
                     writer.close();
-                }
+                
             }catch (IOException e) {
                 e.printStackTrace();
             } 
@@ -132,4 +129,28 @@ public class ReadWrite{
             System.exit(0);
         }
     }
+
+
+    public boolean checkUsername(String pUsername){
+        boolean check = true;
+        try{
+            BufferedReader br = new BufferedReader(new FileReader("Userlist.txt"));
+            String line;
+                while((line = br.readLine() ) !=null){
+                    if(pUsername.equals(line)){
+                        check = false;
+                        break;
+                    }else{
+                        br.readLine();
+                        continue;
+                    }
+                }
+            br.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        System.out.println(check);
+        return check;
+    }
+    
 }

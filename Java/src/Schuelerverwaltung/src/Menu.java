@@ -45,13 +45,18 @@ public class Menu {
 
         write = new ReadWrite();
         breakLine();
-        System.out.println("Erstelle einen Username");
-        String pUsername = sc.next();
+        String pUsername = "";
+        System.out.println("Erstelle einen Usernamen: ");
+        String check = sc.next();
+        if(write.checkUsername(check) == true){
+            pUsername = check; 
+        }else{
+            System.out.println("Username bereits vergeben!");
+            System.exit(0);
+        }
 
         System.out.println("Erstellen Sie ein Passwort");
         String pPassword = sc.next();
-
-        
 
         System.out.println("Gebe deinen richtigen Namen ein"); 
         String pName = sc.next();
@@ -149,11 +154,19 @@ public class Menu {
             breakLine();
             pUser.changePassword(pPassword);
         }else if(input.toLowerCase().equals("b")){
-            System.out.println("Gebe dein neuen Benutzernamen ein: ");
-            String pUsername = sc.next();
+            write = new ReadWrite();
             breakLine();
-            pUser.changeUsername(pUsername);
-
+            System.out.println("Gebe dein neuen Benutzernamen ein: ");
+            String check = sc.next();
+            if(write.checkUsername(check) == true){
+                pUser.setUsername(check);
+                System.out.println("Dein neuer Username: " + pUser.getUsername());
+                breakLine();
+            }else{
+                System.out.println("Username existiert bereits! ");
+                breakLine();
+                showProfile(pUser, pCardmanagement);
+            }
         }else{
             System.out.println("Falsche Eingabe!");
             showProfile(pUser, pCardmanagement);

@@ -45,13 +45,20 @@ public class Inventory {
             else {
                 System.out.println("Wähle die Karte, die du verkaufen willst.");
                 showCards();
-                u = sc.nextInt();
-            }  
+                int z = sc.nextInt();
+                if (z <= 20) {
+                    cards[z] = null;
+                    System.out.println("Karte an Stelle" + z + "verkauft"); 
+                }
+                else {
+                    System.out.println("Die angegebene Stelle existiert nicht");
+                }  
+            }
+        sc.close();
         }
     }
     private void showCards() {
         //showCards() braucht vermutlich ein Return-Wert aus Shop (von der buyCard())
-        // Inventory[] cards = new Inventory[20];
         breakLine();
         for (int i=0, j=1; i<=19; i++, j++) {
              if (cards[i] == null) {
