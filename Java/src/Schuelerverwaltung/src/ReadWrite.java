@@ -82,7 +82,6 @@ public class ReadWrite{
                         pUser.setUsername(line);
                         break;
                     }else{   //sonst wiederholt sich die while schleif
-                        br.readLine();
                         continue;
                     }
                 }
