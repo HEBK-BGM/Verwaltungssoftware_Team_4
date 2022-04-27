@@ -78,6 +78,7 @@ public class ReadWrite{
             BufferedReader br = new BufferedReader(new FileReader("Userlist.txt"));
                 //check ob der Input auch dem Username in der Userlist.txt enstspricht. Geht jede einzelne Zeile durch und überprüft
                 while((line = br.readLine() ) !=null){
+                    br.readLine();
                     if(inputUS.equals(line)){ //Wenn gefunden, dann setzt er den Usernamen auf die line
                         pUser.setUsername(line);
                         break;
