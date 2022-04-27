@@ -13,7 +13,7 @@ public class Cardmanagement {
 
      
       user = new User(" ", 0 , " ", " ", 0.0 , 0);
-      menu = new Menu();
+      
 
       r = new ReadWrite();
 
