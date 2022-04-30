@@ -6,7 +6,6 @@ public class User extends Person {
     private int userID;
     private double money;
     private Inventory inventory;
-
     //User Konstruktor
     public User(String pName, int pAge, String pUsername, String pPassword, double pMoney, int pUserID) {
         super(pName, pAge);
@@ -14,11 +13,8 @@ public class User extends Person {
         setPassword(pPassword);
         setMoney(pMoney);
         setUserID(pUserID);
-        this.inventory = new Inventory();
+        this.inventory = new Inventory(Cardmanagement.user); 
     }
-
-    
-
     //set-Methoden
     public void setPassword(String pPassword){
         this.password = pPassword;
@@ -56,7 +52,7 @@ public class User extends Person {
 
     public Inventory getInventory(){
         return this.inventory;
-    }
+    } 
 
 
 
