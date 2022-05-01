@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 public class Shop {
-    private Cards[] ladeTheke = new Cards[4];
+    public Cards[] ladeTheke = new Cards[4];
     private Cardslist myCardslist;
-    private User presentUser; 
+    private User presentUser;
 
     Scanner scanner = new Scanner(System.in);
 
     public String antwort2;
-    int antwort3;
+    static int antwort3;
 
     public Shop(Cardslist pCardslist, User pUser) {
         this.myCardslist = pCardslist;
@@ -59,12 +59,12 @@ public class Shop {
 
         if (antwort2.equals("Ja") || (antwort2.equals("ja"))) {
             System.out.println("Welche Karte möchtest du kaufen? (1) (2) (3) (4)");
-            antwort3 = scanner.nextInt();
+           antwort3 = scanner.nextInt();
         } else {
             return;
         }
-         presentUser.getInventory().addCard(ladeTheke[antwort3-1]);
-        
+        presentUser.getInventory().addCard(ladeTheke[antwort3-1]);
+       
 
     }
 

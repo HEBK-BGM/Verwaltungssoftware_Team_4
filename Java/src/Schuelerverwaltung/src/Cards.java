@@ -14,8 +14,7 @@ public class Cards {
         this.setRarity(pRarity);
         this.setPrice(pPrice);
     }
-
-
+    
     //get-Methoden
     public String getName() {
         return name; 
@@ -42,38 +41,7 @@ public class Cards {
     public void setCardID(int pCardID) {
         this.cardID = pCardID;
     }
-    //show-Methoden
-    public void showName() {
-        getName();
-        System.out.println(name);
-    }
-    public void showRarity() {
-        getRarity();
-        System.out.println(rarity);
-    }
-    public void showPrice() {
-        getPrice();
-        System.out.println(price);
-    }
-    public void showCardID() {
-        getCardID();
-        System.out.println(cardID);
-    }
-    /* Festlegung der Preise für die Seltenheiten
-    public void rarities() {
-        if (rarity.equals("non rare")) {
-            price = price + 1.00;
-        } else if (rarity.equals("rare")) {
-            price = price + 5.00;
-        } else if (rarity.equals("super rare")) {
-            price = price + 10.00;
-        } else if (rarity.equals("extrem rare")) {
-            price = price + 25.00;
-        } else if (rarity.equals("pogO")) {
-            price = price + 420.69;
-        } */
-
     public String toString(){
-        return "Name: "  + name + " CardID: " + cardID + " Rarität: " + rarity+ " Price: " + price;
+        return "Name: "  + name + " CardID: " + cardID + " Rarität: " + rarity+ " Preis: " + price;
     }
 }

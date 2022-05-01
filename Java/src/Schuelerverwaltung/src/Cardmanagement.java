@@ -1,7 +1,7 @@
 public class Cardmanagement {
 
     //Attribute
-    private User user;
+    public static User user;
     private Menu menu;
     private ReadWrite r;
     private Cardslist myCardslist;
@@ -17,7 +17,6 @@ public class Cardmanagement {
 
       r = new ReadWrite();
 
-      
       myCardslist = new Cardslist();
       myShop = new Shop(myCardslist, user);
 
@@ -57,7 +56,7 @@ public class Cardmanagement {
 
    //get User
    public User getUser(){
-    return this.user;
+    return user;
    }
 
 

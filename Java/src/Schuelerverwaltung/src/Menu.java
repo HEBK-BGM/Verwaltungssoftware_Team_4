@@ -18,7 +18,7 @@ public class Menu {
     int userIDrandom = 999;
 
     Cardmanagement myCardmanagement;
-
+   
     public Menu (Cardmanagement pCardmanagement){
         this.myCardmanagement = pCardmanagement;
     }
