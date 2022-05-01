@@ -7,10 +7,15 @@ public class Inventory {
     private User presentUser;
     private static Cards boughtCard;
     private boolean running;
+//    private Cardmanagement myCardmanagement;
 
     // Methoden
     public Inventory(User pUser) {
         setUser(pUser);
+     //   setCardmanagement(pCardmanagement);
+    }
+    public void setCardmanagement(Cardmanagement pCardmanagement) {
+     //   this.myCardmanagement = pCardmanagement;
     }
     public void setCard(Cards pCard) {
         boughtCard = pCard;
@@ -35,7 +40,7 @@ public class Inventory {
         switch(textInventory()) {
             case 1: showUsTheCards();
                     break;
-            case 2: sellCardAufruf();
+            case 2: sellCard();
                     break;
             default:
         }
@@ -49,13 +54,11 @@ public class Inventory {
 
     }
     public void sellCardAufruf() {
-        sellCard(cards[cardchoice]);
-     
-    }
-    public void sellCard(Cards pCard) {
+     //   sellCard(cards[cardchoice]);
+    } 
+    public void sellCard() {
         //sellCard() braucht showCards()
         breakLine();
-        for (int u=0; u<cards.length; u++) {
             System.out.println("Wähle die Karte, die du verkaufen willst.");
             breakLine();
             showUsTheCards();
@@ -64,7 +67,6 @@ public class Inventory {
             cardchoice = antwortZ-1;
             if (cards[cardchoice] == null) {
                 System.out.println("Du hast keine Karten, die du verkaufen kannst.");
-                break;
             }
             else {
                 if (cardchoice <= cards.length) {
@@ -75,13 +77,17 @@ public class Inventory {
                     System.out.println("Karte an Stelle " + antwortZ + " verkauft"); 
                     System.out.println("Dein neues Guthaben beträgt: " + currentmoney);
                     cards[cardchoice] = null;
-                    break;
+                    boughtCard = null;
                 }
                 else {
                     System.out.println("Die angegebene Stelle existiert nicht");
                 }  
             }
-        }
+    }
+    public void showMoney(User pUser, Cardmanagement pCardmanagement) {
+        breakLine();
+        System.out.println("Dein Geld beträgt: " + pUser.getMoney());
+        breakLine();
     }
     private void breakLine() {
         System.out.println("--------------");
@@ -112,7 +118,7 @@ public class Inventory {
             if (cards[i] == null) {
                 if (boughtCard != null) {
                 cards[i] = boughtCard;
-                System.out.println("Die Karte an Platz " + j + " = " + cards[i]);
+                System.out.println(j + " = " + cards[i]);
                 i++;
                 j++;
                 this.running = false;
@@ -123,9 +129,10 @@ public class Inventory {
                 }
             }
             else if (cards[i] != null && this.running == true){
-                 System.out.println("Karte an Platz " + j + " = " + cards[i]);
+                 System.out.println(j + " = " + cards[i]);
                  i++;
                  j++;
+                 this.running = false;
             }
             else {
                 this.running = false;
